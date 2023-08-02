@@ -10,7 +10,7 @@
 - [x] Fix sound
 - [x] Home Manager
   - [x] Git config
-- [ ] Fix launch & shutdown menus
+- [x] Fix launch & shutdown menus
 - [ ] xplr
   - [ ] fix icons
   - [ ] call helix from xplr

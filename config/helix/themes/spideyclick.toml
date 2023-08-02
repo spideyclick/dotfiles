@@ -4,6 +4,7 @@ inherits = "base16_default"
 "ui.gutter" = { bg = "none" }
 "ui.linenr" = { bg = "none" }
 "ui.linenr.selected" = { modifiers = ["bold"] }
+"ui.virtual.whitespace" = { fg = "#6060a0" }
 
 [palette]
 gray = "#888888"

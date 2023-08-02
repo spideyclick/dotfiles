@@ -1,14 +1,14 @@
 {
 	"layer": "top",
 	"modules-left": [
-		"custom/launcher",
-		"custom/media",
+		// "custom/launcher",
         "wlr/workspaces",
-        "hyprland/window"
 	],
 	"modules-center": [
 		// "river/tags",
 		// "custom/wallpaper",
+		"custom/media",
+        "hyprland/window",
 		"custom/updates",
 		"cpu",
 		"memory",
@@ -92,11 +92,11 @@
     },
     "custom/launcher":{
         "format": "󱓞",
-        "on-click": "killall rofi; ~/utils/rofi/launch_menu/rofi_launcher.sh",
+        "on-click": ".config/rofi/launchers/type-2/launcher.sh",
     },
     "custom/power":{
         "format": " ",
-        "on-click": "killall rofi; ~/utils/rofi/power_menu/rofi_power_menu.sh",
+        "on-click": ".config/rofi/powermenu/type-1/powermenu.sh",
     },
     "custom/updates":{
         "format": "{} Update(s)",
