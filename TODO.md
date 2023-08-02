@@ -8,8 +8,8 @@
   - [x] Style workspace switcher
 - [x] Fix screen brighness
 - [x] Fix sound
-- [ ] Home Manager
-  - [ ] Git config
+- [x] Home Manager
+  - [x] Git config
 - [ ] Fix launch & shutdown menus
 - [ ] xplr
   - [ ] fix icons
