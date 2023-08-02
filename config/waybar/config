@@ -7,9 +7,9 @@
 	"modules-center": [
 		// "river/tags",
 		// "custom/wallpaper",
-		"custom/media",
-        "hyprland/window",
-		"custom/updates",
+		// "custom/media",
+        // "hyprland/window",
+		// "custom/updates",
 		"cpu",
 		"memory",
 		"backlight",
