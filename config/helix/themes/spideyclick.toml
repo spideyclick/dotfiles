@@ -1,0 +1,10 @@
+inherits = "base16_default"
+
+"comment" = { fg = "#9090b0" }
+"ui.gutter" = { bg = "none" }
+"ui.linenr" = { bg = "none" }
+"ui.linenr.selected" = { modifiers = ["bold"] }
+
+[palette]
+gray = "#888888"
+

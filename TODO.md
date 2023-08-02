@@ -1,0 +1,22 @@
+# TODO
+
+- [x] WayBar
+  - [x] Fix Memory/CPU readouts
+  - [x] Fix workspace switcher icon
+  - [x] Fix broken icons
+  - [x] Finish styling
+  - [x] Style workspace switcher
+- [x] Fix screen brighness
+- [x] Fix sound
+- [ ] Home Manager
+  - [ ] Git config
+- [ ] Fix launch & shutdown menus
+- [ ] xplr
+  - [ ] fix icons
+  - [ ] call helix from xplr
+- [ ] Fish: prompt theme
+- [ ] Animated wallpapers
+- [ ] Keyboard - modifiers on `jkl;` hold?
+- [ ] NixOS Flakes
+- [ ] Make a project out of all configurations & dotfiles
+- [ ] Configuration for WSL

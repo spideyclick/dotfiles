@@ -1,8 +1,12 @@
-theme = "onedark"
+theme = "spideyclick"
+
+[keys.insert]
+"A-x" = "normal_mode"
 
 [editor]
-rulers = [80, 120]
+line-number = "relative"
 mouse = false
+bufferline = "multiple"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -12,14 +16,3 @@ select = "underline"
 [editor.file-picker]
 hidden = false
 
-[editor.whitespace.render]
-space = "all"
-nbsp = "all"
-tab = "all"
-newline = "none"
-
-[keys.normal]
-h = "no_op"
-j = "no_op"
-k = "no_op"
-l = "no_op"
