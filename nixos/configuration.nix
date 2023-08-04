@@ -70,8 +70,9 @@
   };
   # Optional, hint electron apps to use wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
-  environment.shells = with pkgs; [ fish ];
 
+  # Use fish shell
+  environment.shells = with pkgs; [ fish ];
 
   # Configure keymap in X11
   services.xserver = {

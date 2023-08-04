@@ -23,6 +23,7 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
+  nixpkgs.config.allowUnfree = true;
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
@@ -69,6 +70,8 @@
   # if you don't want to manage your shell through Home Manager.
   home.sessionVariables = {
     EDITOR = "hx";
+    # Optional, hint electron apps to use wayland:
+    NIXOS_OZONE_WL = "1";
   };
 
   # Let Home Manager install and manage itself.
