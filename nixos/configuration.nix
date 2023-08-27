@@ -27,6 +27,12 @@
   networking.wireless.iwd.enable = true;
   networking.networkmanager.wifi.backend = "iwd";
 
+  # services.openvpn.servers = {
+  #   home_vpn = {
+  #     config = '' config /root/nixos/openvpn/home_vpn.conf '';
+  #   };
+  # };
+
   # Set your time zone.
   time.timeZone = "America/Chicago";
 
@@ -168,6 +174,9 @@
     fzf
     fishPlugins.grc
     grc
+    pkgs.inkscape
+    gcc
+    rustup
   ];
 
   programs.fish.enable = true;

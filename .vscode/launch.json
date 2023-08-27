@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Apply NixOS Configuration",
+      "type": "f5anything",
+      "request": "launch",
+      "command": "sudo ./scripts/apply_nixos_configuration.sh"
+    }
+  ],
+  "compounds": []
+}
