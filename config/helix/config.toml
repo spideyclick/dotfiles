@@ -4,6 +4,7 @@ theme = "base16_transparent"
 "A-x" = "normal_mode"
 
 [editor]
+true-color = true
 line-number = "relative"
 mouse = false
 bufferline = "multiple"
