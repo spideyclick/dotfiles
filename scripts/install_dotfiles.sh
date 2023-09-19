@@ -2,4 +2,6 @@
 
 cd $(dirname $0)
 
-cp -r ../config/* ~/.config/
+cp -ra ../config/. ~/.config/
+cp ~/.config/.tmux.conf ~
+
