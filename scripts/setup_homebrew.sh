@@ -24,3 +24,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 ### Deploy Dotfiles
 ./install_dotfiles.sh
+
+### Configure Git to use helix
+git config --global core.editor hx
+
