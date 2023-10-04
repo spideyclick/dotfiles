@@ -151,7 +151,6 @@
     pkgs.swww
     pkgs.rofi-wayland
     pkgs.hyprpaper
-    pkgs.xplr
     pkgs.gnome.nautilus
     pkgs.fish
     pkgs.nerdfonts
@@ -177,6 +176,8 @@
     pkgs.inkscape
     gcc
     rustup
+    pkgs.ranger
+    pkgs.lazygit
   ];
 
   programs.fish.enable = true;
