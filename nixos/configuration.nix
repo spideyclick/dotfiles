@@ -176,6 +176,7 @@
     pkgs.inkscape
     gcc
     rustup
+    pkgs.bacon
     pkgs.ranger
     pkgs.lazygit
   ];
