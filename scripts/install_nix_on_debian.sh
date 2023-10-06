@@ -8,4 +8,5 @@ nix-env -iA nixpkgs.helix
 nix-env -iA nixpkgs.lazygit
 
 # Python dev in Helix
+nix-env -iA nixpkgs.nodePackages.pyright
 python -m pip install pyright
