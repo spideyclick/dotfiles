@@ -6,3 +6,6 @@ source ~/.nix-profile/etc/profile.d/nix.sh
 nix-channel --update
 nix-env -iA nixpkgs.helix
 nix-env -iA nixpkgs.lazygit
+
+# Python dev in Helix
+python -m pip install pyright
