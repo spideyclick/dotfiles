@@ -179,6 +179,7 @@
     pkgs.bacon
     pkgs.ranger
     pkgs.lazygit
+    pkgs.marksman
   ];
 
   programs.fish.enable = true;
