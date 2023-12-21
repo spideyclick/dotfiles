@@ -1,10 +1,11 @@
-inherits = "base16_default"
+inherits = "base16_transparent"
 
 "comment" = { fg = "#9090b0" }
 "ui.gutter" = { bg = "none" }
 "ui.linenr" = { bg = "none" }
 "ui.linenr.selected" = { modifiers = ["bold"] }
 "ui.virtual.whitespace" = { fg = "#6060a0" }
+"ui.virtual.ruler" = { bg = "#404060" }
 
 [palette]
 gray = "#888888"

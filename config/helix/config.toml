@@ -8,6 +8,7 @@ true-color = true
 line-number = "relative"
 mouse = false
 bufferline = "multiple"
+auto-save = true
 
 [editor.whitespace.render]
 space = "all"
@@ -30,3 +31,5 @@ hidden = false
 [editor.lsp]
 display-inlay-hints = true
 
+[editor.statusline]
+center = ["version-control"]
