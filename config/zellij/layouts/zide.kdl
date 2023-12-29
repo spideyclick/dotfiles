@@ -1,0 +1,10 @@
+layout {
+    pane split_direction="vertical" {
+        pane command="hx" args="." size="60%"
+        pane split_direction="horizontal" stacked=true {
+            pane command="ranger" expanded=true
+            pane command="lazygit"
+            pane command="htop"
+        }
+    }
+}
