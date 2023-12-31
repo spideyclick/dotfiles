@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 if [ ! $(which zellij) ]; then
 	echo "zide requires zellij to be installed"

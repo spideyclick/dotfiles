@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Install inotifywait on ubuntu/debian with:
 # apt install inotify-tools
