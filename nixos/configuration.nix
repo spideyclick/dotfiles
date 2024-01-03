@@ -72,13 +72,13 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-    nvidiaPatches = true;
+    enableNvidiaPatches = true;
   };
   # Optional, hint electron apps to use wayland:
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # Use fish shell
-  environment.shells = with pkgs; [ fish ];
+  environment.shells = with pkgs; [ zsh ];
 
   # Configure keymap in X11
   services.xserver = {
@@ -119,11 +119,36 @@
     isNormalUser = true;
     description = "Zachary";
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
     packages = with pkgs; [
     #  thunderbird
     ];
   };
+
+  # home-manager.users.spideyclick = {
+  #   /* The home.stateVersion option does not have a default and must be set */
+  #   home.stateVersion = "18.09";
+  #   /* Here goes the rest of your home-manager config, e.g. home.packages = [ pkgs.foo ]; */
+  #   programs.git = {
+  #     enable = true;
+  #     userName  = "spideyclick";
+  #     userEmail = "spideyclick@gmail.com";
+  #   };
+  #   programs.zsh = {
+  #     enable = true;
+  #     shellAliases = {
+  #       ll = "ls -l";
+  #       update = "sudo nixos-rebuild switch";
+  #     };
+  #     histSize = 10000;
+  #     histFile = "~/.zsh_history";
+  #     ohMyZsh = {
+  #       enable = true;
+  #       plugins = [ "git" "thefuck" ];
+  #       theme = "robbyrussell";
+  #     };
+  #   };
+  # };
 
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
@@ -153,6 +178,7 @@
     pkgs.hyprpaper
     pkgs.gnome.nautilus
     pkgs.fish
+    pkgs.zsh
     pkgs.nerdfonts
     pkgs.unzip
     pkgs.killall
@@ -180,12 +206,18 @@
     pkgs.ranger
     pkgs.lazygit
     pkgs.marksman
+    pkgs.neovim
+    pkgs.ripgrep
+    pkgs.fd
+    pkgs.zellij
   ];
 
   programs.fish.enable = true;
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
       (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" "JetBrainsMono" ]; })
   ];
+
+  programs.zsh.enable = true;
 
   nixpkgs.overlays = [
     (self: super: {
