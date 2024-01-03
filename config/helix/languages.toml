@@ -14,6 +14,7 @@ comment-token = "#"
 language-servers = ["pyright", "ruff"]
 indent = { tab-width = 4, unit = "    " }
 auto-format = true
+rulers = [80, 120]
 
 # [language.debugger]
 # name = "debugpy"
@@ -46,7 +47,21 @@ command = "ruff-lsp"
 [language-server.ruff.config]
 settings = {args = []}
 
+[language-server.marksman]
+command = "marksman"
 
+[language-server.cspell]
+command = "cspell-lsp"
+args = ["--stdio"]
+
+# [[language]]
+# name = "shell"
+# scope = "source.sh"
+# file-types = ["sh"]
+# roots = []
+# shebangs = ["sh", "bash"]
+# indent = { tab-width = 2, unit = "	"}
+# auto-format = true
 
 [[language]]
 name = "html"
@@ -76,6 +91,7 @@ auto-format = true
 indent = { tab-width = 4, unit = "	" }
 formatter = { command = "dprint", args = ["fmt", "--stdin", "-c", "dprint.json", "md"]}
 rulers = [120]
+language-servers = [ "marksman", "cspell" ]
 # soft-wrap = true
 
 [[language]]
