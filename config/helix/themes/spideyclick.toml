@@ -1,4 +1,4 @@
-inherits = "base16_transparent"
+inherits = "material_deep_ocean"
 
 "comment" = { fg = "#9090b0" }
 "ui.gutter" = { bg = "none" }
