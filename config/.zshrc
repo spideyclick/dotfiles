@@ -105,7 +105,7 @@ PATH=$PATH:/data/data/com.termux/files/home/.cargo/bin
 ZELLIJ_AUTO_ATTACH=true
 ZELLIJ_AUTO_EXIT=true
 # eval "$(zellij setup --generate-auto-start zsh)"
-if [[ -z "$ZELLIJ" && "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+if [[ -z "$ZELLIJ" && "$ZELLIJ_AUTO_ATTACH" == "true" && -x "$(command -v zellij)" ]]; then
   zellij attach --create main
   if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
     exit 0
