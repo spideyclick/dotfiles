@@ -1,11 +1,22 @@
 theme = "spideyclick"
 
+# [keys.normal]
+# # Breaking my bad hjkl habits!
+# "h" = "normal_mode"
+# "j" = "normal_mode"
+# "k" = "normal_mode"
+# "l" = "normal_mode"
+
+[keys.normal]
+"'" = "select_register"
+
 [keys.insert]
 "A-x" = "normal_mode"
 
 [editor]
 true-color = true
-line-number = "relative"
+line-number = "absolute"
+# line-number = "relative"
 mouse = false
 bufferline = "multiple"
 auto-save = true
