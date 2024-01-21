@@ -1,4 +1,4 @@
-# Edit this configuration file to define what should be installed on
+#I've since uEdit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
@@ -125,6 +125,7 @@
     ];
   };
 
+
   # home-manager.users.spideyclick = {
   #   /* The home.stateVersion option does not have a default and must be set */
   #   home.stateVersion = "18.09";
@@ -165,26 +166,58 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    # The Nano editor is installed by default.
+    # Basic Utilities
     pkgs.bashmount
+    pkgs.fd
     pkgs.git
-    pkgs.helix
-    pkgs.kitty
-    pkgs.vscode
-    pkgs.waybar
-    pkgs.networkmanagerapplet
-    pkgs.swww
-    pkgs.rofi-wayland
-    pkgs.hyprpaper
-    pkgs.gnome.nautilus
-    pkgs.fish
-    pkgs.zsh
-    pkgs.nerdfonts
-    pkgs.unzip
     pkgs.killall
-    pkgs.vscode
-    pkgs.brave
+    pkgs.unzip
+    pkgs.wl-clipboard
+
+    # OS/UI
+    grc
     pkgs.brightnessctl
+    pkgs.hyprpaper
+    pkgs.networkmanagerapplet
+    pkgs.rofi-wayland
+    pkgs.swww
+    pkgs.waybar
+
+    # Terminal/Shell
+    pkgs.nerdfonts
+    pkgs.kitty
+    pkgs.wezterm
+    pkgs.zellij
+    pkgs.zsh
+    pkgs.fish
+    fishPlugins.done
+    fishPlugins.fzf-fish
+    fishPlugins.forgit
+    fishPlugins.hydro
+    fzf
+    fishPlugins.grc
+
+    # Editors & Language Servers
+    # The Nano editor is installed by default.
+    pkgs.vscode
+    pkgs.helix
+    pkgs.marksman
+    nodePackages_latest.cspell
+
+    # File Management
+    pkgs.gnome.nautilus
+
+    # Browsers
+    pkgs.brave
+    pkgs.firefox
+
+    # TUI Apps
+    pkgs.bacon
+    pkgs.broot
+    pkgs.lazygit
+    pkgs.ranger
+
+    # GUI Apps
     (
       pkgs.writeShellScriptBin "discord" ''
         exec ${pkgs.discord}/bin/discord
@@ -192,24 +225,11 @@
           --ozone-platform=wayland
       ''
     )
-    fishPlugins.done
-    fishPlugins.fzf-fish
-    fishPlugins.forgit
-    fishPlugins.hydro
-    fzf
-    fishPlugins.grc
-    grc
     pkgs.inkscape
+
+    # Rust Development
     gcc
     rustup
-    pkgs.bacon
-    pkgs.ranger
-    pkgs.lazygit
-    pkgs.marksman
-    pkgs.neovim
-    pkgs.ripgrep
-    pkgs.fd
-    pkgs.zellij
   ];
 
   programs.fish.enable = true;
@@ -218,6 +238,13 @@
   ];
 
   programs.zsh.enable = true;
+  programs.zsh = {
+    ohMyZsh = {
+      enable = true;
+      plugins = [ "git" "vi-mode" ];
+      theme = "robbyrussell";
+    };
+  };
 
   nixpkgs.overlays = [
     (self: super: {
@@ -254,5 +281,6 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.05"; # Did you read the comment?
+  # I've since upgraded to 23.10
 
 }

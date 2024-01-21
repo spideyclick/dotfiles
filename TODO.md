@@ -11,12 +11,11 @@
 - [x] Home Manager
   - [x] Git config
 - [x] Fix launch & shutdown menus
-- [ ] xplr
-  - [ ] fix icons
-  - [ ] call helix from xplr
-- [ ] Fish: prompt theme
+- [x] Make a project out of all configurations & dotfiles
+- [x] Configuration for WSL
+- [x] Change to ZSH + Zellij
+  - [ ] Oh-my-zsh + autofill
+- [ ] Change terminal from Kitty to WezTerm (rustify everything now that we are on Zellij)
 - [ ] Animated wallpapers
-- [ ] Keyboard - modifiers on `jkl;` hold?
 - [ ] NixOS Flakes
-- [ ] Make a project out of all configurations & dotfiles
-- [ ] Configuration for WSL
+  - [ ] Create flakes to fix Helix dependencies?
