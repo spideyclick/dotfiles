@@ -1,3 +1,6 @@
+# Some good ideas here:
+# https://codeberg.org/ADIOP55550/helix-config/src/commit/1d52ac4a15735ca7f9307e789094590786007e18/config.toml
+# TODO: Figure out how to select inside of next/previous occurance of `()[]{}<>''""```
 theme = "spideyclick"
 
 # [keys.normal]
@@ -9,14 +12,36 @@ theme = "spideyclick"
 
 [keys.normal]
 "'" = "select_register"
+X = "extend_line_above"
+g = { "(" = [ "find_next_char", "move_char_left" ] }
+space."." = "file_picker_in_current_buffer_directory"
+# C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+# C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+# C-A-j = ["normal_mode", "extend_to_line_bounds", "yank", "open_below", "replace_with_yanked", "collapse_selection"]
+# C-A-k = ["normal_mode", "extend_to_line_bounds", "yank", "open_above", "replace_with_yanked", "collapse_selection"]
+
+# Move line up
+"A-up" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "delete_selection", "move_visual_line_up", "paste_before"]
+"A-k" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "delete_selection", "move_visual_line_up", "paste_before"]
+
+# Move line down
+"A-down" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection","delete_selection", "paste_after"]
+"A-j" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "delete_selection", "paste_after"]
+
+# Copy line up
+"A-S-up" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "yank", "paste_before"]
+"A-K" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "yank", "paste_before"]
+
+# Copy line down
+"A-S-down" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "yank", "paste_after"]
+"A-J" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "yank", "paste_after"]
 
 [keys.insert]
 "A-x" = "normal_mode"
 
 [editor]
 true-color = true
-line-number = "absolute"
-# line-number = "relative"
+line-number = "relative"
 mouse = false
 bufferline = "multiple"
 auto-save = true
