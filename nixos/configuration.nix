@@ -201,8 +201,11 @@
     # The Nano editor is installed by default.
     pkgs.vscode
     pkgs.helix
-    pkgs.marksman
-    nodePackages_latest.cspell
+    pkgs.marksman                 # Hints for linking between documents
+    nodePackages_latest.cspell    # Just a spell checker
+    nodePackages_latest.pyright   # Python LSP (very robust)
+    pkgs.ruff-lsp                 # Python LSP written in Rust
+    pkgs.lldb                     # Rust LLDB
 
     # File Management
     pkgs.gnome.nautilus
