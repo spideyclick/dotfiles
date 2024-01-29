@@ -1,43 +1,48 @@
 # Some good ideas here:
 # https://codeberg.org/ADIOP55550/helix-config/src/commit/1d52ac4a15735ca7f9307e789094590786007e18/config.toml
+
 # TODO: Figure out how to select inside of next/previous occurance of `()[]{}<>''""```
+# g = { "(" = [ "find_next_char", "move_char_left" ] }
+
+# TODO: Figure out select inside of matching indent
+
 theme = "spideyclick"
 
-# [keys.normal]
+[keys.normal]
+"'" = "select_register"
+X = "extend_line_above"
+space.c = "toggle_comments"
+space."." = "file_picker_in_current_buffer_directory"
+C-p = "file_picker"     # Ctrl + p -> fuzzy finder
+C-P = "command_palette" # Ctrl + Shift + p -> command palette
+"A-F" = ":format"
+
+# Ctrl-based line modifications
+C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
+C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
+C-A-j = ["normal_mode", "extend_to_line_bounds", "yank", "open_below", "replace_with_yanked", "collapse_selection", "normal_mode"]
+C-A-k = ["normal_mode", "extend_to_line_bounds", "yank", "open_above", "replace_with_yanked", "collapse_selection", "normal_mode"]
+# C-S-O = ["open_below", "normal_mode"]
+
+# Alt-based line modifications (not working for some reason)
+# "A-up" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "delete_selection", "move_visual_line_up", "paste_before"]
+# "A-k" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "delete_selection", "move_visual_line_up", "paste_before"]
+# "A-down" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection","delete_selection", "paste_after"]
+# "A-j" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "delete_selection", "paste_after"]
+# "A-S-up" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "yank", "paste_before"]
+# "A-K" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "yank", "paste_before"]
+# "A-S-down" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "yank", "paste_after"]
+# "A-J" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "yank", "paste_after"]
+
 # # Breaking my bad hjkl habits!
 # "h" = "normal_mode"
 # "j" = "normal_mode"
 # "k" = "normal_mode"
 # "l" = "normal_mode"
 
-[keys.normal]
-"'" = "select_register"
-X = "extend_line_above"
-g = { "(" = [ "find_next_char", "move_char_left" ] }
-space."." = "file_picker_in_current_buffer_directory"
-# C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
-# C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
-# C-A-j = ["normal_mode", "extend_to_line_bounds", "yank", "open_below", "replace_with_yanked", "collapse_selection"]
-# C-A-k = ["normal_mode", "extend_to_line_bounds", "yank", "open_above", "replace_with_yanked", "collapse_selection"]
-
-# Move line up
-"A-up" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "delete_selection", "move_visual_line_up", "paste_before"]
-"A-k" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "delete_selection", "move_visual_line_up", "paste_before"]
-
-# Move line down
-"A-down" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection","delete_selection", "paste_after"]
-"A-j" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "delete_selection", "paste_after"]
-
-# Copy line up
-"A-S-up" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "yank", "paste_before"]
-"A-K" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "yank", "paste_before"]
-
-# Copy line down
-"A-S-down" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "yank", "paste_after"]
-"A-J" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "yank", "paste_after"]
-
 [keys.insert]
 "A-x" = "normal_mode"
+"C-space" = "completion"
 
 [editor]
 true-color = true
