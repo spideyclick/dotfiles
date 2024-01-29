@@ -9,6 +9,12 @@ I wonder if it would make more sense to use symlinks rather than copying files b
 ```sh
 echo -e "\e[1mbold\e[0m\n\e[3mitalic\e[0m\n\e[4munderline\e[0m\n\e[9mstrikethrough\e[0m"
 ```
+## Rust Shell Tools
+
+- zellij
+- helix
+- jless
+- wezterm
 
 ## HyprLand
 
