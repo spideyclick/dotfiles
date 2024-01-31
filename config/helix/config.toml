@@ -69,8 +69,18 @@ select = "underline"
 [editor.file-picker]
 hidden = false
 
+[editor.auto-pairs]
+# '(' = ')'
+# '{' = '}'
+# '[' = ']'
+# '"' = '"'
+# '`' = '`'
+# '<' = '>'
+
 [editor.lsp]
 display-inlay-hints = true
 
 [editor.statusline]
 center = ["version-control"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type", "position-percentage"]
+
