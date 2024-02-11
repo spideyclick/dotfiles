@@ -15,6 +15,7 @@ echo -e "\e[1mbold\e[0m\n\e[3mitalic\e[0m\n\e[4munderline\e[0m\n\e[9mstrikethrou
 - helix
 - jless
 - wezterm
+- dutree
 
 ## HyprLand
 
