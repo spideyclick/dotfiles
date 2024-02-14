@@ -22,6 +22,14 @@ C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
 C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_before"]
 C-A-j = ["normal_mode", "extend_to_line_bounds", "yank", "open_below", "replace_with_yanked", "collapse_selection", "normal_mode"]
 C-A-k = ["normal_mode", "extend_to_line_bounds", "yank", "open_above", "replace_with_yanked", "collapse_selection", "normal_mode"]
+
+# Alternate key maps for tree sitter
+A-k = "expand_selection"
+A-j = "shrink_selection"
+A-l = "select_next_sibling"
+A-h = "select_prev_sibling"
+
+
 # C-S-O = ["open_below", "normal_mode"]
 
 # Alt-based line modifications (not working for some reason)
