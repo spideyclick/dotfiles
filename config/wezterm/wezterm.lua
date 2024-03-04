@@ -26,7 +26,7 @@ config.window_background_gradient = {
   orientation = { Linear = {angle = -40.0 } },
   colors = { '#0f111a', '#0f111a' },
 }
-config.font_size = 10
+config.font_size = 9
 -- config.disable_default_key_bindings = true
 -- key = 'F11', mods = 'SHIFT|CTRL', action = ToggleFullScreen
 
