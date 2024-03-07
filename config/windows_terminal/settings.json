@@ -118,7 +118,7 @@
       "experimental.retroTerminalEffect": false,
       "font": {
         "face": "JetBrains Mono",
-        "size": 9.0
+        "size": 10.0
       },
       "historySize": 100000,
       "intenseTextStyle": "all",

@@ -178,6 +178,14 @@ keybinds {
                 ignore_case true
             }
         }
+        // Harpoon Plugin is not yet updated to latest Zellij release
+        // bind "Ctrl r" {
+        //     LaunchOrFocusPlugin "file:~/.config/zellij/plugins/harpoon.wasm" {
+        //         floating true
+        //         ignore_case true
+        //         move_to_focused_tab true
+        //     }
+        // }
     }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
