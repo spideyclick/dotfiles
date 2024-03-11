@@ -46,6 +46,8 @@ cargo install speedtest-rs
 cargo install-update speedtest-rs
 cargo install rtx-cli
 cargo install-update rtx-cli
+gargo install joshuto
+cargo install-update joshuto
 # Wezterm is going to be platform specific
 # cargo install wezterm
 # cargo install-update wezterm
