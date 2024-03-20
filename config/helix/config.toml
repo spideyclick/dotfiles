@@ -55,6 +55,7 @@ A-h = "select_prev_sibling"
 [keys.insert]
 "A-x" = "normal_mode"
 "C-space" = "completion"
+"C-s" = [":write", "normal_mode"]
 
 [editor]
 true-color = true
