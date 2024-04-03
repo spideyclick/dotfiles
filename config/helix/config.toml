@@ -15,6 +15,7 @@ theme = "spideyclick"
 # W = ["move_next_long_word_start", "move_prev_long_word_start", "move_next_long_word_end"]
 "'" = "select_register"
 X = "extend_line_above"
+G = "goto_word"
 space.c = "toggle_comments"
 space."." = "file_picker_in_current_buffer_directory"
 C-p = "file_picker"     # Ctrl + p -> fuzzy finder
