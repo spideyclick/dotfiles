@@ -1,4 +1,31 @@
 layout {
+    default_tab_template {
+       pane size=1 borderless=true {
+           plugin location="zellij:tab-bar"
+       }
+        pane size=1 borderless=true {
+            plugin location="file:/home/zhubbell/.config/zellij/plugins/zellij-datetime.wasm" {
+                timezone1 "CST/-6"
+                timezone1 "CDT/-5"
+                timezone2 "EST/-5"
+                timezone3 "UTC/0"
+                default_timezone "CDT"
+                background_color "#404040"
+                foreground_color "#ffffff"
+                pane_color "#1e1e1e"
+                enable_right_click false
+                arrow_separator1 ""
+                arrow_separator2 ""
+                arrow_separator3 ""
+                padding_adjust 0
+                text_align "left"
+            }
+        }
+       children
+       pane size=2 borderless=true {
+           plugin location="zellij:status-bar"
+       }
+    }
     tab_template name="ui" {
        pane size=1 borderless=true {
            plugin location="zellij:tab-bar"
