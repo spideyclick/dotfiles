@@ -178,13 +178,20 @@ keybinds {
                 ignore_case true
             }
         }
-        bind "Ctrl r" {
-            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/harpoon.wasm" {
-                floating true
-                ignore_case true
-                move_to_focused_tab true
-            }
-        }
+        // bind "Ctrl r" {
+        //     LaunchOrFocusPlugin "file:~/.config/zellij/plugins/harpoon.wasm" {
+        //         floating true
+        //         ignore_case true
+        //         move_to_focused_tab true
+        //     }
+        // }
+        bind "Alt e" { ToggleTab; }
+        // Unfortunately GoToTabName is not yet implemented
+        // bind "Alt e" {
+        //     GoToTabName "edit" {
+        //         create true
+        //     }
+        // }
     }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
