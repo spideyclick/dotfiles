@@ -52,7 +52,6 @@ inherits = "nord"
 "ui.bufferline.active" = { fg = "text", modifiers = ["bold"], underline = { color = "text", style = "line" } }
 
 ## SYNTAX HIGHLIGHTING
-
 "comment" = { fg = "gray", modifiers = ["italic"] }
 "label" = "gray"
 "constructor" = "yellow"

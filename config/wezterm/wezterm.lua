@@ -29,6 +29,12 @@ config.window_background_gradient = {
 config.font_size = 9
 -- config.disable_default_key_bindings = true
 -- key = 'F11', mods = 'SHIFT|CTRL', action = ToggleFullScreen
-
 -- and finally, return the configuration to wezterm
+
+-- TODO: Full Screen on startup would be nice!
+-- wezterm.on('gui-startup', function(cmd)
+--   local tab, pane, window = mux.spawn_window(cmd or ())
+--   window:gui_window():fullscreen()
+-- end)
+
 return config
