@@ -55,4 +55,4 @@ brew "fzf"
 # Python
 brew "pyright"
 brew "black"
-brew "ruff"
+brew "ruff-lsp"
