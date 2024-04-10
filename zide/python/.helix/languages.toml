@@ -1,36 +1,3 @@
-# [[language]]
-# name = "python"
-# scope = "source.python"
-# injection-regex = "python"
-# file-types = ["py","pyi","py3","pyw","ptl",".pythonstartup",".pythonrc","SConstruct", "rpy", "cpy", "ipy", "pyt", "SConscript"]
-# shebangs = ["python"]
-# roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
-# comment-token = "#"
-# # language-servers = ["ruff"]
-# language-servers = ["ruff-lsp"]
-# indent = { tab-width = 4, unit = "    " }
-# auto-format = true
-# rulers = [80, 120]
-
-# [language.formatter]
-# command = "ruff"
-# args = [
-#   "format"
-# ]
-
-# [language-server.ruff]
-# command = "ruff-lsp"
-
-# [language-server.ruff.config]
-# settings = {args = []}
-
-# [language-server.pyright.config]
-# reportMissingTypeStubs = false
-
-# [language-server.pyright.config.python.analysis]
-# typeCheckingMode = "basic"
-# autoImportCompletions = true
-
 [language-server.ruff-lsp]
 command = "ruff-lsp"
 
@@ -42,6 +9,9 @@ settings.run = "onSave"
 command = "pyright-langserver"
 args = [ "--stdio" ]
 config.reportMissingtypeStubs = false
+config.reportMissingTypeStubs = false
+config.python.analysis.typeCheckingMode = "basic"
+config.python.analysis.autoImportCompletions = true
 
 [language-server.cspell]
 command = "cspell-lsp"

@@ -112,3 +112,4 @@ if [[ -z "$ZELLIJ" && "$ZELLIJ_AUTO_ATTACH" == "true" && -x "$(command -v zellij
   fi
 fi
 
+PATH=${PATH:+${PATH}:}~/.local/bin

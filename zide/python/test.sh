@@ -34,14 +34,16 @@ elif [[ $1 == 'last' ]]; then
 	TARGET_TEST=$(cat .zide/.last_test)
 	echo "Run test for ${TARGET_TEST}"
 else
-	TESTS=$(pytest --collect-only)
-	if [ $? -eq 0 ]; then
+	echo "Fetching available tests"
+	if TESTS=$( pytest --collect-only --color=yes 2>&1 ); then
+		echo "test collection succeeded"
 		TARGET_TEST=$(echo $TESTS | grep -oP '(?<=<)(Function|Coroutine)\s+\K\w+' | fzf)
 		echo "$TARGET_TEST" > .zide/.last_test
 		echo "Run test for ${TARGET_TEST}"
 	else
+		echo "test collection failed"
 		# This means the pytest collection failed; echo output & exit
-		echo -e $TESTS
+		echo -e "$TESTS"
 		exit 1
 	fi
 fi
