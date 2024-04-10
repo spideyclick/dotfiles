@@ -20,7 +20,6 @@ if [[ ${OS_ID} == "debian" ]]; then
   brew bundle install ./Brewfile
   ./scripts/install_local_bin.sh
   ./scripts/install_configs.sh
-  chsh -s "$(which zsh)"
 else
   echo "OS unknown: ${OS_ID}"
 fi
