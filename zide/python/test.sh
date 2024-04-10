@@ -71,13 +71,11 @@ if [ -f $WORKSPACE ]; then
 fi
 
 ############################################################
-# Proxies                                                  #
+# Environment                                              #
 ############################################################
-# Disabled for now, not sure how to accomplish this!
-# export http_proxy=http://localhost:25829/
-# export https_proxy=http://localhost:25829/
-# export ftp_proxy=http://username:password@proxyhost:port/
-# export telnet_proxy=http://username:password@proxyhost:port/
+if [ -f .zide/.env ]; then
+	source .zide/.env
+fi
 
 ############################################################
 # Program Start                                            #

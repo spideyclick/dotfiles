@@ -6,17 +6,22 @@ ZWD=$(dirname $(realpath "$0"))
 
 if [ -f 'pyproject.toml' ]; then
   echo 'python project detected'
-  mkdir .zide
+  mkdir -p .zide
   cd .zide
-  ln -s "${ZWD}/python/setup.sh" .
-  ln -s "${ZWD}/python/edit.sh" .
-  ln -s "${ZWD}/python/run.sh" .
-  ln -s "${ZWD}/python/test.sh" .
-  cp "${ZWD}/workspace_template.yaml" ./workspace.yaml
+  ln -sf "${ZWD}/python/setup.sh" .
+  ln -sf "${ZWD}/python/edit.sh" .
+  ln -sf "${ZWD}/python/run.sh" .
+  ln -sf "${ZWD}/python/test.sh" .
+  if [ ! -f ./workspace.yaml ]; then
+    cp "${ZWD}/workspace_template.yaml" ./workspace.yaml
+  fi
+  if [ ! -f ./.env ]; then
+    cp "${ZWD}/template.env" ./.env
+  fi
   cd ../
-  mkdir .helix
+  mkdir -p .helix
   cd .helix
-  ln -s "${ZWD}/python/.helix/languages.toml" .
+  ln -sf "${ZWD}/python/.helix/languages.toml" .
   cd ../
 else
   echo 'project type unknown'
