@@ -10,7 +10,7 @@ command = "pyright-langserver"
 args = [ "--stdio" ]
 config.reportMissingtypeStubs = false
 config.reportMissingTypeStubs = false
-config.python.analysis.typeCheckingMode = "basic"
+config.python.analysis.typeCheckingMode = "strict"
 config.python.analysis.autoImportCompletions = true
 
 [language-server.cspell]
