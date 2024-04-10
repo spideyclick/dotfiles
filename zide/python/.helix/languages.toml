@@ -23,6 +23,6 @@ auto-format = true
 file-types = ["py"]
 language-servers = [
   { name = "ruff-lsp", only-features = [ "format", "diagnostics" ] },
-  { name = "pyright", except-features = [ "format", "diagnostics" ] },
+  { name = "pyright", except-features = [ "format" ] },
   { name = "cspell"},
 ]
