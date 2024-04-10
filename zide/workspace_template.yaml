@@ -1,0 +1,6 @@
+# Tunnels should contain a list of SSH hosts
+# SSH Hosts should be configured in .zide/ssh_client.conf
+# Set forward & reverse ports in that configuration
+tunnels:
+  - dev_server_a
+  - dev_server_b
