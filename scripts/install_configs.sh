@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 
-mkdir -p ~/.config
 cd "$(dirname $0)/../config" || exit
 
-ln -s .zshrc ~/.zshrc
-ln -s starship.toml ~/.config/starship.toml
-ln -s helix ~/.config/helix
-ln -s joshuto ~/.config/joshuto
-ln -s lazygit ~/.config/lazygit
-ln -s ranger ~/.config/ranger
+mkdir -p ~/.config
+user_home_dir=$(getent passwd "$(whoami)" | cut -d: -f6)
+config_dir="${user_home_dir}/.config"
+
+ln -s .zshrc "${user_home_dir}/.zshrc"
+ln -s starship.toml "${config_dir}/starship.toml"
+ln -s helix "${config_dir}/helix"
+ln -s joshuto "${config_dir}/joshuto"
+ln -s lazygit "${config_dir}/lazygit"
+ln -s ranger "${config_dir}/ranger"
 
