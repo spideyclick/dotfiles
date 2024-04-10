@@ -15,6 +15,8 @@ echo "Current OS appears to be: ${OS_ID}"
 if [[ ${OS_ID} == "debian" ]]; then
   echo "Debian detected"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> ~/.bashrc
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   brew bundle install ./Brewfile
   ./scripts/install_local_bin.sh
   ./scripts/install_configs.sh
