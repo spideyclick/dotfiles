@@ -16,7 +16,7 @@
 
 add_newline = true
 
-format = """$time $all"""
+format = """$time$all"""
 
 [character]
 success_symbol = "[➜](white)"
@@ -27,8 +27,9 @@ symbol = "🌱 "
 truncation_length = 4
 truncation_symbol = ""
 # ignore_branches = ["master", "main"]
-format = "[](fg:#ffffff bg:none)[🌱](fg:#282c34 bg:#ffffff)[](fg:#ffffff bg:#24c90a)[ $branch]($style)[](fg:#24c90a bg:none) "
-style = "fg:#ffffff bg:#24c90a"
+# Icons: 
+format = "[  $branch ]($style)"
+style = "fg:#ffffff bg:#9ed072"
 
 [git_commit]
 commit_hash_length = 4
@@ -37,7 +38,8 @@ format = "[\\($hash\\)]($style) [\\($tag\\)]($style)"
 style = "green"
 
 [git_status]
-format="[](fg:#ffffff bg:none)[🥶](fg:#282c34 bg:#ffffff)[ ](fg:#ffffff bg:#4da0ff)[$modified](fg:#282c34 bg:#4da0ff)[$untracked](fg:#282c34 bg:#4da0ff)[$staged](fg:#282c34 bg:#4da0ff)[$renamed](fg:#282c34 bg:#4da0ff)[](fg:#4da0ff bg:none)"
+# format="[](fg:#ffffff bg:none)[🥶](fg:#282c34 bg:#ffffff)[ ](fg:#ffffff bg:#4da0ff)[$modified](fg:#282c34 bg:#4da0ff)[$untracked](fg:#282c34 bg:#4da0ff)[$staged](fg:#282c34 bg:#4da0ff)[$renamed](fg:#282c34 bg:#4da0ff)[](fg:#4da0ff bg:none)"
+format="(fg:#ffffff bg:#9ed072)[$modified](fg:#282c34 bg:#9ed072)[$untracked](fg:#282c34 bg:#9ed072)[$staged](fg:#282c34 bg:#9ed072)[$renamed](fg:#282c34 bg:#9ed072)[](fg:#9ed072 bg:none)"
 conflicted = ""
 ahead = "🏎💨"
 behind = "😰"
@@ -48,7 +50,7 @@ stashed = "📦"
 modified = "📝"
 renamed = "👅"
 deleted = "🗑️"
-style = "red"
+style = "fg:#ffffff bg:#9ed072"
 disabled = false
 
 # [git_state]
@@ -61,15 +63,15 @@ disabled = false
 # am_or_rebase = "AM/REBASE"
 # style =	"yellow"
 # format = '\([$state( $progress_current/$progress_total)]($style)\) '
-# disabled = true
+# disabled = false
 
 
 [directory]
-format = "[](fg:#ffffff bg:none)[✨](fg:#282c34 bg:#ffffff)[](fg:#ffffff bg:#ffc32b)[ $path]($style)[](fg:#ffc32b bg:none) "
-style = "fg:#ffffff bg:#ffc32b"
+format = "[ 📂 $path ]($style)"
+style = "fg:#ffffff bg:#e7c664"
 truncation_length = 3
 truncate_to_repo=false
-home_symbol = ""
+home_symbol = "~"
 
 [nodejs]
 symbol = "🤖 "
@@ -87,9 +89,9 @@ symbol = "🦀 "
 
 [time]
 disabled = false
-format="[](fg:#ffffff bg:none)[💖](fg:#282c34 bg:#ffffff)[](fg:#ffffff bg:#f72851)[ $time]($style)[](fg:#f72851 bg:none)"
+format="[ 🕒](fg:#fc5d7c bg:#fc5d7c)[ $time ]($style)"
 time_format = "%T" #change to %R to only have HH:MM
-style="fg:#ffffff bg:#f72851"
+style="fg:#ffffff bg:#fc5d7c"
 
 # [custom.emoji]
 # description = "Displays a (pseudo) random emoji for each prompt"
