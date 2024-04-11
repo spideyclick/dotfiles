@@ -69,7 +69,7 @@ if [ -f $WORKSPACE ]; then
 		echo "Setting up SSH tunnels to Host: ${tunnel_host}"
 		ssh -fNnTM \
 			-o ExitOnForwardFailure=yes \
-			-S ".zide/ssh_tunnels_${tunnel_host}.sock" \
+			-S "${target_socket}" \
 			-F ".zide/ssh_client.conf" \
 			"${tunnel_host}"
 	done <<< "$tunnel_hosts"
