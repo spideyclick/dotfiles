@@ -1,0 +1,22 @@
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(starship init bash)"
+export EDITOR=hx
+PATH=${PATH:+${PATH}:}~/.local/bin
+
+# source /home/zhubbell/.config/broot/launcher/bash/br
+# . "$HOME/.cargo/env"
+# if [ -e /home/zhubbell/.nix-profile/etc/profile.d/nix.sh ]; then . /home/zhubbell/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# eval `ssh-agent -s`
+# ssh-add -t 0 ~/.ssh/id_rsa
+
+# ZELLIJ_AUTO_ATTACH=true
+# ZELLIJ_AUTO_EXIT=true
+# # eval "$(zellij setup --generate-auto-start zsh)"
+# if [[ -z "$ZELLIJ" && "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+#   zellij attach --create main
+#   if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
+#     exit 0
+#   fi
+# fi
+

@@ -40,6 +40,7 @@
 
 # Shell
 brew "zsh"
+brew "starship"
 
 # IDE
 brew "helix"

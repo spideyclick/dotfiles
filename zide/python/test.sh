@@ -7,6 +7,7 @@ set -e
 if [ ! -f pyproject.toml ]; then echo "python project not found in $(pwd)"; exit 1; fi
 .zide/setup.sh
 WORKSPACE=.zide/workspace.yaml
+PROJECT_NAME=$(basename "$(pwd)")
 
 source .venv/bin/activate
 source .env
@@ -56,7 +57,7 @@ fi
 if [ -f $WORKSPACE ]; then
 	tunnel_hosts=$(yq ".tunnels | .[]" .zide/workspace.yaml)
 	while IFS=" " read -r tunnel_host; do
-		target_socket=.zide/ssh_tunnels_${tunnel_host}.sock
+		target_socket=/dev/shm/ssh_tunnel_${PROJECT_NAME}_${tunnel_host}.sock
 		if [ -S "$target_socket" ]; then
 			echo "Detected socket $target_socket; Closing existing SSH session to $tunnel_host"
 			ssh -n -S "$target_socket" -O exit "$tunnel_host"
