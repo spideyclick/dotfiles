@@ -22,6 +22,7 @@ $time\
 $username\
 $hostname\
 $os\
+$docker_context\
 $localip\
 $directory\
 [ ](fg:#000000 bg:#9ed072)\
@@ -62,14 +63,19 @@ disabled = false
 style = "fg:#000000 bg:#f39660"
 
 [os]
-format = "[ ($name)]($style)"
+format = "[ 💻 $name]($style)"
 style = "fg:#000000 bg:#f39660"
 disabled = false
+
+[docker_context]
+format = '[ 🐋 $context](blue bold)'
+disabled = false
+style = "fg:#000000 bg:#f39660"
 
 [localip]
 disabled = false
 ssh_only = false
-format = "[ ($localipv4) 💻 ]($style)"
+format = "[ 🌐 ($localipv4) ]($style)"
 style = "fg:#000000 bg:#f39660"
 
 [character]
