@@ -1,5 +1,6 @@
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(starship init bash)"
+eval "$(zoxide init bash)"
 export EDITOR=hx
 PATH=${PATH:+${PATH}:}~/.local/bin
 

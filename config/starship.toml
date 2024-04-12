@@ -1,29 +1,16 @@
 # # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
 
-# Default config
-# # Inserts a blank line between shell prompts
-# add_newline = true
-
-# # Replace the '❯' symbol in the prompt with '➜'
-# [character] # The name of the module we are configuring is 'character'
-# success_symbol = '[➜](bold green)' # The 'success_symbol' segment is being set to '➜' with the color 'bold green'
-
-# # Disable the package module, hiding it from the prompt completely
-# [package]
-# disabled = true
-# end of Default config
+# Helpful symbols
+# 🔴🟢
+# 
 
 add_newline = false
 
 # format = """$all"""
 format = """
+$status\
 $time\
-$username\
-$hostname\
-$os\
-$docker_context\
-$localip\
 $directory\
 [ ](fg:#000000 bg:#9ed072)\
 $git_branch\
@@ -34,8 +21,12 @@ $package\
 $python\
 $rust\
 [ ](fg:#000000 bg:#9ed072)\
-$status\
-$line_break\
+$username\
+$hostname\
+$os\
+$docker_context\
+$localip\
+[](fg:#f39660 bg:none)
 $character\
 """
 
@@ -155,15 +146,13 @@ style = "fg:#000000 bg:#9ed072"
 
 [status]
 disabled = false
-# symbol = ''
-# success_symbol = ''
 # symbol = '[](fg:'
 # success_symbol = ''
 symbol = '🔴'
 success_symbol = '🟢'
 # format = '[\[$symbol$common_meaning$signal_name$maybe_int\]]($style)[](fg:#85d3f2 bg:none)'
 # format = '$symbol$common_meaning$signal_name$maybe_int'
-format = '[ $symbol $status ]($style)[](bg:none fg:#76cce0)'
+format = '[](bg:none fg:#76cce0)[ $symbol $status ]($style)'
 # map_symbol = true
 # style = 'fg: #000000 bg:#444444'
 style = 'bg:#76cce0'
