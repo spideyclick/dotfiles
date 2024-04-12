@@ -16,8 +16,27 @@
 
 add_newline = false
 
-# format = """$time$all"""
-format = """$time$username$hostname$os$directory[ ](fg:#000000 bg:#9ed072)$git_branch$git_commit$git_status$nodejs$package$python$rust$status$line_break$character"""
+# format = """$all"""
+format = """
+$time\
+$username\
+$hostname\
+$os\
+$localip\
+$directory\
+[ ](fg:#000000 bg:#9ed072)\
+$git_branch\
+$git_commit\
+$git_status\
+$nodejs\
+$package\
+$python\
+$rust\
+[ ](fg:#000000 bg:#9ed072)\
+$status\
+$line_break\
+$character\
+"""
 
 [line_break]
 disabled = false
@@ -25,7 +44,8 @@ disabled = false
 [time]
 disabled = false
 format="[ 🕒](fg:#fc5d7c bg:#fc5d7c)[ $time ]($style)"
-time_format = "%T" #change to %R to only have HH:MM
+# time_format = "%T" #change to %R to only have HH:MM
+time_format = "%a %Y-%m-%d %T" #change to %R to only have HH:MM
 style="fg:#000000 bg:#fc5d7c"
 
 [username]
@@ -42,9 +62,15 @@ disabled = false
 style = "fg:#000000 bg:#f39660"
 
 [os]
-format = "[ ($name) 💻 ]($style)"
+format = "[ ($name)]($style)"
 style = "fg:#000000 bg:#f39660"
 disabled = false
+
+[localip]
+disabled = false
+ssh_only = false
+format = "[ ($localipv4) 💻 ]($style)"
+style = "fg:#000000 bg:#f39660"
 
 [character]
 # success_symbol = "[->](white)"
@@ -56,11 +82,11 @@ error_symbol = "[](red)"
 
 [git_branch]
 symbol = "🌱 "
-truncation_length = 4
-truncation_symbol = ""
+truncation_length = 32
+truncation_symbol = "…"
 # ignore_branches = ["master", "main"]
 # Icons: 
-format = "[ $branch ]($style)"
+format = "[ $branch]($style)"
 style = "fg:#000000 bg:#9ed072"
 
 [git_commit]
@@ -72,15 +98,15 @@ style = "green"
 [git_status]
 # format="[](fg:#ffffff bg:none)[🥶](fg:#282c34 bg:#ffffff)[ ](fg:#ffffff bg:#4da0ff)[$modified](fg:#282c34 bg:#4da0ff)[$untracked](fg:#282c34 bg:#4da0ff)[$staged](fg:#282c34 bg:#4da0ff)[$renamed](fg:#282c34 bg:#4da0ff)[](fg:#4da0ff bg:none)"
 # format="(fg:#ffffff bg:#9ed072)[$modified](fg:#282c34 bg:#9ed072)[$untracked](fg:#282c34 bg:#9ed072)[$staged](fg:#282c34 bg:#9ed072)[$renamed](fg:#282c34 bg:#9ed072)[](fg:#9ed072 bg:none)"
-format="[$modified](fg:#282c34 bg:#9ed072)[$untracked](fg:#282c34 bg:#9ed072)[$staged](fg:#282c34 bg:#9ed072)[$renamed](fg:#282c34 bg:#9ed072)[ ]($style)"
-conflicted = ""
-ahead = "🏎💨"
-behind = "😰"
+format="[$modified](fg:#282c34 bg:#9ed072)[$untracked](fg:#282c34 bg:#9ed072)[$staged](fg:#282c34 bg:#9ed072)[$renamed](fg:#282c34 bg:#9ed072)"
+conflicted = "⚠"
+ahead = "->"
+behind = "<-"
 diverged = "😵"
-up_to_date = "🥰"
-untracked = "🤷"
+up_to_date = "✔"
+untracked = "+"
 stashed = "📦"
-modified = "📝"
+modified = "*"
 renamed = "👅"
 deleted = "🗑️"
 style = "fg:#000000 bg:#9ed072"
@@ -106,6 +132,21 @@ truncation_length = 3
 truncate_to_repo=false
 home_symbol = "~"
 
+[package] 
+symbol = "📦"
+disabled = true
+style = "fg:#000000 bg:#9ed072"
+
+[python]
+# symbol = "🐍"
+format = '[ via ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+style = "fg:#000000 bg:#9ed072"
+
+[rust]
+symbol = "🦀"
+format = '[ via $symbol($version )]($style)'
+style = "fg:#000000 bg:#9ed072"
+
 [status]
 disabled = false
 # symbol = ''
@@ -120,21 +161,6 @@ format = '[ $symbol $status ]($style)[](bg:none fg:#76cce0)'
 # map_symbol = true
 # style = 'fg: #000000 bg:#444444'
 style = 'bg:#76cce0'
-
-[nodejs]
-symbol = "🤖 "
-disabled = true
-
-[package] 
-symbol = "📦 "
-disabled = true
-
-[python]
-symbol = "🐍 "
-
-[rust]
-symbol = "🦀 "
-
 
 # [custom.emoji]
 # description = "Displays a (pseudo) random emoji for each prompt"
