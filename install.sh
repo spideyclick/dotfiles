@@ -12,8 +12,8 @@ if [ $? -eq 0 ]; then
 fi
 OS_ID=$(grep -ioP '^ID=\K\S+$' /etc/os-release)
 echo "Current OS appears to be: ${OS_ID}"
-if [[ ${OS_ID} == "debian" ]]; then
-  echo "Debian detected"
+if [[ ${OS_ID} == "debian" || ${OS_ID} == "ubuntu" ]]; then
+  echo "This OS should be able to work with the homebrew strategy"
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   (echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> ~/.bashrc
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -21,5 +21,5 @@ if [[ ${OS_ID} == "debian" ]]; then
   ./scripts/install_local_bin.sh
   ./scripts/install_configs.sh
 else
-  echo "OS unknown: ${OS_ID}"
+  echo "No handler for current OS found - exiting"
 fi
