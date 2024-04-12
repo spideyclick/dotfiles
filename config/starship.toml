@@ -89,8 +89,8 @@ style = "fg:#000000 bg:#9ed072"
 [git_commit]
 commit_hash_length = 4
 tag_symbol = "🔖 "
-format = "[\\($hash\\)]($style) [\\($tag\\)]($style)"
-style = "green"
+format = "[\\($hash\\) \\($tag\\)]($style)"
+style = "fg:#000000 bg:#9ed072"
 
 [git_status]
 # format="[](fg:#ffffff bg:none)[🥶](fg:#282c34 bg:#ffffff)[ ](fg:#ffffff bg:#4da0ff)[$modified](fg:#282c34 bg:#4da0ff)[$untracked](fg:#282c34 bg:#4da0ff)[$staged](fg:#282c34 bg:#4da0ff)[$renamed](fg:#282c34 bg:#4da0ff)[](fg:#4da0ff bg:none)"
