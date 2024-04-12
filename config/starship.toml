@@ -29,7 +29,7 @@ truncation_symbol = ""
 # ignore_branches = ["master", "main"]
 # Icons: 
 format = "[  $branch ]($style)"
-style = "fg:#ffffff bg:#9ed072"
+style = "fg:#000000 bg:#9ed072"
 
 [git_commit]
 commit_hash_length = 4
@@ -50,7 +50,7 @@ stashed = "📦"
 modified = "📝"
 renamed = "👅"
 deleted = "🗑️"
-style = "fg:#ffffff bg:#9ed072"
+style = "fg:#000000 bg:#9ed072"
 disabled = false
 
 # [git_state]
@@ -68,7 +68,7 @@ disabled = false
 
 [directory]
 format = "[ 📂 $path ]($style)"
-style = "fg:#ffffff bg:#e7c664"
+style = "fg:#000000 bg:#e7c664"
 truncation_length = 3
 truncate_to_repo=false
 home_symbol = "~"
@@ -91,7 +91,7 @@ symbol = "🦀 "
 disabled = false
 format="[ 🕒](fg:#fc5d7c bg:#fc5d7c)[ $time ]($style)"
 time_format = "%T" #change to %R to only have HH:MM
-style="fg:#ffffff bg:#fc5d7c"
+style="fg:#000000 bg:#fc5d7c"
 
 # [custom.emoji]
 # description = "Displays a (pseudo) random emoji for each prompt"
