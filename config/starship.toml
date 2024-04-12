@@ -14,13 +14,45 @@
 # disabled = true
 # end of Default config
 
-add_newline = true
+add_newline = false
 
-format = """$time$all"""
+# format = """$time$all"""
+format = """$time$username$hostname$os$directory[ ](fg:#000000 bg:#9ed072)$git_branch$git_commit$git_status$nodejs$package$python$rust$status$line_break$character"""
+
+[line_break]
+disabled = false
+
+[time]
+disabled = false
+format="[ 🕒](fg:#fc5d7c bg:#fc5d7c)[ $time ]($style)"
+time_format = "%T" #change to %R to only have HH:MM
+style="fg:#000000 bg:#fc5d7c"
+
+[username]
+style_user = "fg:#000000 bg:#f39660"
+style_root = "bold fg:#000000 bg:#f39660"
+format = "[ 🧑 $user]($style)"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = "[@$hostname]($style)"
+disabled = false
+style = "fg:#000000 bg:#f39660"
+
+[os]
+format = "[ ($name) 💻 ]($style)"
+style = "fg:#000000 bg:#f39660"
+disabled = false
 
 [character]
-success_symbol = "[➜](white)"
-error_symbol = "[➜](red)"
+# success_symbol = "[->](white)"
+# error_symbol = "[->](red)"
+# success_symbol = "[➜](white)"
+# error_symbol = "[➜](red)"
+success_symbol = "[](white)"
+error_symbol = "[](red)"
 
 [git_branch]
 symbol = "🌱 "
@@ -28,7 +60,7 @@ truncation_length = 4
 truncation_symbol = ""
 # ignore_branches = ["master", "main"]
 # Icons: 
-format = "[  $branch ]($style)"
+format = "[ $branch ]($style)"
 style = "fg:#000000 bg:#9ed072"
 
 [git_commit]
@@ -39,7 +71,8 @@ style = "green"
 
 [git_status]
 # format="[](fg:#ffffff bg:none)[🥶](fg:#282c34 bg:#ffffff)[ ](fg:#ffffff bg:#4da0ff)[$modified](fg:#282c34 bg:#4da0ff)[$untracked](fg:#282c34 bg:#4da0ff)[$staged](fg:#282c34 bg:#4da0ff)[$renamed](fg:#282c34 bg:#4da0ff)[](fg:#4da0ff bg:none)"
-format="(fg:#ffffff bg:#9ed072)[$modified](fg:#282c34 bg:#9ed072)[$untracked](fg:#282c34 bg:#9ed072)[$staged](fg:#282c34 bg:#9ed072)[$renamed](fg:#282c34 bg:#9ed072)[](fg:#9ed072 bg:none)"
+# format="(fg:#ffffff bg:#9ed072)[$modified](fg:#282c34 bg:#9ed072)[$untracked](fg:#282c34 bg:#9ed072)[$staged](fg:#282c34 bg:#9ed072)[$renamed](fg:#282c34 bg:#9ed072)[](fg:#9ed072 bg:none)"
+format="[$modified](fg:#282c34 bg:#9ed072)[$untracked](fg:#282c34 bg:#9ed072)[$staged](fg:#282c34 bg:#9ed072)[$renamed](fg:#282c34 bg:#9ed072)[ ]($style)"
 conflicted = ""
 ahead = "🏎💨"
 behind = "😰"
@@ -73,6 +106,21 @@ truncation_length = 3
 truncate_to_repo=false
 home_symbol = "~"
 
+[status]
+disabled = false
+# symbol = ''
+# success_symbol = ''
+# symbol = '[](fg:'
+# success_symbol = ''
+symbol = '🔴'
+success_symbol = '🟢'
+# format = '[\[$symbol$common_meaning$signal_name$maybe_int\]]($style)[](fg:#85d3f2 bg:none)'
+# format = '$symbol$common_meaning$signal_name$maybe_int'
+format = '[ $symbol $status ]($style)[](bg:none fg:#76cce0)'
+# map_symbol = true
+# style = 'fg: #000000 bg:#444444'
+style = 'bg:#76cce0'
+
 [nodejs]
 symbol = "🤖 "
 disabled = true
@@ -87,11 +135,6 @@ symbol = "🐍 "
 [rust]
 symbol = "🦀 "
 
-[time]
-disabled = false
-format="[ 🕒](fg:#fc5d7c bg:#fc5d7c)[ $time ]($style)"
-time_format = "%T" #change to %R to only have HH:MM
-style="fg:#000000 bg:#fc5d7c"
 
 # [custom.emoji]
 # description = "Displays a (pseudo) random emoji for each prompt"
