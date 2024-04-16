@@ -16,7 +16,6 @@ if [[ ${OS_ID} == "debian" || ${OS_ID} == "ubuntu" ]]; then
 	echo "This OS should be able to work with the homebrew strategy"
 	if ! command -v brew &> /dev/null; then
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-		(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> ~/.bashrc
 		eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 	fi
 	brew bundle install ./Brewfile
