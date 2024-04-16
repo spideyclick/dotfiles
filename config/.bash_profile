@@ -5,7 +5,7 @@ export EDITOR=hx
 ZELLIJ_AUTO_ATTACH=true
 ZELLIJ_AUTO_EXIT=true
 # eval "$(zellij setup --generate-auto-start zsh)"
-if [[ -z "$ZELLIJ" && "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
+if command -v 'zellij' &> /dev/null && [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
   zellij attach --create main
   if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
     exit 0
