@@ -41,6 +41,7 @@
 # Shell
 brew "zsh"
 brew "starship"
+brew "zoxide"
 
 # IDE
 brew "helix"
