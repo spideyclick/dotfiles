@@ -1,34 +1,55 @@
+# Generic
+
+[language-server.cspell]
+command = "cspell-lsp"
+args = ["--stdio"]
+
+# Markdown
+
+[language-server.marksman]
+command = "marksman"
+
+[[language]]
+name = "markdown"
+auto-format = true
+indent = { tab-width = 4, unit = "	" }
+formatter = { command = "dprint", args = ["fmt", "--stdin", "-c", "dprint.json", "md"]}
+rulers = [120]
+language-servers = [ "marksman", "cspell" ]
+# soft-wrap = true
+
+[[grammar]]
+name = "markdown"
+source = { git = "https://github.com/tree-sitter-grammars/tree-sitter-markdown", rev = "62516e8c78380e3b51d5b55727995d2c511436d8", subpath = "tree-sitter-markdown" }
+
+[[language]]
+name = "markdown.inline"
+scope = "source.markdown.inline"
+injection-regex = "markdown\\.inline"
+file-types = []
+grammar = "markdown_inline"
+
+[[grammar]]
+name = "markdown_inline"
+source = { git = "https://github.com/tree-sitter-grammars/tree-sitter-markdown", rev = "62516e8c78380e3b51d5b55727995d2c511436d8", subpath = "tree-sitter-markdown-inline" }
+
+
+# Rust
+
 [[language]]
 name = "rust"
 indent = { tab-width = 2, unit = "	"}
 
-[[language]]
-name = "python"
-scope = "source.python"
-injection-regex = "python"
-file-types = ["py","pyi","py3","pyw","ptl",".pythonstartup",".pythonrc","SConstruct", "rpy", "cpy", "ipy", "pyt", "SConscript"]
-shebangs = ["python"]
-roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
-comment-token = "#"
-# language-servers = [ "pylsp" ]
-language-servers = ["pyright", "ruff"]
-indent = { tab-width = 4, unit = "    " }
-auto-format = true
-rulers = [80, 120]
+# Python
 
-# [language.debugger]
-# name = "debugpy"
-# transport = "stdio"
-# command = "python3"
-# args = ["-m", "debugpy.adapter"]
-
-[language.formatter]
-command = "black"
-args = [
-  "-",
-  "--quiet",
-  "--line-length=80"
-]
+# Formatting handled by RUFF now
+# [language.formatter]
+# command = "black"
+# args = [
+#   "-",
+#   "--quiet",
+#   "--line-length=80"
+# ]
 
 [language-server.pyright]
 command = "pyright-langserver"
@@ -38,30 +59,94 @@ args = ["--stdio"]
 reportMissingTypeStubs = false
 
 [language-server.pyright.config.python.analysis]
-typeCheckingMode = "basic"
+typeCheckingMode = "strict"
 autoImportCompletions = true
 
 [language-server.ruff]
 command = "ruff-lsp"
+# settings = {args = []}
+# settings.run = "onSave"
 
 [language-server.ruff.config]
-settings = {args = []}
+documentFormatting = true 
 
-[language-server.marksman]
-command = "marksman"
+[[language]]
+name = "python"
+auto-format = true
+scope = "source.python"
+injection-regex = "python"
+file-types = ["py","pyi","py3","pyw","ptl",".pythonstartup",".pythonrc","SConstruct", "rpy", "cpy", "ipy", "pyt", "SConscript"]
+shebangs = ["python"]
+roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
+comment-token = "#"
+indent = { tab-width = 4, unit = "    " }
+rulers = [80, 120]
+language-servers = [
+  { name = "ruff", only-features = [ "format", "diagnostics" ] },
+  { name = "pyright", except-features = [ "format", "diagnostics" ] },
+  { name = "cspell"},
+]
 
-[language-server.cspell]
-command = "cspell-lsp"
-args = ["--stdio"]
 
-# [[language]]
-# name = "shell"
-# scope = "source.sh"
-# file-types = ["sh"]
-# roots = []
-# shebangs = ["sh", "bash"]
-# indent = { tab-width = 2, unit = "	"}
-# auto-format = true
+# Bash
+
+[language-server.bash]
+command = "bash-language-server"
+args = ["start"]
+
+[[language]]
+name = "bash"
+scope = "source.bash"
+injection-regex = "(shell|bash|zsh|sh)"
+file-types = [
+  "sh",
+  "bash",
+  "ash",
+  "dash",
+  "ksh",
+  "mksh",
+  "zsh",
+  "zshenv",
+  "zlogin",
+  "zlogout",
+  "zprofile",
+  "zshrc",
+  "eclass",
+  "ebuild",
+  "bazelrc",
+  "Renviron",
+  "zsh-theme",
+  "cshrc",
+  "tcshrc",
+  "bashrc_Apple_Terminal",
+  "zshrc_Apple_Terminal",
+  { glob = "tmux.conf" },
+  { glob = ".bash_history" },
+  { glob = ".bash_login" },
+  { glob = ".bash_logout" },
+  { glob = ".bash_profile" },
+  { glob = ".bashrc" },
+  { glob = ".profile" },
+  { glob = ".zshenv" },
+  { glob = ".zlogin" },
+  { glob = ".zlogout" },
+  { glob = ".zprofile" },
+  { glob = ".zshrc" },
+  { glob = ".zimrc" },
+  { glob = "APKBUILD" },
+  { glob = ".bash_aliases" },
+  { glob = ".Renviron" },
+  { glob = ".xprofile" },
+  { glob = ".xsession" },
+  { glob = ".xsessionrc" },
+  { glob = ".yashrc" },
+  { glob = ".yash_profile" },
+  { glob = ".hushlogin" },
+]
+shebangs = ["sh", "bash", "dash", "zsh"]
+comment-token = "#"
+language-servers = [ "bash" ]
+indent = { tab-width = 2, unit = "	" }
 
 [[language]]
 name = "html"
@@ -84,15 +169,6 @@ auto-format = true
 name = "typescript"
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 auto-format = true
-
-[[language]]
-name = "markdown"
-auto-format = true
-indent = { tab-width = 4, unit = "	" }
-formatter = { command = "dprint", args = ["fmt", "--stdin", "-c", "dprint.json", "md"]}
-rulers = [120]
-language-servers = [ "marksman", "cspell" ]
-# soft-wrap = true
 
 [[language]]
 name = "hcl"
