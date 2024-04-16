@@ -9,9 +9,6 @@ settings.run = "onSave"
 command = "pyright-langserver"
 args = [ "--stdio" ]
 config.reportMissingtypeStubs = false
-config.reportMissingTypeStubs = false
-config.python.analysis.typeCheckingMode = "strict"
-config.python.analysis.autoImportCompletions = true
 
 [language-server.cspell]
 command = "cspell-lsp"
@@ -23,6 +20,7 @@ auto-format = true
 file-types = ["py"]
 language-servers = [
   { name = "ruff-lsp", only-features = [ "format", "diagnostics" ] },
-  { name = "pyright", except-features = [ "format" ] },
+  { name = "pyright", except-features = [ "format", "diagnostics" ] },
   { name = "cspell"},
 ]
+

@@ -54,6 +54,7 @@ brew "yq"
 brew "fd"
 brew "fzf"
 brew "hstr"
+brew "lsd"
 
 # Python
 brew "pyright"

@@ -3,41 +3,53 @@
 ############################################################
 # Directory + Environment Setup                            #
 ############################################################
-# CWD=$(dirname $(realpath "$0"))
-# cd ${CWD}
-
-if [ ! -f pyproject.toml ]; then echo "python project now found in $(pwd)"; exit 1; fi
+set -e
+if [ ! -f pyproject.toml ]; then echo "python project not found in $(pwd)"; exit 1; fi
 .zide/setup.sh
+WORKSPACE=.zide/workspace.yaml
+PROJECT_NAME=$(basename "$(pwd)")
 
-# cd $(dirname ${CWD})
 source .venv/bin/activate
 source .env
 
 ############################################################
-# Network Setup                                            #
+# SSH Tunnels                                              #
 ############################################################
-if [[ $(hostname) != 'Fermi.midwestholding.com' ]]
-then
-  # SSH Forwarding for database
-  if nc -z localhost 27017
-  then
-    ssh \
-      -L 27017:fermi:27017 \
-      -L 25829:fermi:25829 \
-      fermi \
-      ;
-  fi
-  # HTTP Forwarding (required for Chorus)
-  HTTP_PROXY=http://localhost:25829
-  export HTTP_PROXY
-  HTTPS_PROXY=http://localhost:25829
-  export HTTPS_PROXY
-  # NO_PROXY=hostname.example.com,127.0.0.1
-  # export NO_PROXY
+if [ -f $WORKSPACE ]; then
+	tunnel_hosts=$(yq ".tunnels | .[]" .zide/workspace.yaml)
+	while IFS=" " read -r tunnel_host; do
+		if [ -z "${tunnel_host}" ]; then continue; fi
+		target_socket=/dev/shm/ssh_tunnel_${PROJECT_NAME}_${tunnel_host}.sock
+		if [ -S "$target_socket" ]; then
+			echo "Detected socket $target_socket; Closing existing SSH session to $tunnel_host"
+			ssh -n -S "$target_socket" -O exit "$tunnel_host"
+		fi
+		# -f means go to the background before program execution
+		# -N means don't execute a command; used for port forwarding
+		# -Y Don't allocate a TTY
+		# -M Master mode
+		echo "Setting up SSH tunnels to Host: ${tunnel_host}"
+		ssh -fNnTM \
+			-o ExitOnForwardFailure=yes \
+			-S "${target_socket}" \
+			-F ".zide/ssh_client.conf" \
+			"${tunnel_host}"
+	done <<< "$tunnel_hosts"
+fi
+
+############################################################
+# Environment                                              #
+############################################################
+if [ -f .zide/.env ]; then
+	source .zide/.env
 fi
 
 ############################################################
 # Program Start                                            #
 ############################################################
-./docker-entrypoint.sh
+if [ -f ./docker-entrypoint.sh ]; then
+	./docker-entrypoint.sh
+else
+	python -m main
+fi
 
