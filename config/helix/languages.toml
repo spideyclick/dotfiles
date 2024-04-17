@@ -65,27 +65,27 @@ autoImportCompletions = true
 [language-server.ruff]
 command = "ruff-lsp"
 # settings = {args = []}
-# settings.run = "onSave"
 
-[language-server.ruff.config]
-documentFormatting = true 
+# [language-server.ruff.config]
+# documentFormatting = false
+# settings.run = "onSave"
 
 [[language]]
 name = "python"
-auto-format = true
-scope = "source.python"
-injection-regex = "python"
-file-types = ["py","pyi","py3","pyw","ptl",".pythonstartup",".pythonrc","SConstruct", "rpy", "cpy", "ipy", "pyt", "SConscript"]
-shebangs = ["python"]
-roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
-comment-token = "#"
-indent = { tab-width = 4, unit = "    " }
-rulers = [80, 120]
 language-servers = [
-  { name = "ruff", only-features = [ "format", "diagnostics" ] },
-  { name = "pyright", except-features = [ "format", "diagnostics" ] },
+  { name = "pyright", except-features = [ "format" ] },
+  { name = "ruff"},
   { name = "cspell"},
 ]
+auto-format = true
+# scope = "source.python"
+# injection-regex = "python"
+file-types = ["py","pyi","py3","pyw","ptl",".pythonstartup",".pythonrc","SConstruct", "rpy", "cpy", "ipy", "pyt", "SConscript"]
+# shebangs = ["python"]
+# roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
+# comment-token = "#"
+# indent = { tab-width = 4, unit = "    " }
+rulers = [80, 120]
 
 
 # Bash

@@ -2,7 +2,7 @@
 command = "ruff-lsp"
 
 [language-server.ruff-lsp.config]
-documentFormatting = true 
+documentFormatting = true
 settings.run = "onSave"
 
 [language-server.pyright]
@@ -20,7 +20,7 @@ auto-format = true
 file-types = ["py"]
 language-servers = [
   { name = "ruff-lsp", only-features = [ "format", "diagnostics" ] },
-  { name = "pyright", except-features = [ "format", "diagnostics" ] },
+  { name = "pyright", except-features = [ "format" ] },
   { name = "cspell"},
 ]
 
