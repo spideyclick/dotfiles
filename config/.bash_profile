@@ -1,3 +1,6 @@
+# Always source .bashrc
+source "$HOME/.bashrc"
+
 # exports
 export EDITOR=hx
 
