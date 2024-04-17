@@ -2,3 +2,5 @@ alias l='lsd -lAgF --tree --depth 2 --permission rwx --date +%Y-%m-%d --group-di
 alias lg='lazygit'
 alias x='joshuto'
 alias c='z'
+alias d='date --iso'
+alias t="time"
