@@ -1,3 +1,4 @@
-alias l='lsd -algh'
+alias l='lsd -lAgF --tree --depth 2 --permission rwx --date +%Y-%m-%d --group-dirs last --truncate-owner-after 3'
 alias lg='lazygit'
 alias x='joshuto'
+alias c='z'
