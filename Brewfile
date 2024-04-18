@@ -49,6 +49,7 @@ brew "lazygit"
 brew "joshuto"
 
 # Utilities
+brew "rg"
 brew "jq"
 brew "yq"
 brew "fd"
