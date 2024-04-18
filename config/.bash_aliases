@@ -3,4 +3,3 @@ alias lg='lazygit'
 alias x='joshuto'
 alias c='z'
 alias d='date --iso'
-alias t="time"
