@@ -192,6 +192,7 @@ keybinds {
         //         create true
         //     }
         // }
+        bind "Alt /" { SwitchToMode "EnterSearch"; SearchInput 0; }
     }
     shared_except "normal" "locked" {
         bind "Enter" "Esc" { SwitchToMode "Normal"; }
