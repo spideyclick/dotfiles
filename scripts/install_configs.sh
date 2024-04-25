@@ -8,6 +8,7 @@ config_dir="${user_home_dir}/.config"
 dotfiles_config_dir="${user_home_dir}/dotfiles/config"
 
 ln -s "${dotfiles_config_dir}/.bash_aliases" "${user_home_dir}/.bash_aliases"
+ln -s "${dotfiles_config_dir}/.inputrc" "${user_home_dir}/.inputrc"
 ln -s "${dotfiles_config_dir}/starship.toml" "${config_dir}/starship.toml"
 ln -s "${dotfiles_config_dir}/helix" "${config_dir}/helix"
 ln -s "${dotfiles_config_dir}/joshuto" "${config_dir}/joshuto"

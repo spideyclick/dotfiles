@@ -1,0 +1,5 @@
+# Tab Completion Customizations
+# Option 1: Cycle through available Options
+# "\C-i": menu-complete
+# Option 2: Show all options on first tab input
+set show-all-if-ambiguous on
