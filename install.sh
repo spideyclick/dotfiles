@@ -18,7 +18,7 @@ if [[ ${OS_ID} == "debian" || ${OS_ID} == "ubuntu" ]]; then
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 		eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 	fi
-	brew bundle install ./Brewfile
+	brew bundle
 	./scripts/install_local_bin.sh
 	./scripts/install_configs.sh
 else
