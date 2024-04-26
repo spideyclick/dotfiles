@@ -57,6 +57,9 @@ fi
 if [ -f $WORKSPACE ]; then
 	tunnel_hosts=$(yq ".tunnels | .[]" .zide/workspace.yaml)
 	while IFS=" " read -r tunnel_host; do
+		if [ -z "${tunnel_host}" ]; then
+			continue
+		fi
 		target_socket=/dev/shm/ssh_tunnel_${PROJECT_NAME}_${tunnel_host}.sock
 		if [ -S "$target_socket" ]; then
 			echo "Detected socket $target_socket; Closing existing SSH session to $tunnel_host"
