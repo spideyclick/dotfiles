@@ -56,6 +56,7 @@ brew "fd"
 brew "fzf"
 brew "hstr"
 brew "lsd"
+brew "lnav"
 
 # Python
 brew "pyright"
