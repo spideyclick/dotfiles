@@ -36,11 +36,15 @@ C-k = ["extend_to_line_bounds", "delete_selection", "move_line_up", "paste_befor
 C-A-j = ["normal_mode", "extend_to_line_bounds", "yank", "open_below", "replace_with_yanked", "collapse_selection", "normal_mode"]
 C-A-k = ["normal_mode", "extend_to_line_bounds", "yank", "open_above", "replace_with_yanked", "collapse_selection", "normal_mode"]
 
-# Alternate key maps for tree sitter
+# Alternate key maps for tree sitter and jumping
 "up" = "expand_selection"
 "down" = "shrink_selection"
 "left" = "select_prev_sibling"
 "right" = "select_next_sibling"
+"C-up" = "jump_forward"
+"C-down" = "jump_backward"
+# "C-right" = "jump_forward"
+# "C-left" = "jump_backward"
 
 
 # C-S-O = ["open_below", "normal_mode"]
