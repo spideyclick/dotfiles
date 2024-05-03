@@ -37,7 +37,7 @@ disabled = false
 disabled = false
 format="[ 🕒](fg:#fc5d7c bg:#fc5d7c)[ $time ]($style)"
 # time_format = "%T" #change to %R to only have HH:MM
-time_format = "%a %Y-%m-%d %T" #change to %R to only have HH:MM
+time_format = "%a %Y-%m-%d %T%z" #change to %R to only have HH:MM
 style="fg:#000000 bg:#fc5d7c"
 
 [username]
