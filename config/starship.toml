@@ -10,105 +10,131 @@ add_newline = false
 # format = """$all"""
 format = """
 $status\
-$time\
 $directory\
-[ ](fg:#000000 bg:#9ed072)\
 $git_branch\
-$git_commit\
-$git_status\
-$nodejs\
-$package\
-$python\
-$rust\
-[ ](fg:#000000 bg:#9ed072)\
-$docker_context\
 $username\
 $hostname\
 $os\
 $localip\
-[](fg:#f39660 bg:none)
+$docker_context\
+$nodejs\
+$package\
+$python\
+$rust\
+$fill\
+$time\
 $character\
 """
 
 [line_break]
 disabled = false
 
+[status]
+disabled = false
+# symbol = '[](fg:'
+# success_symbol = ''
+# symbol = '🔴'
+# symbol = '[🔴](bg:#ffffff)'
+# symbol = '[](bg:none fg:#fc5d7c)[$status](bold fg:#000000 bg:#fc5d7c)'
+# symbol = '[$status](bold fg:#fc5d7c)'
+symbol = '[$status](bold fg:#fc5d7c) '
+# success_symbol = '🟢'
+# success_symbol = '[](bg:none fg:#9ed072)[$status ](fg:#000000 bg:#9ed072)'
+# success_symbol = '[$status](fg:#9ed072)'
+# map_symbol = true
+# format = '[\[$symbol$common_meaning$signal_name$maybe_int\]]($style)[](fg:#85d3f2 bg:none)'
+# format = '$symbol$common_meaning$signal_name$maybe_int'
+format = '$symbol'
+# style = 'fg: #000000 '
+# format = '[\[$symbol$common_meaning$signal_name$maybe_int\]]($style)[](fg:#85d3f2 bg:none)'
+# format = '$symbol$common_meaning$signal_name$maybe_int'
+# format = '[](bg:none fg:#bbbbbb)[ $symbol $status ]($style)'
+# map_symbol = true
+# style = 'fg: #000000 bg:#444444'
+# style = 'bg:#bbbbbb'
+
 [time]
 disabled = false
-format="[ 🕒](fg:#fc5d7c bg:#fc5d7c)[ $time ]($style)"
-# time_format = "%T" #change to %R to only have HH:MM
+# format="[🕒 $time]($style)"
+format="[$time]($style)"
 time_format = "%a %Y-%m-%d %T%z" #change to %R to only have HH:MM
-style="fg:#000000 bg:#fc5d7c"
+style="fg:black"
 
 [username]
-style_user = "fg:#000000 bg:#f39660"
-style_root = "bold fg:#000000 bg:#f39660"
-format = "[ 🧑 $user]($style)"
+style_user = "fg:purple"
+style_root = "bold fg:red"
+# format = "[🧑 $user]($style)"
+format = "[$user]($style)"
 disabled = false
 show_always = true
 
 [hostname]
 ssh_only = false
-format = "[@$hostname]($style)"
+format = "[@$hostname ]($style)"
 disabled = false
-style = "fg:#000000 bg:#f39660"
+style = "fg:purple"
 
 [os]
-format = "[ 💻 $name]($style)"
-style = "fg:#000000 bg:#f39660"
+# format = "[ 💻 $name]($style)"
+format = "[$name ]($style)"
+style = "fg:#f39660"
 disabled = false
 
 [docker_context]
 only_with_files = false
-format = '[ 🐋 $context ]($style)'
+# format = '[🐋 $context ]($style)'
+format = '[🐋 $context ]($style)'
 disabled = false
-style = "fg:#000000 bg:#76cce0"
+style = "fg:blue"
 
 [localip]
 disabled = false
 ssh_only = false
-format = "[ 🌐 ($localipv4) ]($style)"
-style = "fg:#000000 bg:#f39660"
+# format = "[ 🌐 ($localipv4) ]($style)"
+format = "[($localipv4) ]($style)"
+style = "fg:cyan"
 
 [character]
 # success_symbol = "[->](white)"
 # error_symbol = "[->](red)"
 # success_symbol = "[➜](white)"
 # error_symbol = "[➜](red)"
-success_symbol = "[](white)"
-error_symbol = "[](red)"
+success_symbol = "\n[](white)"
+error_symbol = "\n[](red)"
 
 [git_branch]
-symbol = "🌱 "
+# symbol = "🌱 "
 truncation_length = 8
 truncation_symbol = "…"
 # ignore_branches = ["master", "main"]
 # Icons: 
-format = "[ $branch]($style)"
-style = "fg:#000000 bg:#9ed072"
+format = "[ $branch ]($style)"
+style = "fg:green"
 
-[git_commit]
-commit_hash_length = 4
-tag_symbol = "🔖 "
-format = "[\\($hash\\) \\($tag\\)]($style)"
-style = "fg:#000000 bg:#9ed072"
+# [git_commit]
+# disabled = false
+# # commit_hash_length = 4
+# # tag_symbol = "🔖 "
+# # format = "[\\($hash\\) \\($tag\\)]($style)"
+# format = "[\\($tag\\)]($style)"
+# style = "fg:#9ed072"
 
-[git_status]
-# format="[](fg:#ffffff bg:none)[🥶](fg:#282c34 bg:#ffffff)[ ](fg:#ffffff bg:#4da0ff)[$modified](fg:#282c34 bg:#4da0ff)[$untracked](fg:#282c34 bg:#4da0ff)[$staged](fg:#282c34 bg:#4da0ff)[$renamed](fg:#282c34 bg:#4da0ff)[](fg:#4da0ff bg:none)"
-# format="(fg:#ffffff bg:#9ed072)[$modified](fg:#282c34 bg:#9ed072)[$untracked](fg:#282c34 bg:#9ed072)[$staged](fg:#282c34 bg:#9ed072)[$renamed](fg:#282c34 bg:#9ed072)[](fg:#9ed072 bg:none)"
-format="[$modified](fg:#282c34 bg:#9ed072)[$untracked](fg:#282c34 bg:#9ed072)[$staged](fg:#282c34 bg:#9ed072)[$renamed](fg:#282c34 bg:#9ed072)"
-conflicted = "⚠"
-ahead = "->"
-behind = "<-"
-diverged = "😵"
-up_to_date = "✔"
-untracked = "+"
-stashed = "📦"
-modified = "*"
-renamed = "👅"
-deleted = "🗑️"
-style = "fg:#000000 bg:#9ed072"
-disabled = false
+# [git_status]
+# # format="[](fg:#ffffff bg:none)[🥶](fg:#282c34 )[ ](fg:#ffffff )[$modified](fg:#282c34 )[$untracked](fg:#282c34 )[$staged](fg:#282c34 )[$renamed](fg:#282c34 )[](fg:#4da0ff bg:none)"
+# # format="(fg:#ffffff )[$modified](fg:#282c34 )[$untracked](fg:#282c34 )[$staged](fg:#282c34 )[$renamed](fg:#282c34 )[](fg:#9ed072 bg:none)"
+# format="[$modified](fg:#282c34 )[$untracked](fg:#282c34 )[$staged](fg:#282c34 )[$renamed](fg:#282c34 )"
+# conflicted = "⚠"
+# ahead = "->"
+# behind = "<-"
+# diverged = "😵"
+# up_to_date = "✔"
+# untracked = "+"
+# stashed = "📦"
+# modified = "*"
+# renamed = "👅"
+# deleted = "🗑️"
+# style = "fg:#9ed072"
+# disabled = false
 
 # [git_state]
 # rebase = "REBASING"
@@ -122,44 +148,31 @@ disabled = false
 # format = '\([$state( $progress_current/$progress_total)]($style)\) '
 # disabled = false
 
-
 [directory]
-format = "[ 📂 $path ]($style)"
-style = "fg:#000000 bg:#e7c664"
+# format = "[📂 $path ]($style)"
+fish_style_pwd_dir_length = 1
+format = "[$path ]($style)"
+style = "fg:yellow"
 truncation_length = 2
 # truncation_symbol = "…"
 
 [package] 
 symbol = "📦"
 disabled = true
-style = "fg:#000000 bg:#9ed072"
+style = "fg:#000000 "
 
 [python]
 # symbol = "🐍"
-format = '[ ${symbol}${pyenv_prefix}(${version})( \($virtualenv\))]($style)'
-style = "fg:#000000 bg:#9ed072"
+format = '[${symbol}${pyenv_prefix}(${version})( \($virtualenv\))]($style) '
+style = "fg:green"
 
 [rust]
 symbol = "🦀"
 format = '[ via $symbol($version )]($style)'
-style = "fg:#000000 bg:#9ed072"
+style = "fg:#000000 "
 
-[status]
-disabled = false
-# symbol = '[](fg:'
-# success_symbol = ''
-# symbol = '🔴'
-# symbol = '[🔴](bg:#ffffff)'
-symbol = '[](bg:none fg:#fc5d7c)[$status](bold fg:#000000 bg:#fc5d7c)'
-# success_symbol = '🟢'
-success_symbol = '[](bg:none fg:#9ed072)[$status ](fg:#000000 bg:#9ed072)'
-# format = '[\[$symbol$common_meaning$signal_name$maybe_int\]]($style)[](fg:#85d3f2 bg:none)'
-# format = '$symbol$common_meaning$signal_name$maybe_int'
-# format = '[](bg:none fg:#bbbbbb)[ $symbol $status ]($style)'
-format = '$symbol'
-# map_symbol = true
-# style = 'fg: #000000 bg:#444444'
-# style = 'bg:#bbbbbb'
+[fill]
+symbol = ' '
 
 # [custom.emoji]
 # description = "Displays a (pseudo) random emoji for each prompt"
