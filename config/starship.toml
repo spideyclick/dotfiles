@@ -16,15 +16,15 @@ $directory\
 $git_branch\
 $git_commit\
 $git_status\
+[ ](fg:#000000 bg:#9ed072)\
+$docker_context\
 $nodejs\
 $package\
 $python\
 $rust\
-[ ](fg:#000000 bg:#9ed072)\
 $username\
 $hostname\
 $os\
-$docker_context\
 $localip\
 [](fg:#f39660 bg:none)
 $character\
@@ -59,9 +59,10 @@ style = "fg:#000000 bg:#f39660"
 disabled = false
 
 [docker_context]
-format = '[ 🐋 $context](blue bold)'
+only_with_files = false
+format = '[ 🐋 $context ]($style)'
 disabled = false
-style = "fg:#000000 bg:#f39660"
+style = "fg:#000000 bg:#76cce0"
 
 [localip]
 disabled = false
