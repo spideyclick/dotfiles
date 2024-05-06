@@ -149,14 +149,18 @@ style = "fg:#000000 bg:#9ed072"
 disabled = false
 # symbol = '[](fg:'
 # success_symbol = ''
-symbol = '🔴'
-success_symbol = '🟢'
+# symbol = '🔴'
+# symbol = '[🔴](bg:#ffffff)'
+symbol = '[](bg:none fg:#fc5d7c)[$status](bold fg:#000000 bg:#fc5d7c)'
+# success_symbol = '🟢'
+success_symbol = '[](bg:none fg:#9ed072)[$status ](fg:#000000 bg:#9ed072)'
 # format = '[\[$symbol$common_meaning$signal_name$maybe_int\]]($style)[](fg:#85d3f2 bg:none)'
 # format = '$symbol$common_meaning$signal_name$maybe_int'
-format = '[](bg:none fg:#76cce0)[ $symbol $status ]($style)'
+# format = '[](bg:none fg:#bbbbbb)[ $symbol $status ]($style)'
+format = '$symbol'
 # map_symbol = true
 # style = 'fg: #000000 bg:#444444'
-style = 'bg:#76cce0'
+# style = 'bg:#bbbbbb'
 
 # [custom.emoji]
 # description = "Displays a (pseudo) random emoji for each prompt"
