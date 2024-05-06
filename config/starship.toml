@@ -16,12 +16,12 @@ $directory\
 $git_branch\
 $git_commit\
 $git_status\
-[ ](fg:#000000 bg:#9ed072)\
-$docker_context\
 $nodejs\
 $package\
 $python\
 $rust\
+[ ](fg:#000000 bg:#9ed072)\
+$docker_context\
 $username\
 $hostname\
 $os\
@@ -80,7 +80,7 @@ error_symbol = "[](red)"
 
 [git_branch]
 symbol = "🌱 "
-truncation_length = 32
+truncation_length = 8
 truncation_symbol = "…"
 # ignore_branches = ["master", "main"]
 # Icons: 
@@ -126,9 +126,8 @@ disabled = false
 [directory]
 format = "[ 📂 $path ]($style)"
 style = "fg:#000000 bg:#e7c664"
-truncation_length = 3
-truncate_to_repo=false
-home_symbol = "~"
+truncation_length = 2
+# truncation_symbol = "…"
 
 [package] 
 symbol = "📦"
@@ -137,7 +136,7 @@ style = "fg:#000000 bg:#9ed072"
 
 [python]
 # symbol = "🐍"
-format = '[ via ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+format = '[ ${symbol}${pyenv_prefix}(${version})( \($virtualenv\))]($style)'
 style = "fg:#000000 bg:#9ed072"
 
 [rust]
