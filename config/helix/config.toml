@@ -78,6 +78,8 @@ C-A-k = ["normal_mode", "extend_to_line_bounds", "yank", "open_above", "replace_
 "C-S-right" = ["extend_next_long_word_start"]
 "A-S-left" = ["extend_prev_word_start"]
 "A-S-right" = ["extend_next_word_start"]
+"A-Q" = ["record_macro"]
+"A-q" = ["replay_macro"]
 
 [keys.select]
 X = "extend_line_above"
