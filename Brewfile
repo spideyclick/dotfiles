@@ -43,10 +43,13 @@ brew "zsh"
 brew "starship"
 brew "zoxide"
 
+# File Manager
+# brew "joshuto"
+brew "dzfrias/formulae/projectable"
+
 # IDE
 brew "helix"
 brew "lazygit"
-brew "joshuto"
 
 # Utilities
 brew "rg"
@@ -57,6 +60,7 @@ brew "fzf"
 brew "hstr"
 brew "lsd"
 brew "lnav"
+brew "jless"
 
 # Python
 brew "pyright"

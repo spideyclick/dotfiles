@@ -1,6 +1,6 @@
 alias l='lsd -lAgF --tree --depth 2 --permission rwx --date +%Y-%m-%d --group-dirs last --truncate-owner-after 3'
 alias lg='lazygit'
-alias x='joshuto'
+alias x='prj'
 alias c='z'
 alias d='date --iso'
 alias cb='clip.exe'
