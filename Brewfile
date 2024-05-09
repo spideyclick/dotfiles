@@ -51,6 +51,7 @@ brew "joshuto"
 # IDE
 brew "helix"
 brew "lazygit"
+brew "git-delta"
 
 # Utilities
 brew "rg"
