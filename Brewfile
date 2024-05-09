@@ -44,9 +44,9 @@ brew "starship"
 brew "zoxide"
 
 # File Manager
-# brew "joshuto"
-tap "dzfrias/formulae"
-brew "dzfrias/formulae/projectable"
+brew "joshuto"
+# tap "dzfrias/formulae"
+# brew "dzfrias/formulae/projectable"
 
 # IDE
 brew "helix"
