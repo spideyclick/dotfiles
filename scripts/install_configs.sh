@@ -14,6 +14,7 @@ ln -s "${dotfiles_config_dir}/helix" "${config_dir}/helix"
 ln -s "${dotfiles_config_dir}/joshuto" "${config_dir}/joshuto"
 ln -s "${dotfiles_config_dir}/lazygit/config.yml" "${config_dir}/lazygit/config.yml"
 ln -s "${dotfiles_config_dir}/ranger" "${config_dir}/ranger"
+ln -s "${dotfiles_config_dir}/zellij" "${config_dir}/zellij"
 
 ../scripts/push_managed_config_block.sh .bash_profile "${user_home_dir}/.bash_profile"
 ../scripts/push_managed_config_block.sh .bashrc "${user_home_dir}/.bashrc"
