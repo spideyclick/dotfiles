@@ -150,10 +150,10 @@ style = "fg:green"
 
 [directory]
 # format = "[📂 $path ]($style)"
-fish_style_pwd_dir_length = 1
+fish_style_pwd_dir_length = 2
 format = "[$path ]($style)"
 style = "fg:yellow"
-truncation_length = 2
+truncation_length = 1
 # truncation_symbol = "…"
 
 [package] 
