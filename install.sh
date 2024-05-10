@@ -12,7 +12,7 @@ if [ $? -eq 0 ]; then
 fi
 OS_ID=$(grep -ioP '^ID=\K\S+$' /etc/os-release)
 echo "Current OS appears to be: ${OS_ID}"
-if [[ ${OS_ID} == "debian" || ${OS_ID} == "ubuntu" ]]; then
+if [[ ${OS_ID} == "debian" || ${OS_ID} == "ubuntu" || ${OS_ID} == "linuxmint" ]]; then
 	echo "This OS should be able to work with the homebrew strategy"
 	if ! command -v brew &> /dev/null; then
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
