@@ -17,6 +17,7 @@ ln -s "${dotfiles_config_dir}/starship.toml"  "${config_dir}/starship.toml"
 ln -s "${dotfiles_config_dir}/helix"    "${config_dir}/helix"
 ln -s "${dotfiles_config_dir}/joshuto"  "${config_dir}/joshuto"
 ln -s "${dotfiles_config_dir}/ranger"   "${config_dir}/ranger"
+ln -s "${dotfiles_config_dir}/zellij"   "${config_dir}/zellij"
 
 # Some folders have both config & state; these will link only the config, not the state!
 mkdir -p "${dotfiles_config_dir}/lazygit/"
