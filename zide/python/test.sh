@@ -36,6 +36,7 @@ elif [[ $1 == 'last' ]]; then
 	echo "Run test for ${TARGET_TEST}"
 elif [[ -n "$1" ]]; then
 	TARGET_TEST=$1
+	echo "$TARGET_TEST" > .zide/.last_test
 else
 	echo "Fetching available tests"
 	if TESTS=$( pytest --collect-only --color=yes 2>&1 ); then
