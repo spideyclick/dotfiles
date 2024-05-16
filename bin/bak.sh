@@ -64,11 +64,11 @@ backup() {
 
 restore() {
 	local backup_file="$1"
-	if [[ $backup_file =~ ^backup_[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}_.*$ ]]; then
-		local dir;
-		dir=$(dirname "$backup_file")
-		local filename;
-		filename=$(basename -- "$backup_file")
+	local dir;
+	dir=$(dirname "$backup_file")
+	local filename;
+	filename=$(basename -- "$backup_file")
+	if [[ $filename =~ ^backup_[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}_.+$ ]]; then
 		local orig_filename;
 		orig_filename=$(echo "$filename" | sed 's/^backup_[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}-[0-9]\{2\}-[0-9]\{2\}-[0-9]\{2\}_//')
 		cp "$backup_file" "${dir}/${orig_filename}"
