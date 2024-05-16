@@ -58,7 +58,7 @@ disabled = false
 # format="[🕒 $time]($style)"
 format="[$time]($style)"
 time_format = "%a %Y-%m-%d %T%z" #change to %R to only have HH:MM
-style="fg:black"
+style = "fg:#808080"
 
 [username]
 style_user = "fg:purple"
