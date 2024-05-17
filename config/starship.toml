@@ -22,6 +22,7 @@ $package\
 $python\
 $rust\
 $fill\
+$cmd_duration\
 $time\
 $character\
 """
@@ -228,3 +229,10 @@ symbol = ' '
 # when = "1"
 # shell = ["cmd /C"]
 # format = "$output"
+
+[cmd_duration]
+disabled = false
+min_time = 0
+show_milliseconds = true
+format = '[$duration ](#808080)'
+
