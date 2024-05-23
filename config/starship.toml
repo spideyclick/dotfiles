@@ -10,11 +10,11 @@ add_newline = false
 # format = """$all"""
 format = """
 $status\
+$os\
 $directory\
 $git_branch\
-$username\
 $hostname\
-$os\
+$username\
 $localip\
 $docker_context\
 $nodejs\
@@ -62,7 +62,7 @@ time_format = "%a %Y-%m-%d %T%z" #change to %R to only have HH:MM
 style = "fg:#808080"
 
 [username]
-style_user = "fg:purple"
+style_user = "fg:blue"
 style_root = "bold fg:red"
 # format = "[🧑 $user]($style)"
 format = "[$user]($style)"
@@ -71,14 +71,14 @@ show_always = true
 
 [hostname]
 ssh_only = false
-format = "[@$hostname ]($style)"
+format = "[$hostname ]($style)"
 disabled = false
-style = "fg:purple"
+style = "fg:cyan"
 
 [os]
 # format = "[ 💻 $name]($style)"
 # format = "[$symbol $name ]($style)"
-format = "[$symbol ]($style)"
+format = "[$symbol]($style)"
 style = "fg:#f39660"
 disabled = false
 
@@ -138,8 +138,8 @@ style = "fg:blue"
 disabled = false
 ssh_only = false
 # format = "[ 🌐 ($localipv4) ]($style)"
-format = "[($localipv4) ]($style)"
-style = "fg:cyan"
+format = " [($localipv4) ]($style)"
+style = "fg:purple"
 
 [character]
 # success_symbol = "[->](white)"
@@ -217,8 +217,8 @@ style = "fg:green"
 
 [rust]
 symbol = "🦀"
-format = '[ via $symbol($version )]($style)'
-style = "fg:#000000 "
+format = '[$symbol $version]($style)'
+style = "fg:#f39660"
 
 [fill]
 symbol = ' '
