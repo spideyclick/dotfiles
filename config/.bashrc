@@ -15,4 +15,3 @@ if command -v broot &> /dev/null; then source /home/zhubbell/.config/broot/launc
 # Disabled because it's not working well on my system
 # source ~/.local/share/blesh/ble.sh
 # eval "$(atuin init bash)"
-
