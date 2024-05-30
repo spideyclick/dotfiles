@@ -3,3 +3,4 @@
 # "\C-i": menu-complete
 # Option 2: Show all options on first tab input
 set show-all-if-ambiguous on
+set editing-mode vi
