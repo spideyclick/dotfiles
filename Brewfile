@@ -39,12 +39,12 @@
 # vscode "GitHub.codespaces"
 
 # Shell
-brew "zsh"
 brew "starship"
 brew "zoxide"
 
 # File Manager
 brew "joshuto"
+# Not quite sold on projectable yet
 # tap "dzfrias/formulae"
 # brew "dzfrias/formulae/projectable"
 
@@ -54,13 +54,14 @@ brew "lazygit"
 brew "git-delta"
 
 # Utilities
-brew "rg"
-brew "jq"
-brew "yq"
 brew "fd"
+brew "jq"
+brew "rg"
+brew "yq"
+brew "bat"
 brew "fzf"
-brew "hstr"
 brew "lsd"
+brew "hstr"
 brew "lnav"
 brew "jless"
 
