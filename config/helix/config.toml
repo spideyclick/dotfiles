@@ -26,7 +26,7 @@ theme = "spideyclick"
 "C-minus" = "merge_selections"
 "C-_" = "merge_consecutive_selections"
 "C-;" = "flip_selections"
-"C-:" = "flip_selections_forward"
+"C-:" = "ensure_selections_forward"
 
 # Cusom line manipulations
 x = "extend_line_below"
