@@ -41,7 +41,7 @@ else
 	echo "Fetching available tests"
 	if TESTS=$( pytest --collect-only --color=yes 2>&1 ); then
 		echo "test collection succeeded"
-		TARGET_TEST=$(echo $TESTS | grep -oP '(?<=<)(Function|Coroutine)\s+\K\w+' | fzf)
+		TARGET_TEST=$(echo $TESTS | grep -oP '(?<=<)(Function|Coroutine)\s+\K\w+' | sort | uniq | fzf)
 		echo "$TARGET_TEST" > .zide/.last_test
 		echo "Run test for ${TARGET_TEST}"
 	else
