@@ -13,6 +13,7 @@ ln -s "${dotfiles_config_dir}/starship.toml" "${config_dir}/starship.toml"
 ln -s "${dotfiles_config_dir}/helix" "${config_dir}/helix"
 ln -s "${dotfiles_config_dir}/joshuto" "${config_dir}/joshuto"
 ln -s "${dotfiles_config_dir}/lazygit/config.yml" "${config_dir}/lazygit/config.yml"
+ln -s "${dotfiles_config_dir}/pet" "${config_dir}/pet"
 ln -s "${dotfiles_config_dir}/ranger" "${config_dir}/ranger"
 ln -s "${dotfiles_config_dir}/zellij" "${config_dir}/zellij"
 

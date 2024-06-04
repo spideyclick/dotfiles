@@ -64,6 +64,7 @@ brew "lsd"
 brew "hstr"
 brew "lnav"
 brew "jless"
+brew "knqyf263/pet/pet"
 
 # Python
 brew "pyright"
