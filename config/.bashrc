@@ -1,6 +1,9 @@
 # Path Additions
 PATH=${PATH:+${PATH}:}~/.local/bin
 
+# HOSTS Additions
+export HOSTALIASES=~/.hosts
+
 # Alias definitions
 if [ -f ~/.bash_aliases ]; then . "$HOME/.bash_aliases"; fi
 
