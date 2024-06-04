@@ -19,6 +19,9 @@ if [[ ${OS_ID} == "debian" || ${OS_ID} == "ubuntu" || ${OS_ID} == "linuxmint" ]]
 		eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 	fi
 	brew bundle
+	# Manually install rgr to local bin
+	wget -qO- https://github.com/acheronfail/repgrep/releases/download/0.15.0/repgrep-0.15.0-x86_64-unknown-linux-gnu.tar.gz \
+		| tar --strip-components=1 -xzf - -C ~/.local/bin repgrep-0.15.0-x86_64-unknown-linux-gnu/rgr
 	./scripts/install_local_bin.sh
 	./scripts/install_configs.sh
 else
