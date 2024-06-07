@@ -53,6 +53,14 @@ brew "helix"
 brew "lazygit"
 brew "git-delta"
 
+# IDE - General Language Servers
+brew "yaml-language-server"
+
+# IDE - Python
+brew "pyright"
+brew "black"
+brew "ruff-lsp"
+
 # Utilities
 brew "fd"
 brew "jq"
@@ -67,7 +75,3 @@ brew "jless"
 tap "knqyf263/pet"
 brew "knqyf263/pet/pet"
 
-# Python
-brew "pyright"
-brew "black"
-brew "ruff-lsp"
