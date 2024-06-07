@@ -155,6 +155,7 @@ keybinds clear-defaults=true {
         bind "Alt E" { EditScrollback; }
         bind "Alt q" { Quit; }
         bind "Alt w" { CloseFocus; }
+        bind "Alt x" { ToggleFloatingPanes; }
         bind "Alt n" { NewPane; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
