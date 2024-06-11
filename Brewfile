@@ -62,16 +62,19 @@ brew "black"
 brew "ruff-lsp"
 
 # Utilities
-brew "fd"
-brew "jq"
-brew "rg"
-brew "yq"
-brew "bat"
-brew "fzf"
-brew "lsd"
+brew "fd"                 # find replacement
+brew "jq"                 # JSON Parser
+brew "rg"                 # grep replacement
+brew "sd"                 # sed replacement
+brew "yq"                 # YAML Parser
+brew "bat"                # cat replacement
+brew "eva"                # Simple calculator (bc replacement)
+brew "fzf"                # Fuzzy Finder
+brew "lsd"                # ls replacement
 brew "hstr"
 brew "lnav"
-brew "jless"
-tap "knqyf263/pet"
-brew "knqyf263/pet/pet"
+brew "jless"              # TUI JSON Browser
+brew "choose"             # Human-friendly cut/awk alternative
+tap "knqyf263/pet"        # CLI Snippets
+brew "knqyf263/pet/pet"   # CLI Snippets
 
