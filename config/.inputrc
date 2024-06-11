@@ -4,3 +4,4 @@
 # Option 2: Show all options on first tab input
 set show-all-if-ambiguous on
 set editing-mode vi
+"\C-]":"\C-e\C-u cb <<"EOF"\n\C-y\nEOF\n"
