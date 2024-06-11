@@ -17,5 +17,9 @@ ln -s "${dotfiles_config_dir}/pet" "${config_dir}/pet"
 ln -s "${dotfiles_config_dir}/ranger" "${config_dir}/ranger"
 ln -s "${dotfiles_config_dir}/zellij" "${config_dir}/zellij"
 
+mkdir -p ~/.config/pudb
+ln -s "${dotfiles_config_dir}/pudb/pudb.cfg" "${config_dir}/pudb/pudb.cfg"
+ln -s "${dotfiles_config_dir}/pudb/custom.theme" "${config_dir}/pudb/custom.theme"
+
 ../scripts/push_managed_config_block.sh .bash_profile "${user_home_dir}/.bash_profile"
 ../scripts/push_managed_config_block.sh .bashrc "${user_home_dir}/.bashrc"
