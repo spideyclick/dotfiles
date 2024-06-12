@@ -56,8 +56,8 @@ C-A-k = ["normal_mode", "extend_to_line_bounds", "yank", "open_above", "replace_
 "right" = "select_next_sibling"
 "C-up" = "jump_forward"
 "C-down" = "jump_backward"
-# "C-right" = "jump_forward"
-# "C-left" = "jump_backward"
+"C-right" = "jump_forward"
+"C-left" = "jump_backward"
 
 
 # C-S-O = ["open_below", "normal_mode"]
@@ -97,6 +97,9 @@ C-A-k = ["normal_mode", "extend_to_line_bounds", "yank", "open_above", "replace_
 [keys.select]
 X = "extend_line_above"
 "tab" = "extend_to_word"
+"D" = "delete_selection_noyank"
+"C-minus" = "merge_selections"
+"C-_" = "merge_consecutive_selections"
 
 [editor]
 true-color = true
