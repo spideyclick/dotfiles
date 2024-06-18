@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -e
+
+# while IFS= read -r line; do
+# 	date -d "$line" +"%Y-%m-%dT%H:%M:%S %Z"
+# done
+
+date -d "2024-06-13T18:20:47.974706161Z"
+date -d "2024-06-14T12:01:36.220812069Z"
+date -d "2024-06-14T12:11:46.165070973Z"
+date -d "2024-06-14T12:21:13.391351357Z"
+date -d "2024-06-14T12:31:40.166426799Z"
+date -d "2024-06-14T12:42:00.915208969Z"
+date -d "2024-06-14T12:51:51.038455472Z"
+
+Thu Jun 13 13:20:47 CDT 2024
+Fri Jun 14 07:01:36 CDT 2024
+Fri Jun 14 07:11:46 CDT 2024
+Fri Jun 14 07:21:13 CDT 2024
+Fri Jun 14 07:31:40 CDT 2024
+Fri Jun 14 07:42:00 CDT 2024
+Fri Jun 14 07:51:51 CDT 2024
+
+
+

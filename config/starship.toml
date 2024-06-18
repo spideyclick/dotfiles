@@ -79,7 +79,7 @@ style = "fg:cyan"
 [os]
 # format = "[ 💻 $name]($style)"
 # format = "[$symbol $name ]($style)"
-format = "[$symbol]($style)"
+format = "[$symbol]($style) "
 style = "fg:#f39660"
 disabled = false
 
@@ -145,12 +145,14 @@ style = "fg:purple"
 [character]
 # success_symbol = "[->](white)"
 # error_symbol = "[->](red)"
-# success_symbol = "[➜](white)"
-# error_symbol = "[➜](red)"
+success_symbol = "\n[➜](white)"
+error_symbol = "\n[➜](red)"
 # success_symbol = "\n[](white)"
 # error_symbol = "\n[](red)"
-success_symbol = "\n[](white)"
-error_symbol = "\n[](red)"
+# success_symbol = "\n[](white)"
+# error_symbol = "\n[](red)"
+# success_symbol = ""
+# error_symbol = ""
 
 [git_branch]
 # symbol = "🌱 "

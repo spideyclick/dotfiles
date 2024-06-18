@@ -59,29 +59,18 @@ C-A-k = ["normal_mode", "extend_to_line_bounds", "yank", "open_above", "replace_
 "C-right" = "jump_forward"
 "C-left" = "jump_backward"
 
-
 # C-S-O = ["open_below", "normal_mode"]
 
-# Alt-based line modifications (not working for some reason)
-# "A-up" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "delete_selection", "move_visual_line_up", "paste_before"]
-# "A-k" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "delete_selection", "move_visual_line_up", "paste_before"]
-# "A-down" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection","delete_selection", "paste_after"]
-# "A-j" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "delete_selection", "paste_after"]
-# "A-S-up" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "yank", "paste_before"]
-# "A-K" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "yank", "paste_before"]
-# "A-S-down" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "yank", "paste_after"]
-# "A-J" = ["extend_to_line_bounds", "merge_consecutive_selections", "keep_primary_selection", "yank", "paste_after"]
-
-# # Breaking my bad hjkl habits!
-# "h" = "normal_mode"
-# "j" = "normal_mode"
-# "k" = "normal_mode"
-# "l" = "normal_mode"
+# Scripts
+"ret" = ["normal_mode", "extend_to_line_bounds", "yank", "open_below", "replace_with_yanked", ":pipe ~/dotfiles/scripts/line_base.rs", "collapse_selection", "insert_mode"]
+"C-A-t" = [":insert-output bash t"]
+"C-A-d" = [":insert-output bash -c 'date --iso' | tr -d '\n'"]
 
 [keys.insert]
 "A-x" = "normal_mode"
 "C-space" = "completion"
 "C-s" = [":write", "normal_mode"]
+"C-n" = ["normal_mode", "extend_to_line_bounds", "yank", "open_below", "replace_with_yanked", ":pipe ~/dotfiles/scripts/line_base.rs", "collapse_selection", "insert_mode"]
 
 "C-left" = ["move_prev_long_word_start", "collapse_selection"]
 "C-right" = ["move_next_long_word_start", "collapse_selection"]
