@@ -74,7 +74,7 @@ brew "lsd"                # ls replacement
 brew "hstr"
 brew "lnav"
 brew "jless"              # TUI JSON Browser
-brew "choose"             # Human-friendly cut/awk alternative
+brew "choose-rust"        # Human-friendly cut/awk alternative
 tap "knqyf263/pet"        # CLI Snippets
 brew "knqyf263/pet/pet"   # CLI Snippets
 
