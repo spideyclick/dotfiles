@@ -3,7 +3,7 @@
   Description = "greppable docker logs"
   Output = ""
   Tag = []
-  command = "docker logs -t --since 24h %q 2>&1"
+  command = "docker logs -t --since 24h <container_name> 2>&1"
 
 [[Snippets]]
   Description = "Show listening ports"
@@ -15,10 +15,4 @@
   Description = "Dump Python Object"
   Output = ""
   Tag = []
-  command = '''    from pathlib import Path
-    from json import dumps
-
-    Path("/tmp/case_data.json").write_text(dumps(case_data, indent=2))
-    breakpoint()
-'''
-
+  command = '''from pathlib import Path; from json import dumps; Path("/tmp/tmp.json").write_text(dumps(<variable_name>, indent=2));'''

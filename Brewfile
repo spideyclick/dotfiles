@@ -71,8 +71,9 @@ brew "bat"                # cat replacement
 brew "eva"                # Simple calculator (bc replacement)
 brew "fzf"                # Fuzzy Finder
 brew "lsd"                # ls replacement
+brew "tldr"
 brew "hstr"
-brew "lnav"
+brew "lnav"               # TUI Log Viewer
 brew "jless"              # TUI JSON Browser
 brew "choose-rust"        # Human-friendly cut/awk alternative
 tap "knqyf263/pet"        # CLI Snippets

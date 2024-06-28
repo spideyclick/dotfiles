@@ -14,6 +14,7 @@ theme = "spideyclick"
 # w = ["move_next_word_start", "move_prev_word_start", "move_next_word_end"]
 # W = ["move_next_long_word_start", "move_prev_long_word_start", "move_next_long_word_end"]
 "'" = "select_register"
+"C-/" = "toggle_comments"
 
 # Rebind away from ALT as much as possible
 "D" = "delete_selection_noyank"
@@ -54,6 +55,8 @@ C-A-k = ["normal_mode", "extend_to_line_bounds", "yank", "open_above", "replace_
 "down" = "shrink_selection"
 "left" = "select_prev_sibling"
 "right" = "select_next_sibling"
+"C-h" = "jump_backward"
+"C-l" = "jump_forward"
 "C-up" = "jump_forward"
 "C-down" = "jump_backward"
 "C-right" = "jump_forward"
