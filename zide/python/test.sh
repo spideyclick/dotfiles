@@ -1,16 +1,32 @@
 #!/usr/bin/env bash
 
+set -e
+
 ############################################################
 # Directory + Environment Setup                            #
 ############################################################
-set -e
 if [ ! -f pyproject.toml ]; then echo "python project not found in $(pwd)"; exit 1; fi
 .zide/setup.sh
 WORKSPACE=.zide/workspace.yaml
 PROJECT_NAME=$(basename "$(pwd)")
 
 source .venv/bin/activate
-source .env
+if [ -f .env ]; then source .env; fi
+if [ -f .zide/.env ]; then source .zide/.env; fi
+
+############################################################
+# Help                                                     #
+############################################################
+Help()
+{
+   echo "test.sh: quickly run python tests"
+   echo
+   echo "Syntax: test [-bh]"
+   echo "options:"
+   echo "b     Run tests in [b]asic mode (just PDB, not PUDB)"
+   echo "h     Print this Help."
+   echo
+}
 
 ############################################################
 # Parse Arguments                                          #
