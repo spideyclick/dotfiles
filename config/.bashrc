@@ -14,6 +14,7 @@ if command -v starship &> /dev/null; then eval "$(starship init bash)"; fi
 if command -v zoxide &> /dev/null; then eval "$(zoxide init bash)"; fi
 if command -v aws &> /dev/null; then complete -C "$(which aws_completer)" aws; fi
 if command -v broot &> /dev/null; then source /home/zhubbell/.config/broot/launcher/bash/br; fi
+if command -v fzf &> /dev/null; then source <(fzf --bash); fi
 
 # Disabled because it's not working well on my system
 # source ~/.local/share/blesh/ble.sh
