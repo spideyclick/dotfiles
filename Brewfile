@@ -53,14 +53,6 @@ brew "helix"
 brew "lazygit"
 brew "git-delta"
 
-# IDE - General Language Servers
-brew "yaml-language-server"
-
-# IDE - Python
-brew "pyright"
-brew "black"
-brew "ruff-lsp"
-
 # Utilities
 brew "fd"                 # find replacement
 brew "jq"                 # JSON Parser
@@ -78,4 +70,12 @@ brew "jless"              # TUI JSON Browser
 brew "choose-rust"        # Human-friendly cut/awk alternative
 tap "knqyf263/pet"        # CLI Snippets
 brew "knqyf263/pet/pet"   # CLI Snippets
+
+# TODO: Move IDE extras to separate brew files
+
+# General Language Servers
+# brew "yaml-language-server" Remov
+
+# IDE - Rust
+# brew cargo-rust-script
 

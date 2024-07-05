@@ -6,6 +6,12 @@ ZWD=$(dirname $(realpath "$0"))
 
 if [ -f 'pyproject.toml' ]; then
   echo 'python project detected'
+
+	if command -v brew &> /dev/null; then
+  	echo "Installing HomeBrew Packages"
+  	brew bundle "${ZWD}/python/Brewfile"
+	fi
+
   mkdir -p .zide
   cd .zide
   ln -sf "${ZWD}/python/setup.sh" .
