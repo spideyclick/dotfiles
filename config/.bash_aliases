@@ -2,7 +2,6 @@ alias l='lsd -lAgF --tree --depth 2 --permission rwx --date +%Y-%m-%d --group-di
 alias lg='lazygit'
 alias x='joshuto'
 alias c='z'
-alias d='date --iso'
 alias cb='~/isomorphic_copy/bin/c'
 alias p='~/isomorphic_copy/bin/p'
 alias td='todo.sh'

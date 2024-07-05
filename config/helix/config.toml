@@ -99,6 +99,7 @@ line-number = "relative"
 mouse = false
 bufferline = "multiple"
 auto-save = true
+shell = ["bash", "-c"]
 
 [editor.whitespace.render]
 space = "all"
