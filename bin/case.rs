@@ -14,7 +14,7 @@
 extern crate regex;
 
 use clap::{Parser, Subcommand};
-// use regex::Regex;
+use regex::Regex;
 use std::io::stdin;
 
 #[derive(Parser)]
@@ -50,7 +50,10 @@ fn parse_line(input: String, command: Commands) {
 			todo!();
 		}
 		Commands::Camel => {
-			todo!();
+			let regex = Regex::new(r"(?m)([A-Za-z])[_|-]([A-Za-z])").unwrap();
+			let substitution = r"$1\U$2\E";
+			let result = regex.replace_all(input.as_str(), substitution);
+			println!("{}", result);
 		}
 		Commands::Title => {
 			todo!();
