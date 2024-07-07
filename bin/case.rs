@@ -14,7 +14,6 @@
 extern crate regex;
 
 use clap::{Parser, Subcommand};
-use regex::Regex;
 use std::io::stdin;
 
 #[derive(Parser)]
@@ -27,6 +26,7 @@ struct Cli {
 #[derive(Subcommand, Clone)]
 enum Commands {
 	Snake,
+	Dash,
 	Camel,
 	Title,
 	Upper,
@@ -46,29 +46,161 @@ fn main() {
 
 fn parse_line(input: String, command: Commands) {
 	match command {
-		Commands::Snake => {
-			todo!();
-		}
-		Commands::Camel => {
-			let regex = Regex::new(r"(?m)([A-Za-z])[_|-]([A-Za-z])").unwrap();
-			let substitution = r"$1\U$2\E";
-			let result = regex.replace_all(input.as_str(), substitution);
-			println!("{}", result);
-		}
-		Commands::Title => {
-			todo!();
+		Commands::Upper => {
+			println!("{}", input.to_uppercase());
 		}
 		Commands::Lower => {
 			println!("{}", input.to_lowercase());
 		}
-		Commands::Upper => {
-			println!("{}", input.to_uppercase());
+		Commands::Snake => {
+			let mut output = String::new();
+			let mut last: Option<char> = None;
+			for current in input.chars() {
+				match (last, current) {
+					(None, _) => {
+						// This must be the first character
+						output.push(current.to_ascii_lowercase());
+						last = Some(current);
+					}
+					(Some(_), '-') => {
+						// Dash-Case Delimiters will be converted
+						output.push('_');
+						last = Some(current);
+					}
+					(Some('a'..='z'), 'A'..='Z') => {
+						// Title-Case Delimiters Should be converted
+						output.push('_');
+						output.push(current.to_ascii_lowercase());
+						last = Some(current);
+					}
+					(Some(_), _) => {
+						// Make all others lowercase
+						output.push(current.to_ascii_lowercase());
+						last = Some(current);
+					}
+				}
+			}
+			println!("{}", output);
+		}
+		Commands::Dash => {
+			let mut output = String::new();
+			let mut last: Option<char> = None;
+			for current in input.chars() {
+				match (last, current) {
+					(None, _) => {
+						// This must be the first character
+						output.push(current.to_ascii_lowercase());
+						last = Some(current);
+					}
+					(Some(_), '_') => {
+						// Snake-Case Delimiters will be converted
+						output.push('-');
+						last = Some(current);
+					}
+					(Some('a'..='z'), 'A'..='Z') => {
+						// Title-Case Delimiters Should be converted
+						output.push('-');
+						output.push(current.to_ascii_lowercase());
+						last = Some(current);
+					}
+					(Some(_), _) => {
+						// Make all others lowercase
+						output.push(current.to_ascii_lowercase());
+						last = Some(current);
+					}
+				}
+			}
+			println!("{}", output);
+		}
+		Commands::Camel => {
+			let mut output = String::new();
+			let mut last: Option<char> = None;
+			for current in input.chars() {
+				match (last, current) {
+					(None, _) => {
+						// This must be the first character
+						output.push(current.to_ascii_lowercase());
+						last = Some(current);
+					}
+					(Some(_), '-' | '_') => {
+						// Snake-Case Delimiters will be skipped
+						last = Some(current);
+					}
+					(Some('a'..='z'), 'A'..='Z') => {
+						// Title-Case Delimiters Should be maintained
+						output.push(current);
+						last = Some(current);
+					}
+					(Some('-' | '_'), 'A'..='Z' | 'a'..='z') => {
+						// Letter after snake-case delimiters should be capitalized
+						output.push(current.to_ascii_uppercase());
+						last = Some(current);
+					}
+					(Some(c), 'A'..='Z') => {
+						// Unless it's the first character in a word!
+						match c.is_whitespace() {
+							true => {
+								output.push(current.to_ascii_lowercase());
+							}
+							false => {
+								output.push(current);
+							}
+						}
+						last = Some(current);
+					}
+					(Some(_), _) => {
+						// Make all others lowercase
+						output.push(current.to_ascii_lowercase());
+						last = Some(current);
+					}
+				}
+			}
+			println!("{}", output);
+		}
+		Commands::Title => {
+			let mut output = String::new();
+			let mut last: Option<char> = None;
+			for current in input.chars() {
+				match (last, current) {
+					(None, _) => {
+						// This must be the first character
+						output.push(current.to_ascii_uppercase());
+						last = Some(current);
+					}
+					(Some(_), '-' | '_') => {
+						// Snake-Case Delimiters will be skipped
+						last = Some(current);
+					}
+					(Some('a'..='z'), 'A'..='Z') => {
+						// Title-Case Delimiters Should be maintained
+						output.push(current);
+						last = Some(current);
+					}
+					(Some('-' | '_'), 'A'..='Z' | 'a'..='z') => {
+						// Letter after snake-case delimiters should be capitalized
+						output.push(current.to_ascii_uppercase());
+						last = Some(current);
+					}
+					(Some(c), 'A'..='Z' | 'a'..='z') => {
+						// First character in a word should also be capitalized
+						match c.is_whitespace() {
+							true => {
+								output.push(current.to_ascii_uppercase());
+							}
+							false => {
+								output.push(current);
+							}
+						}
+						last = Some(current);
+					}
+					(Some(_), _) => {
+						// Make all others lowercase
+						output.push(current.to_ascii_lowercase());
+						last = Some(current);
+					}
+				}
+			}
+			println!("{}", output);
 		}
 	};
-	// s/\([a-z]\)\([A-Z]\)/\1_\2/g
-	// let regex = Regex::new(r"(?m)^(\s+)?(- )?(\[[ \*xX]\] )?.*$").unwrap();
-	// let substitution = "$2$3";
-	// let result = regex.replace_all(trimmed_string, substitution);
-	// todo!();
-	// println!("{}", output);
 }
