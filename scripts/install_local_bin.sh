@@ -6,7 +6,7 @@ mkdir -p ~/.local/bin
 for file in ./*; do
 	if [ -f "${file}" ]; then
 		if [ ! -L ~/.local/bin/${file} ]; then
-			ln -s $(readlink -f "$file") ~/.local/bin/$(basename $file .sh)
+			ln -s $(readlink -f "$file") ~/.local/bin/$(basename ${file%.*})
 		fi
 	fi
 done

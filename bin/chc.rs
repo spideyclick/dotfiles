@@ -17,7 +17,7 @@ use clap::{Parser, Subcommand};
 use std::io::stdin;
 
 #[derive(Parser)]
-#[command(version, about, long_about = None)]
+#[command(version, about = "chc - A utility for quickly [Ch]anging [C]ase from STDIN", long_about = None)]
 struct Cli {
 	#[command(subcommand)]
 	command: Option<Commands>,
