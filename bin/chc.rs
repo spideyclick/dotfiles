@@ -25,12 +25,18 @@ struct Cli {
 
 #[derive(Subcommand, Clone)]
 enum Commands {
-	Snake,
-	Dash,
-	Camel,
-	Title,
+	#[command(visible_alias="u")]
 	Upper,
+	#[command(visible_alias="l")]
 	Lower,
+	#[command(visible_alias="s")]
+	Snake,
+	#[command(visible_alias="d")]
+	Dash,
+	#[command(visible_alias="c")]
+	Camel,
+	#[command(visible_alias="t")]
+	Title,
 }
 
 fn main() {
