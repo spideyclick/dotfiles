@@ -5,4 +5,5 @@ alias c='z'
 alias cb='~/isomorphic_copy/bin/c'
 alias p='~/isomorphic_copy/bin/p'
 alias td='todo.sh'
-alias dps="docker ps -a --format json | jq -r '.Names, .RunningFor, .Status' | paste - - - | column -ts $'\t'"
+alias dps="docker ps -a --format json | jq -r '.Names, .RunningFor, .Status' | paste - - - | column -ts $'\t' | sort"
+alias ai='tgpt -m'
