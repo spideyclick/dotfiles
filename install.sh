@@ -41,12 +41,22 @@ if [[ \
 	fi
 	brew bundle
 
-	echo "Installing cargo-binstall packages"
-	. "$HOME/.cargo/env"
-	cargo binstall -y \
-		ccase \
-		repgrep \
-		;
+	echo "Installing rgr"
+	wget -qO- https://github.com/acheronfail/repgrep/releases/download/0.15.0/repgrep-0.15.0-x86_64-unknown-linux-gnu.tar.gz \
+	| tar --strip-components=1 -xzf - -C ~/.local/bin repgrep-0.15.0-x86_64-unknown-linux-gnu/rgr
+
+	# TODO: Find another way to easily use rust scripts?
+	# Maybe we builds & releases, with custom homebrew tap?
+
+	# Disabling due to the fact that
+	# this would require installing ALL OF RUST
+	# echo "Installing cargo-binstall packages"
+	# . "$HOME/.cargo/env"
+	# cargo binstall -y \
+	# 	cargo-script \
+	# 	ccase \
+	# 	repgrep \
+	# 	;
 
 	### Auto zide setup
 	if [ -f /usr/src/app/pyproject.toml ]; then
