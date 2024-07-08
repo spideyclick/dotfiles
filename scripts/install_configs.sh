@@ -8,6 +8,7 @@ config_dir="${user_home_dir}/.config"
 dotfiles_config_dir="${user_home_dir}/dotfiles/config"
 
 # Symlinked Directories
+ln -s "${dotfiles_config_dir}/bat" "${config_dir}/bat"
 ln -s "${dotfiles_config_dir}/helix" "${config_dir}/helix"
 ln -s "${dotfiles_config_dir}/joshuto" "${config_dir}/joshuto"
 ln -s "${dotfiles_config_dir}/pet" "${config_dir}/pet"
