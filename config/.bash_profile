@@ -17,7 +17,6 @@ fi
 
 # Etc
 # source /home/zhubbell/.config/broot/launcher/bash/br
-# . "$HOME/.cargo/env"
 # if [ -e /home/zhubbell/.nix-profile/etc/profile.d/nix.sh ]; then . /home/zhubbell/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 # eval `ssh-agent -s`
 # ssh-add -t 0 ~/.ssh/id_rsa

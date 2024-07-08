@@ -41,9 +41,12 @@ if [[ \
 	fi
 	brew bundle
 
-	echo "Installing rgr"
-	wget -qO- https://github.com/acheronfail/repgrep/releases/download/0.15.0/repgrep-0.15.0-x86_64-unknown-linux-gnu.tar.gz \
-		| tar --strip-components=1 -xzf - -C ~/.local/bin repgrep-0.15.0-x86_64-unknown-linux-gnu/rgr
+	echo "Installing cargo-binstall packages"
+	. "$HOME/.cargo/env"
+	cargo binstall -y \
+		ccase \
+		repgrep \
+		;
 
 	### Auto zide setup
 	if [ -f /usr/src/app/pyproject.toml ]; then
