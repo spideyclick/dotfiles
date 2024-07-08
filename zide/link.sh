@@ -9,7 +9,7 @@ if [ -f 'pyproject.toml' ]; then
 
 	if command -v brew &> /dev/null; then
   	echo "Installing HomeBrew Packages"
-  	brew bundle "${ZWD}/python/Brewfile"
+  	brew bundle --file "${ZWD}/python/Brewfile"
 	fi
 
   mkdir -p .zide

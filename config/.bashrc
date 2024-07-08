@@ -3,6 +3,7 @@ PATH=${PATH:+${PATH}:}~/.local/bin
 
 # HOSTS Additions
 export HOSTALIASES=~/.hosts
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
 # Alias definitions
 if [ -f ~/.bash_aliases ]; then . "$HOME/.bash_aliases"; fi
