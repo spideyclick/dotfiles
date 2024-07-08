@@ -72,7 +72,7 @@ tap "knqyf263/pet"        # CLI Snippets
 brew "knqyf263/pet/pet"   # CLI Snippets
 
 # More packages via cargo-binstall
-cargo-binstall
+brew cargo-binstall
 
 # TODO: Move IDE extras to separate brew files
 
