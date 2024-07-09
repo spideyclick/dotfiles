@@ -5,6 +5,16 @@ PATH=${PATH:+${PATH}:}~/.local/bin
 export HOSTALIASES=~/.hosts
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+# HISTORY Configurations
+export HISTCONTROL=ignoreboth
+export HISTIGNORE="clear:ai:web:history:[bf]g:exit:date:* --help"
+export HISTSIZE=2000
+export HISTFILESIZE=16000
+
+# This saves every command to history file immediately
+# However PROMPT_COMMAND can be used for much more!
+export PROMPT_COMMAND='history -a'
+
 # Alias definitions
 if [ -f ~/.bash_aliases ]; then . "$HOME/.bash_aliases"; fi
 
