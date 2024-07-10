@@ -1,3 +1,2 @@
-brew "pyright"
 brew "black"
 brew "ruff-lsp"

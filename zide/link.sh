@@ -12,7 +12,7 @@ if [ -f 'pyproject.toml' ]; then
   	brew bundle --file "${ZWD}/python/Brewfile"
 	fi
 
-  python -m pip install pudb
+  python -m pip install pudb basedpyright
 
   mkdir -p .zide
   cd .zide
