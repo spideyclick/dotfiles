@@ -12,6 +12,8 @@ if [ -f 'pyproject.toml' ]; then
   	brew bundle --file "${ZWD}/python/Brewfile"
 	fi
 
+  python -m pip install pudb
+
   mkdir -p .zide
   cd .zide
   ln -sf "${ZWD}/python/setup.sh" .
