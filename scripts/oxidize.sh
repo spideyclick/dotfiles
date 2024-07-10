@@ -8,6 +8,10 @@ if [ $? -eq 0 ]; then
 	pkg install binutils
 fi
 
+if [[ $(command -v apt) ]]; then
+  sudo apt install build-essential pkg-config libssl-dev
+fi
+
 if [ ! $(command -v cargo) ]; then
   echo "Installing Cargo..."
 	curl https://sh.rustup.rs -sSf | sh
@@ -22,33 +26,12 @@ cargo install cargo-update
 cargo-update
 
 echo "Installing all the good stuff"
-cargo install zellij
-cargo install-update zellij
-cargo install helix
-cargo install-update helix
-cargo install jless
-cargo install-update jless
-cargo install exa
-cargo install-update exa
-cargo install bat
-cargo install-update bat
-cargo install mprocs
-cargo install-update mprocs
-cargo install ripgrep
-cargo install-update ripgrep
-cargo install irust
-cargo install-update irust
 cargo install bacon
 cargo install-update bacon
+cargo install irust
+cargo install-update irust
 cargo install cargo-info
 cargo install-update cargo-info
-cargo install speedtest-rs
-cargo install-update speedtest-rs
-cargo install rtx-cli
-cargo install-update rtx-cli
-gargo install joshuto
-cargo install-update joshuto
-# Wezterm is going to be platform specific
-# cargo install wezterm
-# cargo install-update wezterm
+cargo install dioxus-cli
+cargo install-update dioxus-cli
 
