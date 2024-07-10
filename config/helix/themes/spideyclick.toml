@@ -42,7 +42,7 @@ inherits = "nord"
 
 # Virtual/invisible text
 "ui.virtual.indent-guide" = "text-muted"
-"ui.virtual.inlay-hint" = { fg = "text", modifiers = ["italic"] }
+"ui.virtual.inlay-hint" = { fg = "#606060", bg = "#282828" }
 "ui.virtual.whitespace" = { fg = "text-muted" }
 "ui.virtual.ruler" = { bg = "ruler" }
 "ui.virtual.wrap" = "text-muted"
