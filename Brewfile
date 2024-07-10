@@ -70,6 +70,9 @@ brew "jless"              # TUI JSON Browser
 brew "choose-rust"        # Human-friendly cut/awk alternative
 tap "knqyf263/pet"        # CLI Snippets
 brew "knqyf263/pet/pet"   # CLI Snippets
+# Disabled due to repository being locked?
+# tap "xkumiyu/homebrew-case-style-changer"
+# brew "case-style-changer" # Quick case changing
 
 # TODO: Move IDE extras to separate brew files
 
