@@ -6,6 +6,6 @@ alias cb='~/isomorphic_copy/bin/c'
 alias p='~/isomorphic_copy/bin/p'
 alias td='todo.sh'
 alias dps="docker ps -a --format json | jq -r '.Names, .RunningFor, .Status' | paste - - - | column -ts $'\t' | sort"
-alias ai='tgpt -m'
+alias ai='clear;tgpt -m'
 alias web='sr google'
 # alias web='sr google -browser=w3m'
