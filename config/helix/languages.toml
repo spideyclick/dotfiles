@@ -66,6 +66,22 @@ inlayHints.discriminantHints.enable = "fieldless"
 inlayHints.lifetimeElisionHints.enable = "skip_trivial"
 inlayHints.typeHints.hideClosureInitialization = false
 
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+args = [
+  "--fix",
+  "--",
+  "-W",
+  "clippy::pedantic",
+  "-W",
+  "clippy::nusery",
+  "-W",
+  "clippy::expect_used",
+  "-W",
+  "clippy::unwrap_used",
+]
+
+
 # Python
 
 # Formatting handled by RUFF now
