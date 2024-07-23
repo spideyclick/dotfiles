@@ -1,26 +1,26 @@
-[language-server.ruff-lsp]
-command = "ruff-lsp"
+# [language-server.ruff-lsp]
+# command = "ruff-lsp"
 
-[language-server.ruff-lsp.config]
-documentFormatting = true
-settings.run = "onSave"
+# [language-server.ruff-lsp.config]
+# documentFormatting = true
+# settings.run = "onSave"
 
-[language-server.pyright]
-command = "pyright-langserver"
-args = [ "--stdio" ]
-config.reportMissingtypeStubs = false
+# [language-server.pyright]
+# command = "pyright-langserver"
+# args = [ "--stdio" ]
+# config.reportMissingtypeStubs = false
 
-[language-server.cspell]
-command = "cspell-lsp"
-args = ["--stdio"]
+# [language-server.cspell]
+# command = "cspell-lsp"
+# args = ["--stdio"]
 
-[[language]]
-name = "python"
-auto-format = true
-file-types = ["py"]
-language-servers = [
-  { name = "ruff-lsp", only-features = [ "format", "diagnostics" ] },
-  { name = "pyright", except-features = [ "format" ] },
-  { name = "cspell"},
-]
+# [[language]]
+# name = "python"
+# auto-format = true
+# file-types = ["py"]
+# language-servers = [
+#   { name = "ruff-lsp", only-features = [ "format", "diagnostics" ] },
+#   { name = "pyright", except-features = [ "format" ] },
+#   { name = "cspell"},
+# ]
 

@@ -5,6 +5,7 @@ set -e
 if [ ! -f pyproject.toml ]; then echo "python project not found in $(pwd)"; exit 1; fi
 if [[ -f .zide/.setup_complete ]]; then exit 0; fi
 
+### VENV SETUP
 if ! command -v python &> /dev/null; then
   set +e  # venv errors out when detecting shell type
   python3 -m venv .venv
@@ -14,10 +15,23 @@ if ! command -v python &> /dev/null; then
   if [ -f .zide/.env ]; then source .zide/.env; fi
 fi
 
-python -m pip install ruff python-lsp-ruff pudb
-if [[ -f requirements.txt ]]; then python -m pip install -r requirements.txt; fi
-if [[ -d setup && -f setup/requirements.txt ]]; then python -m pip install -r setup/requirements.txt; fi
-if [[ -d .devcontainer && -f .devcontainer/dev-requirements.txt ]]; then python -m pip install -r .devcontainer/dev-requirements.txt; fi
+### LANGUAGE SERVERS/DEBUGGER
+python -m pip install basedpyright ruff python-lsp-ruff pudb
+if ! command -v cspell-lsp &> /dev/null; then
+  brew install npm
+  git clone https://github.com/vlabo/cspell-lsp.git ~/cspell-lsp
+  cd ~/cspell-lsp
+  set +e # NPM Weirdness
+  npm install
+  npm run build
+  set -e
+  npm link
+  cd -
+fi
 
+### PROJECT-SPECIFIC REQUIREMENTS
+fd -t f -H '.*requirements\.txt' | xargs -I {} python -m pip install -r {}
+
+### MARK SETUP COMPLETE
 touch .zide/.setup_complete
 
