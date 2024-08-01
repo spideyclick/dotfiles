@@ -12,6 +12,10 @@ export HISTIGNORE="clear:history:[bf]g:exit:date:* --help"
 export HISTSIZE=2000
 export HISTFILESIZE=16000
 
+# Set umask
+umask 027
+# 0 = all, 2 = RO, 7 = none
+
 # This saves every command to history file immediately
 # However PROMPT_COMMAND can be used for much more!
 export PROMPT_COMMAND='history -a'
