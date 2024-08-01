@@ -1,18 +1,23 @@
-
 [[Snippets]]
-  Description = "greppable docker logs"
+  Description = "Dump Python Object"
   Output = ""
   Tag = []
-  command = "docker logs -t --since 24h <container_name> 2>&1"
+  command = "from pathlib import Path; from json import dumps; Path(\"/tmp/tmp.json\").write_text(dumps(<variable_name>, indent=2));"
 
 [[Snippets]]
-  Description = "Show listening ports"
+  Description = "Show Listening Ports"
   Output = ""
   Tag = []
   command = "ss -tulpn"
 
 [[Snippets]]
-  Description = "Dump Python Object"
+  Description = "Greppable Docker Logs"
   Output = ""
-  Tag = []
-  command = '''from pathlib import Path; from json import dumps; Path("/tmp/tmp.json").write_text(dumps(<variable_name>, indent=2));'''
+  Tag = ["docker"]
+  command = "docker logs -t --since 24h <container_name> 2>&1"
+
+[[Snippets]]
+  Description = "Quick Edit Docker Container"
+  Output = ""
+  Tag = ["docker"]
+  command = "docker -c <env> exec -u root <container> bash -c 'apt update; apt install -y micro'; docker -c <env> exec -it <container> bash; docker -c <env> restart <container>; docker -c <env> logs -tf <container> 2>&1"
