@@ -15,6 +15,8 @@ theme = "spideyclick"
 # W = ["move_next_long_word_start", "move_prev_long_word_start", "move_next_long_word_end"]
 "'" = "select_register"
 "C-/" = "toggle_comments"
+"e" = ["move_next_word_end", "trim_selections"]
+"E" = ["move_next_long_word_end", "trim_selections"]
 
 # Rebind away from ALT as much as possible
 "D" = "delete_selection_noyank"
