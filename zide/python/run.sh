@@ -1,15 +1,19 @@
 #!/usr/bin/env bash
 
+set -e
+
 ############################################################
 # Directory + Environment Setup                            #
 ############################################################
-set -e
 if [ ! -f pyproject.toml ]; then echo "python project not found in $(pwd)"; exit 1; fi
 .zide/setup.sh
 WORKSPACE=.zide/workspace.yaml
 PROJECT_NAME=$(basename "$(pwd)")
 
-source .venv/bin/activate
+if [ -f .venv ]; then
+	source .venv/bin/activate
+fi
+
 source .env
 
 ############################################################

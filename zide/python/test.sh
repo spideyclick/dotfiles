@@ -10,7 +10,7 @@ if [ ! -f pyproject.toml ]; then echo "python project not found in $(pwd)"; exit
 WORKSPACE=.zide/workspace.yaml
 PROJECT_NAME=$(basename "$(pwd)")
 
-source .venv/bin/activate
+if [ -f .venv ]; then source .venv/bin/activate; fi
 if [ -f .env ]; then source .env; fi
 if [ -f .zide/.env ]; then source .zide/.env; fi
 

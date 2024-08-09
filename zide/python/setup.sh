@@ -6,7 +6,7 @@ if [ ! -f pyproject.toml ]; then echo "python project not found in $(pwd)"; exit
 if [[ -f .zide/.setup_complete ]]; then exit 0; fi
 
 ### VENV SETUP
-if ! command -v python &> /dev/null; then
+if [ ! -f .venv ]; then
   set +e  # venv errors out when detecting shell type
   python3 -m venv .venv
   set -e
