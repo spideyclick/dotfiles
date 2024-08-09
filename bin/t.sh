@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 if [ -p /dev/stdin ]; then
-	xargs -I {} date -d '{}' | tr -d '\n'
+	xargs -I {} date -d '{}'
 	exit 0
 fi
 
