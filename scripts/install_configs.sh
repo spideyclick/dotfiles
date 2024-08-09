@@ -2,10 +2,11 @@
 
 cd "$(dirname $0)/../config" || exit
 
-mkdir -p ~/.config
 user_home_dir=$(getent passwd "$(whoami)" | cut -d: -f6)
 config_dir="${user_home_dir}/.config"
 dotfiles_config_dir="${user_home_dir}/dotfiles/config"
+
+mkdir -p "$config_dir"
 
 # Symlinked Directories
 ln -s "${dotfiles_config_dir}/bat" "${config_dir}/bat"
