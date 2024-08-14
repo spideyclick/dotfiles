@@ -5,14 +5,16 @@ set -e
 if [ ! -f pyproject.toml ]; then echo "python project not found in $(pwd)"; exit 1; fi
 if [[ -f .zide/.setup_complete ]]; then exit 0; fi
 
+if [ -f .env ]; then source .env; fi
+if [ -f .zide/.env ]; then source .zide/.env; fi
+
 ### VENV SETUP
-if [ ! -f .venv ]; then
+if [ -z $PYTHONPATH ]; then echo 'Please set $PYTHONPATH variable in .env'; exit 1; fi
+if [ ! -d .venv ]; then
   set +e  # venv errors out when detecting shell type
-  python3 -m venv .venv
+  $PYTHONPATH -m venv .venv
   set -e
   source .venv/bin/activate
-  if [ -f .env ]; then source .env; fi
-  if [ -f .zide/.env ]; then source .zide/.env; fi
 fi
 
 ### LANGUAGE SERVERS/DEBUGGER
