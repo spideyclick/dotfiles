@@ -21,3 +21,15 @@
   Output = ""
   Tag = ["docker"]
   command = "docker -c <env> exec -u root <container> bash -c 'apt update; apt install -y micro'; docker -c <env> exec -it <container> bash; docker -c <env> restart <container>; docker -c <env> logs -tf <container> 2>&1"
+
+[[Snippets]]
+  Description = "psql to json"
+  Output = ""
+  Tag = []
+  command = "autossh -f <env>; psql \"service=<env> dbname=<db>\" -tA -c \"select to_json(r) from (<query>)r;\" | jq -s ."
+
+[[Snippets]]
+  Description = "Compare Schema"
+  Output = ""
+  Tag = []
+  command = "delta <(usql <db_1> -c '\\d+ <schema>.<table>') <(usql <db_2> -c '\\d+ <schema>.<table>')"
