@@ -8,7 +8,7 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 # HISTORY Configurations
 # ignoreboth refers to ignoring duplicates & commands prefixed with a space
 export HISTCONTROL=ignoreboth
-export HISTIGNORE="clear:history:[bf]g:exit:date:* --help"
+export HISTIGNORE="clear:history:[bf]g:exit:date"
 export HISTSIZE=2000
 export HISTFILESIZE=16000
 
