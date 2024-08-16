@@ -25,11 +25,11 @@
 [[Snippets]]
   Description = "psql to json"
   Output = ""
-  Tag = []
+  Tag = ["db"]
   command = "autossh -f <env>; psql \"service=<env> dbname=<db>\" -tA -c \"select to_json(r) from (<query>)r;\" | jq -s ."
 
 [[Snippets]]
   Description = "Compare Schema"
   Output = ""
-  Tag = []
+  Tag = ["db"]
   command = "delta <(usql <db_1> -c '\\d+ <schema>.<table>') <(usql <db_2> -c '\\d+ <schema>.<table>')"
