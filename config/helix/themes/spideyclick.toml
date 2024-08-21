@@ -26,7 +26,7 @@ inherits = "nord"
 "ui.linenr.selected" = { modifiers = ["bold"] }
 
 # Cursor
-"ui.cursor" = { fg = "nord4", modifiers = [ "reversed" ] }
+"ui.cursor" = { fg = "white", modifiers = [ "reversed" ] }
 "ui.cursorcolumn.primary" = { bg = "nord1" }
 "ui.cursorline.primary" = { bg = "nord1" }
 "ui.selection" = { bg = "nord2" }
@@ -42,7 +42,7 @@ inherits = "nord"
 
 # Virtual/invisible text
 "ui.virtual.indent-guide" = "text-muted"
-"ui.virtual.inlay-hint" = { fg = "#606060", bg = "#282828" }
+"ui.virtual.inlay-hint" = { fg = "white", bg = "bg0" }
 "ui.virtual.whitespace" = { fg = "text-muted" }
 "ui.virtual.ruler" = { bg = "ruler" }
 "ui.virtual.wrap" = "text-muted"
@@ -149,11 +149,35 @@ inherits = "nord"
 "markup.raw" = "green"
 
 [palette]
+# These are the base16 terminal colors
+# They *can* be inherited from terminal config if desired
+# by commenting this section out
+
+# default = "default"
+black = "#181819"
+# red = "#fc5d7c"
+# green = "#9ed072"
+# yellow = "#e7c664"
+# blue = "#76cce0"
+blue = "#96dcf0"
+# magenta = "???"
+cyan = "#8dd0b6" # added for compatibility with `edge` scheme
+# gray = "#7f8490"
+gray = "#808080"
+# light-red = "???"
+# light-green = "???"
+# light-yellow = "???"
+# light-blue = "???"
+# light-magenta = "???"
+# light-cyan = "???"
+# light-gray = "???"
+# white = "???"
+
+# These are other custom colors
 text = "#d0dcdc"
 text-muted = "#6060a0"
 highlight = "#ffffff"
 background = "#0f111a"
-black = "#181819"
 menu_bg = "#0f111a"
 menu_fg = "#ffffff"
 ruler = "#404060"
@@ -171,14 +195,8 @@ bg_blue = "#85d3f2"
 diff_blue = "#354157"
 diff_yellow = "#4e432f"
 fg = "#e2e2e3"
-red = "#fc5d7c"
 orange = "#f39660"
-yellow = "#e7c664"
-green = "#9ed072"
-cyan = "#8dd0b6" # added for compatibility with `edge` scheme
-blue = "#76cce0"
 purple = "#b39df3"
-gray = "#7f8490"
 
 # # Material Theme <https://material-theme.com/> for Helix Editor
 # # Syntax Highlighting

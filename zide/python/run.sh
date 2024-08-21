@@ -14,7 +14,9 @@ if [ -f .venv ]; then
 	source .venv/bin/activate
 fi
 
-source .env
+if [ -f .env ]; then
+	source .env
+fi
 
 ############################################################
 # SSH Tunnels                                              #
