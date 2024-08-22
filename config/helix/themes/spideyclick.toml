@@ -3,8 +3,8 @@ inherits = "nord"
 ## EDITOR UI COLORS
 
 # "ui.background" = { bg = "background", fg = "text" }
-"ui.background" = { fg = "text" }
-"ui.text" = "text"
+"ui.background" = { fg = "white" }
+"ui.text" = "white"
 "ui.window" = "ruler"
 
 # Debug
@@ -13,8 +13,8 @@ inherits = "nord"
 
 # Popus and menus
 "ui.menu" = {}
-"ui.menu.scroll" = { fg = "background", bg = "text" }
-"ui.menu.selected" = { fg = "background", bg = "text" }
+"ui.menu.scroll" = { fg = "background", bg = "white" }
+"ui.menu.selected" = { fg = "background", bg = "white" }
 "ui.popup" = {}
 "ui.popup.info" = {}
 "ui.help" = {}
@@ -29,15 +29,15 @@ inherits = "nord"
 "ui.cursor" = { fg = "white", modifiers = [ "reversed" ] }
 "ui.cursorcolumn.primary" = { bg = "nord1" }
 "ui.cursorline.primary" = { bg = "nord1" }
-"ui.selection" = { bg = "nord2" }
+"ui.selection" = { bg = "nord1" }
 "ui.highlight" = { fg = "nord8", bg = "nord2" }
 
 # Statusline
 "ui.statusline" = {}
 "ui.statusline.inactive" = { fg = "text-muted" }
-"ui.statusline.insert" = { fg = "text" }
+"ui.statusline.insert" = { fg = "text", bg = "red" }
 "ui.statusline.normal" = { fg = "text" }
-"ui.statusline.select" = { fg = "text" }
+"ui.statusline.select" = { fg = "text", bg = "green" }
 "ui.statusline.separator" = "ruler"
 
 # Virtual/invisible text
@@ -126,8 +126,8 @@ inherits = "nord"
 
 # Variables
 "variable" = "red"
-"variable.builtin" = { fg = "red", modifiers = ["italic"] }
-"variable.parameter" = { fg = "red", modifiers = ["bold"] }
+"variable.builtin" = { fg = "purple", modifiers = ["italic"] }
+"variable.parameter" = { fg = "red", modifiers = ["italic"] }
 "variable.other.member" = "orange"
 "attribute" = "orange"
 
@@ -159,9 +159,9 @@ black = "#181819"
 # green = "#9ed072"
 # yellow = "#e7c664"
 # blue = "#76cce0"
-blue = "#96dcf0"
+# blue = "#96dcf0"
 # magenta = "???"
-cyan = "#8dd0b6" # added for compatibility with `edge` scheme
+# cyan = "#8dd0b6" # added for compatibility with `edge` scheme
 # gray = "#7f8490"
 gray = "#808080"
 # light-red = "???"
@@ -196,7 +196,7 @@ diff_blue = "#354157"
 diff_yellow = "#4e432f"
 fg = "#e2e2e3"
 orange = "#f39660"
-purple = "#b39df3"
+purple = "#8D82FF"
 
 # # Material Theme <https://material-theme.com/> for Helix Editor
 # # Syntax Highlighting
