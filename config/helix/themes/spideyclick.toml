@@ -29,7 +29,7 @@ inherits = "nord"
 "ui.cursor" = { fg = "white", modifiers = [ "reversed" ] }
 "ui.cursorcolumn.primary" = { bg = "nord1" }
 "ui.cursorline.primary" = { bg = "nord1" }
-"ui.selection" = { bg = "nord1" }
+"ui.selection" = { bg = "ruler" }
 "ui.highlight" = { fg = "nord8", bg = "nord2" }
 
 # Statusline
@@ -156,6 +156,7 @@ inherits = "nord"
 # default = "default"
 black = "#181819"
 # red = "#fc5d7c"
+# red = "#fc5d7c"
 # green = "#9ed072"
 # yellow = "#e7c664"
 # blue = "#76cce0"
@@ -196,7 +197,7 @@ diff_blue = "#354157"
 diff_yellow = "#4e432f"
 fg = "#e2e2e3"
 orange = "#f39660"
-purple = "#8D82FF"
+purple = "#b39df3"
 
 # # Material Theme <https://material-theme.com/> for Helix Editor
 # # Syntax Highlighting
