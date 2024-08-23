@@ -23,7 +23,7 @@ inherits = "nord"
 # Gutter
 "ui.gutter" = { bg = "none" }
 "ui.linenr" = { bg = "none" }
-"ui.linenr.selected" = { modifiers = ["bold"] }
+"ui.linenr.selected" = { fg = "red", modifiers = ["bold"] }
 
 # Cursor
 "ui.cursor" = { fg = "white", modifiers = [ "reversed" ] }

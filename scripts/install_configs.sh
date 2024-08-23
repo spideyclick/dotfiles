@@ -27,6 +27,15 @@ mkdir -p ~/.config/pudb
 cp "${dotfiles_config_dir}/pudb/custom.theme" "${config_dir}/pudb/custom.theme"
 cp "${dotfiles_config_dir}/pudb/pudb.cfg" "${config_dir}/pudb/pudb.cfg"
 
+# WSL Configurations
+if [ -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
+	# Neither can Windows
+	cp "${dotfiles_config_dir}/windows_terminal/settings.json" "/mnt/c/Users/${USER}/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json"
+	cp "${dotfiles_config_dir}/windows_terminal/settings.json" "/mnt/c/Users/${USER}/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json"
+fi
+
+
 # Managed Blocks
 ../scripts/push_managed_config_block.sh .bash_profile "${user_home_dir}/.bash_profile"
 ../scripts/push_managed_config_block.sh .bashrc "${user_home_dir}/.bashrc"
+../scripts/push_managed_config_block.sh .gitconfig "${user_home_dir}/.gitconfig"
