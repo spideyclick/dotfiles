@@ -134,21 +134,22 @@ inherits = "nord"
 "attribute" = "orange"
 
 # Markup
-"markup.heading.marker" = "gray"
-"markup.heading.1" = { fg = "red", modifiers = ["bold"] }
-"markup.heading.2" = { fg = "orange", modifiers = ["bold"] }
-"markup.heading.3" = { fg = "yellow", modifiers = ["bold"] }
-"markup.heading.4" = { fg = "green", modifiers = ["bold"] }
-"markup.heading.5" = { fg = "blue", modifiers = ["bold"] }
-"markup.heading.6" = { fg = "fg", modifiers = ["bold"] }
+# "markup.heading" = { fg = "text", bg = "text", modifiers = ["dim", "bold"] }
+# "markup.heading.marker" = { fg = "text", bg = "text", modifiers = ["dim", "bold"] }
+"markup.heading.1" = { fg = "background", bg = "red", modifiers = ["bold"] }
+"markup.heading.2" = { fg = "background", bg = "green", modifiers = ["bold"] }
+"markup.heading.3" = { fg = "background", bg = "cyan", modifiers = ["bold"] }
+"markup.heading.4" = { fg = "background", bg = "yellow", modifiers = ["bold"] }
+"markup.heading.5" = { fg = "background", bg = "purple", modifiers = ["bold"] }
+"markup.heading.6" = { fg = "background", bg = "fg", modifiers = ["bold"] }
 "markup.list" = "red"
 "markup.bold" = { modifiers = ["bold"] }
 "markup.italic" = { modifiers = ["italic"] }
 "markup.strikethrough" = { modifiers = ["crossed_out"] }
-"markup.link.url" = { fg = "blue", modifiers = ["underlined"] }
-"markup.link.text" = "purple"
-"markup.quote" = "gray"
-"markup.raw" = "green"
+"markup.link.url" = { fg = "cyan", modifiers = ["underlined"] }
+"markup.link.text" = "red"
+"markup.quote" = { fg = "purple", modifiers = ["italic"] }
+"markup.raw" = "yellow"
 
 [palette]
 # These are the base16 terminal colors
@@ -197,7 +198,7 @@ bg_blue = "#85d3f2"
 diff_blue = "#354157"
 diff_yellow = "#4e432f"
 fg = "#e2e2e3"
-orange = "#f39660"
+orange = "#FF3C00"
 purple = "#b39df3"
 
 # # Material Theme <https://material-theme.com/> for Helix Editor
