@@ -80,7 +80,7 @@ style = "fg:cyan"
 # format = "[ 💻 $name]($style)"
 # format = "[$symbol $name ]($style)"
 format = "[$symbol]($style) "
-style = "fg:#ff3c00"
+style = "fg:#ff7400"
 disabled = false
 
 [os.symbols]
