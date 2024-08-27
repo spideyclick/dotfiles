@@ -15,8 +15,8 @@ $directory\
 $git_branch\
 $container\
 $hostname\
-$username\
 $sudo\
+$username\
 $localip\
 $docker_context\
 $nodejs\
@@ -62,7 +62,7 @@ format = '$symbol'
 disabled = false
 # format="[🕒 $time]($style)"
 format="[$time]($style)"
-time_format = "%a %Y-%m-%d %T%z" #change to %R to only have HH:MM
+time_format = "%T%z" #change to %R to only have HH:MM
 style = "italic #808080"
 
 [username]
@@ -255,7 +255,7 @@ threshold = 2
 
 [sudo]
 disabled = false
-format = '[*](bold blue)'
+format = '[*](blue)'
 
 [container]
 format = '[⬢](cyan)'
