@@ -134,14 +134,14 @@ inherits = "nord"
 "attribute" = "orange"
 
 # Markup
-# "markup.heading" = { fg = "text", bg = "text", modifiers = ["dim", "bold"] }
+"markup.heading" = { modifiers = ["bold"] }
 # "markup.heading.marker" = { fg = "text", bg = "text", modifiers = ["dim", "bold"] }
-"markup.heading.1" = { fg = "background", bg = "red", modifiers = ["bold"] }
-"markup.heading.2" = { fg = "background", bg = "green", modifiers = ["bold"] }
-"markup.heading.3" = { fg = "background", bg = "cyan", modifiers = ["bold"] }
-"markup.heading.4" = { fg = "background", bg = "yellow", modifiers = ["bold"] }
-"markup.heading.5" = { fg = "background", bg = "purple", modifiers = ["bold"] }
-"markup.heading.6" = { fg = "background", bg = "fg", modifiers = ["bold"] }
+"markup.heading.1" = { fg = "red" }
+"markup.heading.2" = { fg = "green" }
+"markup.heading.3" = { fg = "cyan" }
+"markup.heading.4" = { fg = "yellow" }
+"markup.heading.5" = { fg = "purple" }
+"markup.heading.6" = { fg = "fg" }
 "markup.list" = "red"
 "markup.bold" = { modifiers = ["bold"] }
 "markup.italic" = { modifiers = ["italic"] }

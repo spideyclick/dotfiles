@@ -13,14 +13,17 @@ $status\
 $os\
 $directory\
 $git_branch\
+$container\
 $hostname\
 $username\
+$sudo\
 $localip\
 $docker_context\
 $nodejs\
 $package\
 $python\
 $rust\
+$shlvl\
 $fill\
 $cmd_duration\
 $time\
@@ -60,7 +63,7 @@ disabled = false
 # format="[🕒 $time]($style)"
 format="[$time]($style)"
 time_format = "%a %Y-%m-%d %T%z" #change to %R to only have HH:MM
-style = "fg:#808080"
+style = "italic #808080"
 
 [username]
 style_user = "fg:blue"
@@ -243,5 +246,16 @@ symbol = ' '
 disabled = false
 min_time = 0
 show_milliseconds = true
-format = '[$duration ](#808080)'
+format = '[$duration ](bold #808080)'
 
+[shlvl]
+disabled = false
+format = '[nested: $shlvl](italic)'
+threshold = 2
+
+[sudo]
+disabled = false
+format = '[*](bold blue)'
+
+[container]
+format = '[⬢](cyan)'
