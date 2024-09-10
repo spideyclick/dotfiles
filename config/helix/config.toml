@@ -17,6 +17,8 @@ theme = "spideyclick"
 "C-/" = "toggle_comments"
 "e" = ["move_next_word_end", "trim_selections"]
 "E" = ["move_next_long_word_end", "trim_selections"]
+"b" = ["move_prev_word_start", "trim_selections"]
+"B" = ["move_prev_long_word_start", "trim_selections"]
 
 # Rebind away from ALT as much as possible
 "D" = "delete_selection_noyank"
@@ -88,6 +90,9 @@ C-A-k = ["normal_mode", "extend_to_line_bounds", "yank", "open_above", "replace_
 "A-S-right" = ["extend_next_word_start"]
 "A-Q" = ["record_macro"]
 "A-q" = ["replay_macro"]
+
+"C-t" = [":insert-output date +'%_I:%_M' | awk '{$1=$1};1'", "append_mode"]
+"C-d" = [":insert-output date -I | awk '{$1=$1};1'", "append_mode"]
 
 [keys.select]
 X = "extend_line_above"
