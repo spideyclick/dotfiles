@@ -111,16 +111,18 @@ if [[ -v BASIC && -z "$TARGET_TEST" ]]; then
 elif [[ -z "$TARGET_TEST" ]]; then
 	echo "Running all tests with PUDB"
 	pytest \
+		-rs \
 		--color=yes \
 		--pdbcls pudb.debugger:Debugger \
 		--pdb \
 		;
 elif [[ -v BASIC ]]; then
 	echo "Running test $TARGET_TEST"
-	pytest --color=yes -k "$TARGET_TEST"
+	pytest -rs --color=yes -k "$TARGET_TEST"
 else
 	echo "Running test $TARGET_TEST with PUDB"
 	pytest \
+		-rs \
 		--color=yes \
 		--pdbcls pudb.debugger:Debugger \
 		-k "$TARGET_TEST" \
