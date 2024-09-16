@@ -105,9 +105,13 @@ X = "extend_line_above"
 true-color = true
 line-number = "relative"
 mouse = false
-bufferline = "multiple"
+bufferline = "never"
 auto-save = true
 shell = ["bash", "-c"]
+popup-border = "all"
+undercurl = true
+cursorline = false
+cursorcolumn = false
 
 [editor.whitespace.render]
 space = "all"
