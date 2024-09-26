@@ -203,6 +203,10 @@ keybinds clear-defaults=true {
     shared_except "scroll" "locked" {
         bind "Alt ?" { SwitchToMode "Scroll"; }
     }
+    shared_except "scroll" "locked" {
+        bind "Alt u" { SwitchToMode "Scroll"; }
+        bind "Alt U" { SwitchToMode "Scroll"; }
+    }
     shared_except "session" "locked" {
         bind "Alt F" { SwitchToMode "Session"; }
     }
