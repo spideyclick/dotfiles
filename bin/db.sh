@@ -24,31 +24,42 @@ Help()
    # Display Help
    echo "Help not yet written"
    exit 1
-   echo "bak.sh: quickly create & restore single-file backups"
-   echo
-   echo "Syntax: bak [-r]"
-   echo "options:"
-   echo "r     Restore a file backup"
-   echo "h     Print this Help."
-   echo
+   # echo "bak.sh: quickly create & restore single-file backups"
+   # echo
+   # echo "Syntax: bak [-r]"
+   # echo "options:"
+   # echo "r     Restore a file backup"
+   # echo "h     Print this Help."
+   # echo
 }
 
 ############################################################
 # Parse Arguments                                          #
 ############################################################
-# while getopts "r" opt; do
-#     case $opt in
-#         r) # Restore
-#            RESTORE=true;;
-#         \?) # Invalid option
-#            Help
-#            exit 1;;
-#     esac
-# done
-# shift $((OPTIND -1))
-# if [ "$#" -ne 1 ]; then
-#     echo "Usage: $0 <file_path>"
-#     exit 1
-# fi
+YAML_OUT=false
+while getopts "ly" opt; do
+    case $opt in
+        l) # List
+           yq -r ".connections | keys[]" ~/.config/usql/config.yaml | sort
+           exit 0;;
+        y) # Yaml
+           YAML_OUT=true;;
+        \?) # Invalid option
+           Help
+           exit 1;;
+    esac
+done
+shift $((OPTIND -1))
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <file_path>"
+    exit 1
+fi
 
-autossh -f $1; psql "service=$1 dbname=$2" -tA -c "select to_json(r) from ($3)r;" | jq -s .
+ssh_tunnel=$(yq ".connections.$1.tunnel" ~/.config/usql/config.yaml)
+if [ "$ssh_tunnel" != 'null' ]; then
+   ssh -fNT "$ssh_tunnel"
+fi
+command="$2"
+if [ "$YAML_OUT" == "true" ]; then command="select to_json(r) from ($command)r;"; fi
+output=$(usql "$1" -c "$command")
+if [ "$YAML_OUT" == "true" ]; then echo "$output" | yq -pj -oy -P; else echo "$output"; fi
