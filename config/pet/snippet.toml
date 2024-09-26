@@ -33,3 +33,9 @@
   Output = ""
   Tag = ["db"]
   command = "delta <(usql <db_1> -c '\\d+ <schema>.<table>') <(usql <db_2> -c '\\d+ <schema>.<table>')"
+
+[[Snippets]]
+  Description = "Get Table Schema"
+  Output = ""
+  Tag = ["db"]
+  command = "db <db> \"select column_name, data_type from information_schema.columns where table_name='<table>';\""
