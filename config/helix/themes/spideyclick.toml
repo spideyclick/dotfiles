@@ -16,7 +16,7 @@
 "ui.popup" = { bg = "background" }
 "ui.popup.info" = { bg = "background" }
 "ui.help" = { bg = "background" }
-"ui.text.focus" = { fg = "text" }
+"ui.text.focus" = { fg = "highlight" }
 
 # Gutter
 "ui.gutter" = { bg = "none" }
@@ -29,14 +29,14 @@
 "ui.cursorcolumn.primary" = { bg = "black" }
 "ui.cursorline.primary" = { bg = "black" }
 "ui.selection" = { fg = "white", bg = "ruler" }
-"ui.highlight" = { fg = "background", bg = "white" }
+"ui.highlight" = { modifiers = [ "reversed" ] }
 
 # Statusline
 "ui.statusline" = {}
 "ui.statusline.inactive" = { fg = "text", modifiers = ["dim"] }
-"ui.statusline.insert" = { fg = "text", bg = "red" }
-"ui.statusline.normal" = { fg = "text" }
-"ui.statusline.select" = { fg = "text", bg = "green" }
+"ui.statusline.insert" = { fg = "white", bg = "red" }
+"ui.statusline.normal" = { fg = "white" }
+"ui.statusline.select" = { fg = "white", bg = "green" }
 "ui.statusline.separator" = "ruler"
 
 # Virtual/invisible text
