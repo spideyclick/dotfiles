@@ -146,8 +146,8 @@ format = " [($localipv4) ]($style)"
 style = "fg:purple"
 
 [character]
-success_symbol = "\n[▶](white)"
-error_symbol = "\n[▶](red)"
+success_symbol = "\n▶"
+error_symbol = "\n[▶](fg:red)"
 # success_symbol = "\n[➤](white)"
 # error_symbol = "\n[➤](red)"
 # success_symbol = "\n[❱](white)"
