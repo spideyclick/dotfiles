@@ -66,6 +66,7 @@ brew "lsd"                # ls replacement
 brew "tldr"               # Quick help docs
 brew "tailspin"           # Log Colorizer (tspin)
 brew "jless"              # TUI JSON Browser
+brew "hwatch"             # Modern 'watch' alternative
 brew "choose-rust"        # Human-friendly cut/awk alternative
 tap "knqyf263/pet"        # CLI Snippets
 brew "knqyf263/pet/pet"   # CLI Snippets
