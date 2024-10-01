@@ -1,6 +1,6 @@
 alias l='lsd -lAgF --tree --depth 2 --permission rwx --date +%Y-%m-%d --group-dirs last --truncate-owner-after 3 --color always'
 alias lg='lazygit'
-alias x='joshuto'
+alias x='ranger'
 alias c='z'
 alias cb='~/isomorphic_copy/bin/c'
 alias p='~/isomorphic_copy/bin/p'

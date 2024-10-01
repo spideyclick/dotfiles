@@ -43,10 +43,7 @@ brew "starship"
 brew "zoxide"
 
 # File Manager
-brew "joshuto"
-# Not quite sold on projectable yet
-# tap "dzfrias/formulae"
-# brew "dzfrias/formulae/projectable"
+brew "ranger"
 
 # IDE
 brew "helix"
