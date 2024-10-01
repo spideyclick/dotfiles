@@ -1,8 +1,8 @@
 ## EDITOR UI COLORS
 
-# "ui.background" = { bg = "background", fg = "text" }
-"ui.background" = { fg = "white" }
-"ui.text" = "white"
+"ui.background" = { }
+"ui" = { }
+# "ui.text" = "white"
 "ui.window" = "ruler"
 
 # Debug
@@ -11,7 +11,7 @@
 
 # Popus and menus
 "ui.menu" = { bg = "background" }
-"ui.menu.scroll" = { fg = "background", bg = "white" }
+"ui.menu.scroll" = { modifiers = ["reversed"] }
 "ui.menu.selected" = { modifiers = ["reversed"] }
 "ui.popup" = { bg = "background" }
 "ui.popup.info" = { bg = "background" }
@@ -33,23 +33,23 @@
 
 # Statusline
 "ui.statusline" = {}
-"ui.statusline.inactive" = { fg = "text", modifiers = ["dim"] }
+"ui.statusline.inactive" = { fg = "white", modifiers = ["dim"] }
 "ui.statusline.insert" = { fg = "white", bg = "red" }
 "ui.statusline.normal" = { fg = "white" }
 "ui.statusline.select" = { fg = "white", bg = "green" }
 "ui.statusline.separator" = "ruler"
 
 # Virtual/invisible text
-"ui.virtual.indent-guide" = { fg = "text", modifiers = ["dim"] }
-"ui.virtual.inlay-hint" = { fg = "text", modifiers = ["italic", "dim"] }
-"ui.virtual.whitespace" = { fg = "text", modifiers = ["dim"] }
+"ui.virtual.indent-guide" = { fg = "white", modifiers = ["dim"] }
+"ui.virtual.inlay-hint" = { fg = "white", modifiers = ["italic", "dim"] }
+"ui.virtual.whitespace" = { fg = "white", modifiers = ["dim"] }
 "ui.virtual.ruler" = { bg = "ruler" }
-"ui.virtual.wrap" = { fg = "text", modifiers = ["dim"] }
+"ui.virtual.wrap" = { fg = "white", modifiers = ["dim"] }
 "ui.virtual.jump-label" = { fg = "black", bg = "purple", modifiers = ["italic", "bold"] }
 
 # Bufferline
 "ui.bufferline" = { }
-"ui.bufferline.active" = { fg = "text", modifiers = ["bold", "reversed"] }
+"ui.bufferline.active" = { fg = "white", modifiers = ["bold", "reversed"] }
 
 ## SYNTAX HIGHLIGHTING
 "comment" = { fg = "gray", modifiers = ["italic"] }
@@ -57,7 +57,7 @@
 "constructor" = "purple"
 "namespace" = "blue"
 "module" = "blue"
-"operator" = "white"
+"operator" = "highlight"
 "special" = "orange"
 "tag" = "orange"
 
@@ -114,10 +114,10 @@
 "keyword.storage.type" = { fg = "red", modifiers = ["italic"] }
 
 # Punctuation
-"punctuation" = "text-highlight"
-"punctuation.bracket" = "text-highlight"
-"punctuation.delimiter" = "text-highlight"
-"punctuation.special" = "text-highlight"
+"punctuation" = "white"
+"punctuation.bracket" = "white"
+"punctuation.delimiter" = "white"
+"punctuation.special" = "white"
 
 # Strings
 "string" = "yellow"
@@ -138,6 +138,8 @@
 "attribute" = "orange"
 
 # Markup
+"markup.document" = { "fg" = "white" }
+"document" = { "fg" = "white" }
 "markup.heading" = { modifiers = ["bold"] }
 # "markup.heading.marker" = { fg = "text", bg = "text", modifiers = ["dim", "bold"] }
 "markup.heading.1" = { fg = "red" }
@@ -180,9 +182,8 @@ gray = "#808080"
 # white = "???"
 
 # These are other custom colors
-text = "#d0dcdc"
-highlight = "#ffffff"
 background = "#0f111a"
+highlight = "#ffffff"
 ruler = "#404060"
 orange = "#FF7400"
 purple = "#b39df3"
