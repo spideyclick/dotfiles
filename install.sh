@@ -25,7 +25,8 @@ echo "Current OS appears to be: ${OS_ID}"
 if [[ \
 	${OS_ID} == "debian" || \
 	${OS_ID} == "ubuntu" || \
-	${OS_ID} == "linuxmint" \
+	${OS_ID} == "linuxmint" || \
+	${OS_ID}  == "\"endeavouros\""
 ]]; then
 	echo "This OS should be able to work with the homebrew strategy"
 
