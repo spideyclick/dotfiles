@@ -1,3 +1,4 @@
+echo "Running .bashrc"
 # Path Additions
 PATH=${PATH:+${PATH}:}~/.local/bin
 

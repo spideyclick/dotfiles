@@ -1,3 +1,5 @@
+echo "Running .bash_profile"
+
 # Always source .bashrc
 source "$HOME/.bashrc"
 

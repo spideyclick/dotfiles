@@ -332,7 +332,7 @@
   "copyFormatting": "none",
   "copyOnSelect": false,
   "defaultProfile": "{89424c15-1c81-4d5d-945c-dd02ef841d18}",
-  "launchMode": "fullscreen",
+  "launchMode": "maximized",
   "newTabMenu": [
     {
       "type": "remainingProfiles"
@@ -365,7 +365,7 @@
     },
     "list": [
       {
-        "commandline": "C:\\WINDOWS\\system32\\wsl.exe",
+        "commandline": "C:\\WINDOWS\\system32\\wsl.exe bash",
         "guid": "{89424c15-1c81-4d5d-945c-dd02ef841d18}",
         "hidden": false,
         "name": "WSL",
