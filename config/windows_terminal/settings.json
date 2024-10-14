@@ -365,7 +365,7 @@
     },
     "list": [
       {
-        "commandline": "C:\\WINDOWS\\system32\\wsl.exe bash",
+        "commandline": "C:\\WINDOWS\\system32\\wsl.exe",
         "guid": "{89424c15-1c81-4d5d-945c-dd02ef841d18}",
         "hidden": false,
         "name": "WSL",
