@@ -342,7 +342,7 @@
     "defaults": {
       "adjustIndistinguishableColors": "never",
       "antialiasingMode": "cleartype",
-      "backgroundImage": "\\\\wsl.localhost\\Ubuntu\\home\\zhubbell\\wallpapers\\pBn5PVLGBj.png",
+      "backgroundImage": "\\\\wsl.localhost\\Debian\\home\\zhubbell\\wallpapers\\windows_terminal_background.png",
       "backgroundImageAlignment": "center",
       "backgroundImageOpacity": 0.15,
       "backgroundImageStretchMode": "uniformToFill",
@@ -352,7 +352,7 @@
       "experimental.retroTerminalEffect": false,
       "font": {
         "cellHeight": "1.2",
-        "face": "JetBrainsMono Nerd Font",
+        "face": "JetBrainsMono Nerd Font Propo",
         "size": 13,
         "weight": "normal"
       },
