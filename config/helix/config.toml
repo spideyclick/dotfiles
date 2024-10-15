@@ -102,16 +102,21 @@ X = "extend_line_above"
 "C-_" = "merge_consecutive_selections"
 
 [editor]
-true-color = true
+# gutters = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
+auto-save = true
+bufferline = "never"
+completion-replace = true
+cursorcolumn = false
+cursorline = false
+gutters = ["diagnostics", "diff"]
+jump-label-alphabet = "fdsajkl;ghweruiopcvm,tybnqxz"
 line-number = "relative"
 mouse = false
-bufferline = "never"
-auto-save = true
-shell = ["bash", "-c"]
 popup-border = "all"
+preview-completion-insert = false
+shell = ["bash", "-c"]
+true-color = true
 undercurl = true
-cursorline = false
-cursorcolumn = false
 
 [editor.whitespace.render]
 space = "all"
@@ -145,4 +150,7 @@ display-inlay-hints = true
 [editor.statusline]
 center = ["version-control"]
 right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type", "position-percentage"]
+
+[editor.soft-wrap]
+wrap-at-text-width = false
 
