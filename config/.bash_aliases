@@ -9,4 +9,6 @@ alias dps="docker ps -a --format json | jq -r '.Names, .RunningFor, .Status' | p
 alias ai='clear;tgpt -m'
 alias web='sr google'
 alias diff='delta'
+alias scp='scp -O'
+alias sftp="with-readline sftp"
 # alias web='sr google -browser=w3m'
