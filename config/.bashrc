@@ -13,6 +13,9 @@ export HISTIGNORE="clear:history:[bf]g:exit:date"
 export HISTSIZE=2000
 export HISTFILESIZE=16000
 
+# GPG TTY for Lazygit
+export GPG_TTY=$(tty)
+
 # Set umask
 umask 027
 # 0 = all, 2 = RO, 7 = none
