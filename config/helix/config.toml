@@ -72,6 +72,7 @@ C-A-k = ["normal_mode", "extend_to_line_bounds", "yank", "open_above", "replace_
 "ret" = ["normal_mode", "extend_to_line_bounds", "yank", "open_below", "replace_with_yanked", ":pipe ~/dotfiles/scripts/line_base.rs", "collapse_selection", "insert_mode"]
 "C-A-t" = [":insert-output bash t"]
 "C-A-d" = [":insert-output bash -c 'date --iso' | tr -d '\n'"]
+C-o = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/scripts/yazi-picker.sh open"
 
 [keys.insert]
 "A-x" = "normal_mode"
