@@ -43,7 +43,7 @@ brew "starship"
 brew "zoxide"
 
 # File Manager
-brew "ranger"
+brew "yazi"
 
 # IDE
 brew "helix"
