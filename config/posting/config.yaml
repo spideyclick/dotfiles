@@ -1,0 +1,5 @@
+theme: hacker
+layout: vertical
+pager_json: jless
+collection_browser:
+  show_on_startup: false

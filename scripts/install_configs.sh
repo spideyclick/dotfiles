@@ -13,6 +13,7 @@ if [ ! -e "${config_dir}/bat" ]; then ln -s "${dotfiles_config_dir}/bat" "${conf
 if [ ! -e "${config_dir}/helix" ]; then ln -s "${dotfiles_config_dir}/helix" "${config_dir}/helix"; fi
 if [ ! -e "${config_dir}/joshuto" ]; then ln -s "${dotfiles_config_dir}/joshuto" "${config_dir}/joshuto"; fi
 if [ ! -e "${config_dir}/pet" ]; then ln -s "${dotfiles_config_dir}/pet" "${config_dir}/pet"; fi
+if [ ! -e "${config_dir}/posting" ]; then ln -s "${dotfiles_config_dir}/posting" "${config_dir}/posting"; fi
 if [ ! -e "${config_dir}/ranger" ]; then ln -s "${dotfiles_config_dir}/ranger" "${config_dir}/ranger"; fi
 if [ ! -e "${config_dir}/zellij" ]; then ln -s "${dotfiles_config_dir}/zellij" "${config_dir}/zellij"; fi
 

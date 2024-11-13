@@ -255,7 +255,8 @@ threshold = 2
 
 [sudo]
 disabled = false
-format = '[*](blue)'
+# format = '[*](blue)'
+format = '[💪](blue)'
 
 [container]
 format = '[⬢](cyan)'
