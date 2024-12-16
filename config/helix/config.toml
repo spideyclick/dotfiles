@@ -19,6 +19,7 @@ theme = "spideyclick"
 "E" = ["move_next_long_word_end", "trim_selections"]
 "b" = ["move_prev_word_start", "trim_selections"]
 "B" = ["move_prev_long_word_start", "trim_selections"]
+"M" = ["select_textobject_inner"]
 
 # Rebind away from ALT as much as possible
 "D" = "delete_selection_noyank"
@@ -77,10 +78,20 @@ C-o = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.co
 C-i = ":format"
 C-w = ":bc"
 
+space."w" = ":toggle-option soft-wrap.enable"
+
+[keys.normal.space.t]
+t = ["goto_first_nonwhitespace", ":insert-output echo '📃'"]
+i = ["goto_first_nonwhitespace", ":insert-output echo '🚧'"]
+d = ["goto_first_nonwhitespace", ":insert-output echo '✅'"]
+b = ["goto_first_nonwhitespace", ":insert-output echo '⛔'"]
+
 [keys.insert]
 "A-x" = "normal_mode"
 "C-space" = "completion"
 "C-s" = [":write", "normal_mode"]
+"C-A-s" = [":write-all", ":quit"]
+"C-o" = [":write-all", ":quit"]
 "C-n" = ["normal_mode", "extend_to_line_bounds", "yank", "open_below", "replace_with_yanked", ":pipe ~/dotfiles/scripts/line_base.rs", "collapse_selection", "insert_mode"]
 "C-p" = "paste_before"
 
@@ -157,4 +168,5 @@ right = ["diagnostics", "selections", "position", "file-encoding", "file-line-en
 
 [editor.soft-wrap]
 wrap-at-text-width = false
+wrap-indicator = "↪\t"
 

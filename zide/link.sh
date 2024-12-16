@@ -12,7 +12,12 @@ if [ -f 'pyproject.toml' ]; then
   	brew bundle --file "${ZWD}/python/Brewfile"
 	fi
 
+  if [ -d '.venv' ]; then source "./.venv/bin/activate"; fi
+
   python -m pip install pudb basedpyright
+  if [ -f requirements.txt ]; then python -m pip install -r requirements.txt; fi
+  if [ -f setup/requirements.txt ]; then python -m pip install -r setup/requirements.txt; fi
+  if [ -f .devcontainer/dev-requirements.txt ]; then python -m pip install -r .devcontainer/dev-requirements.txt; fi
 
   mkdir -p .zide
   cd .zide

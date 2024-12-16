@@ -221,3 +221,8 @@ auto-format = true
 name = "tfvars"
 formatter = { command = 'terraform', args = ["fmt", "-"] }
 auto-format = true
+
+[[language]]
+name = "sshclientconfig"
+file-types = [ { glob = ".ssh/config" }, { glob = ".ssh/config.d/*" } ]
+indent = { tab-width = 4, unit = "\t" }
