@@ -81,10 +81,10 @@ C-w = ":bc"
 space."w" = ":toggle-option soft-wrap.enable"
 
 [keys.normal.space.t]
-t = ["goto_first_nonwhitespace", ":insert-output echo '📃'"]
-i = ["goto_first_nonwhitespace", ":insert-output echo '🚧'"]
-d = ["goto_first_nonwhitespace", ":insert-output echo '✅'"]
-b = ["goto_first_nonwhitespace", ":insert-output echo '⛔'"]
+t = ["extend_to_line_bounds", "trim_selections", ":pipe line_status", "goto_first_nonwhitespace"]
+i = ["extend_to_line_bounds", "trim_selections", ":pipe line_status 🚧", "goto_first_nonwhitespace"]
+d = ["extend_to_line_bounds", "trim_selections", ":pipe line_status ✅", "goto_first_nonwhitespace"]
+b = ["extend_to_line_bounds", "trim_selections", ":pipe line_status ⛔", "goto_first_nonwhitespace"]
 
 [keys.insert]
 "A-x" = "normal_mode"
@@ -163,8 +163,26 @@ hidden = false
 display-inlay-hints = true
 
 [editor.statusline]
-center = ["version-control"]
-right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type", "position-percentage"]
+left = [
+  "file-name",
+  "version-control",
+]
+center = []
+right = [
+  "spinner",
+  "diagnostics",
+  "position-percentage",
+  "position",
+  "selections",
+  "file-type",
+  "file-encoding",
+  "file-line-ending",
+  "mode",
+]
+separator = "| "
+mode.normal = "🔨"
+mode.insert = "✏️"
+mode.select = "🪢"
 
 [editor.soft-wrap]
 wrap-at-text-width = false
