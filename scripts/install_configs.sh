@@ -26,7 +26,6 @@ if [ ! -e "${config_dir}/starship.toml" ]; then ln -s "${dotfiles_config_dir}/st
 
 # PUDB can't read symlinks, so I need to copy/overwrite instead
 mkdir -p "${config_dir}/pudb"
-cp "${dotfiles_config_dir}/pudb/custom.theme" "${config_dir}/pudb/custom.theme"
 cp "${dotfiles_config_dir}/pudb/pudb.cfg" "${config_dir}/pudb/pudb.cfg"
 
 # WSL Configurations
