@@ -4,6 +4,7 @@ set -e
 
 if [ ! -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
 	echo "System is not WSL, exiting wsl_additions script"
+	exit 0
 fi
 
 
