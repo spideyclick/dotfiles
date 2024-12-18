@@ -63,10 +63,11 @@ if [[ \
 	# 	;
 
 	### Auto zide setup
-	if [ -f /usr/src/app/pyproject.toml ]; then
-		cd /usr/src/app || exit 1
-		~/dotfiles/zide/link.sh
-	fi
+	# Disabling for now since I'm using uv for depencies
+	# if [ -f /usr/src/app/pyproject.toml ]; then
+	# 	cd /usr/src/app || exit 1
+	# 	~/dotfiles/zide/link.sh
+	# fi
 else
 	echo "No handler for current OS found - exiting"
 fi
