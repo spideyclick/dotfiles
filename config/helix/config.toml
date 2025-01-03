@@ -81,10 +81,12 @@ C-w = ":bc"
 space."w" = ":toggle-option soft-wrap.enable"
 
 [keys.normal.space.t]
-t = ["extend_to_line_bounds", "trim_selections", ":pipe line_status", "goto_first_nonwhitespace"]
+t = ["extend_to_line_bounds", "trim_selections", ":pipe line_status 📃", "goto_first_nonwhitespace"]
 i = ["extend_to_line_bounds", "trim_selections", ":pipe line_status 🚧", "goto_first_nonwhitespace"]
 d = ["extend_to_line_bounds", "trim_selections", ":pipe line_status ✅", "goto_first_nonwhitespace"]
 b = ["extend_to_line_bounds", "trim_selections", ":pipe line_status ⛔", "goto_first_nonwhitespace"]
+c = ["extend_to_line_bounds", "trim_selections", ":pipe line_status ❌", "goto_first_nonwhitespace"]
+s = ["extend_to_line_bounds", "trim_selections", ":pipe line_status ⏭️", "goto_first_nonwhitespace"]
 
 [keys.insert]
 "A-x" = "normal_mode"
@@ -170,6 +172,7 @@ left = [
 center = []
 right = [
   "spinner",
+  "separator",
   "diagnostics",
   "position-percentage",
   "position",
@@ -179,7 +182,7 @@ right = [
   "file-line-ending",
   "mode",
 ]
-separator = "| "
+separator = "|"
 mode.normal = "🔨"
 mode.insert = "✏️"
 mode.select = "🪢"

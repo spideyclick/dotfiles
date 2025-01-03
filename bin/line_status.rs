@@ -17,7 +17,6 @@ use std::io::{stdin, IsTerminal};
 use std::env::args;
 
 fn main() {
-	// match IsTerminal() {}
 	let input = stdin();
 	match input.is_terminal() {
 		true => {
@@ -30,8 +29,8 @@ fn main() {
 				.read_line(&mut input_string)
 				.expect("Could not read from STDIN!");
 			let trimmed_string = input_string.trim_end();
-			let regex = Regex::new(r"^(\s+)?(- )?(\[[ xX\*\|]\]|✅|⛔|📃|🚧|🟡)?(.*$)").unwrap();
-			let substitution = format!("$1$2{}$4", icon);
+			let regex = Regex::new(r"^(\s+)?(- )?(\[[ xX\*\|]\]|✅|⛔|📃|🚧|🟡|❌|⏭️)?( )?(.*$)").unwrap();
+			let substitution = format!("$1$2{} $5", icon);
 			let result = regex.replace_all(trimmed_string, substitution);
 			println!("{}", result);
 		}
