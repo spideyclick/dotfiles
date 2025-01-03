@@ -40,11 +40,11 @@
 "ui.statusline.separator" = "ruler"
 
 # Virtual/invisible text
-"ui.virtual.indent-guide" = { fg = "white", modifiers = ["dim"] }
+"ui.virtual.indent-guide" = { fg = "gray", modifiers = ["dim"] }
 "ui.virtual.inlay-hint" = { fg = "white", modifiers = ["italic", "dim"] }
-"ui.virtual.whitespace" = { fg = "white", modifiers = ["dim"] }
+"ui.virtual.whitespace" = { fg = "gray", modifiers = ["dim"] }
 "ui.virtual.ruler" = { bg = "ruler" }
-"ui.virtual.wrap" = { fg = "white", modifiers = ["dim"] }
+"ui.virtual.wrap" = { fg = "gray", modifiers = ["dim"] }
 "ui.virtual.jump-label" = { fg = "black", bg = "purple", modifiers = ["italic", "bold"] }
 
 # Bufferline
