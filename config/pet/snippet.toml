@@ -39,3 +39,9 @@
   Output = ""
   Tag = ["db"]
   command = "db <db> \"select column_name, data_type from information_schema.columns where table_name='<table>';\""
+
+[[Snippets]]
+  Description = "Generic Bash Script Template"
+  Output = ""
+  Tag = ["template"]
+  command = "#!/usr/bin/env bash\n\nset -e\ncd \"$(dirname \"$0\")\"\nif [ -f .env ]; then source .env; fi\n\n"

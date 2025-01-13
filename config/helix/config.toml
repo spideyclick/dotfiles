@@ -6,13 +6,14 @@
 
 # TODO: Figure out select inside of matching indent
 
-# TODO: Faser `miw`?
-
 theme = "spideyclick"
 
 [keys.normal]
-# w = ["move_next_word_start", "move_prev_word_start", "move_next_word_end"]
-# W = ["move_next_long_word_start", "move_prev_long_word_start", "move_next_long_word_end"]
+w = "@miw"
+W = "@miW"
+C-e = ["ensure_selections_forward", "select_mode", "goto_line_end", "normal_mode"]
+# C-m = "@mim"
+# C-A-m = "@mip"
 "'" = "select_register"
 "C-/" = "toggle_comments"
 "e" = ["move_next_word_end", "trim_selections"]
@@ -20,6 +21,8 @@ theme = "spideyclick"
 "b" = ["move_prev_word_start", "trim_selections"]
 "B" = ["move_prev_long_word_start", "trim_selections"]
 "M" = ["select_textobject_inner"]
+"C-q" = [":write-all", ":quit"]
+"C-A-q" = [":quit!"]
 
 # Rebind away from ALT as much as possible
 "D" = "delete_selection_noyank"
@@ -91,8 +94,9 @@ s = ["extend_to_line_bounds", "trim_selections", ":pipe line_status ⏭️", "go
 [keys.insert]
 "A-x" = "normal_mode"
 "C-space" = "completion"
+"C-q" = [":write-all", ":quit"]
+"C-A-q" = [":quit!"]
 "C-s" = [":write", "normal_mode"]
-"C-A-s" = [":write-all", ":quit"]
 "C-o" = [":write-all", ":quit"]
 "C-n" = ["normal_mode", "extend_to_line_bounds", "yank", "open_below", "replace_with_yanked", ":pipe ~/dotfiles/scripts/line_base.rs", "collapse_selection", "insert_mode"]
 "C-p" = "paste_before"
@@ -117,6 +121,8 @@ X = "extend_line_above"
 "D" = "delete_selection_noyank"
 "C-minus" = "merge_selections"
 "C-_" = "merge_consecutive_selections"
+"C-q" = [":write-all", ":quit"]
+"C-A-q" = [":quit!"]
 
 [editor]
 # gutters = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
@@ -134,6 +140,8 @@ preview-completion-insert = false
 shell = ["bash", "-c"]
 true-color = true
 undercurl = true
+# Minimum severity to show a diagnostic after the end of a line:
+end-of-line-diagnostics = "hint"
 
 [editor.whitespace.render]
 space = "all"
@@ -191,3 +199,9 @@ mode.select = "🪢"
 wrap-at-text-width = false
 wrap-indicator = "↪\t"
 
+[editor.inline-diagnostics]
+# Minimum severity to show a diagnostic on the primary cursor's line.
+# Note that `cursor-line` diagnostics are hidden in insert mode.
+cursor-line = "disable"
+# Minimum severity to show a diagnostic on other lines:
+other-lines = "error"

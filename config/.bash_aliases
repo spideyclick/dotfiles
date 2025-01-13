@@ -6,9 +6,15 @@ alias cb='~/isomorphic_copy/bin/c'
 alias p='~/isomorphic_copy/bin/p'
 alias td='todo.sh'
 alias dps="docker ps -a --format json | jq -r '.Names, .RunningFor, .Status' | paste - - - | column -ts $'\t' | sort"
-alias ai='clear;tgpt --provider duckduckgo -m'
+# alias ai='clear;tgpt --provider duckduckgo -m'
+alias ai='aichat'
+alias lm='aichat'
+alias llm='aichat'
 alias web='sr google'
 alias diff='delta'
 alias scp='scp -O'
 alias sftp="with-readline sftp"
 # alias web='sr google -browser=w3m'
+function turl() {
+	curl -s "http://tinyurl.com/api-create.php?url=$1"
+}
