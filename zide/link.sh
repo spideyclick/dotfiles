@@ -32,10 +32,13 @@ if [ -f 'pyproject.toml' ]; then
     cp "${ZWD}/template.env" ./.env
   fi
   cd ../
-  mkdir -p .helix
-  cd .helix
-  ln -sf "${ZWD}/python/.helix/languages.toml" .
-  cd ../
+  # Disabled, since user-level config is generally enough for me.
+  # Anymore, I would argue that Python-specific project-level configs
+  # should live in something like a pyproject.toml file.
+  # mkdir -p .helix
+  # cd .helix
+  # ln -sf "${ZWD}/python/.helix/languages.toml" .
+  # cd ../
 else
   echo 'project type unknown'
 fi

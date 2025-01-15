@@ -29,7 +29,7 @@ fn main() {
 				.read_line(&mut input_string)
 				.expect("Could not read from STDIN!");
 			let trimmed_string = input_string.trim_end();
-			let regex = Regex::new(r"^(\s+)?(- )?(\[[ xX\*\|]\]|✅|⛔|📃|🚧|🟡|❌|⏭️)?( )?(.*$)").unwrap();
+			let regex = Regex::new(r"^(\s+)?(- )?(\[[ xX\*\|]\]|✅|⛔|📃|🚧|🟡|❌|⏭️|🕗)?( )?(.*$)").unwrap();
 			let substitution = format!("$1$2{} $5", icon);
 			let result = regex.replace_all(trimmed_string, substitution);
 			println!("{}", result);

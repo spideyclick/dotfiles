@@ -11,6 +11,7 @@ theme = "spideyclick"
 [keys.normal]
 w = "@miw"
 W = "@miW"
+"C-a" = "@glp"
 C-e = ["ensure_selections_forward", "select_mode", "goto_line_end", "normal_mode"]
 # C-m = "@mim"
 # C-A-m = "@mip"
@@ -90,6 +91,7 @@ d = ["extend_to_line_bounds", "trim_selections", ":pipe line_status ✅", "goto_
 b = ["extend_to_line_bounds", "trim_selections", ":pipe line_status ⛔", "goto_first_nonwhitespace"]
 c = ["extend_to_line_bounds", "trim_selections", ":pipe line_status ❌", "goto_first_nonwhitespace"]
 s = ["extend_to_line_bounds", "trim_selections", ":pipe line_status ⏭️", "goto_first_nonwhitespace"]
+w = ["extend_to_line_bounds", "trim_selections", ":pipe line_status 🕗", "goto_first_nonwhitespace"]
 
 [keys.insert]
 "A-x" = "normal_mode"
