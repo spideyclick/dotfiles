@@ -11,9 +11,10 @@ theme = "spideyclick"
 [keys.normal]
 w = "@miw"
 W = "@miW"
-"C-a" = "@glp"
+"C-i" = "@gsP"
+"C-p" = "@glp"
 C-e = ["ensure_selections_forward", "select_mode", "goto_line_end", "normal_mode"]
-# C-m = "@mim"
+C-m = "@mim_"
 # C-A-m = "@mip"
 "'" = "select_register"
 "C-/" = "toggle_comments"
@@ -49,9 +50,7 @@ X = "extend_line_above"
 "tab" = "goto_word"
 space.c = "toggle_comments"
 space."." = "file_picker_in_current_buffer_directory"
-C-p = "file_picker"     # Ctrl + p -> fuzzy finder
-C-P = "command_palette" # Ctrl + Shift + p -> command palette
-"C-F" = ":format"
+"C-f" = ":format"
 
 # Ctrl-based line modifications
 C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
@@ -79,7 +78,6 @@ C-A-k = ["normal_mode", "extend_to_line_bounds", "yank", "open_above", "replace_
 "C-A-d" = [":insert-output bash -c 'date --iso' | tr -d '\n'"]
 # From https://yazi-rs.github.io/docs/tips
 C-o = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/scripts/yazi-picker.sh open"
-C-i = ":format"
 C-w = ":bc"
 
 space."w" = ":toggle-option soft-wrap.enable"

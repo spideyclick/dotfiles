@@ -12,6 +12,14 @@
     },
     {
       "command": {
+        "action": "sendInput",
+        "input": "\u001b[109;5u"
+      },
+      "id": "User.sendInput.4E4C1E5F",
+      "keys": "ctrl+m"
+    },
+    {
+      "command": {
         "action": "adjustFontSize",
         "delta": 1
       },

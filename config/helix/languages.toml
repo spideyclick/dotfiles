@@ -85,22 +85,22 @@ args = [
 # Python
 
 # Formatting handled by RUFF now
-# [language.formatter]
-# command = "black"
-# args = [
-#   "-",
-#   "--quiet",
-#   "--line-length=80"
-# ]
+[language.formatter]
+command = "black"
+args = [
+  "-",
+  "--quiet",
+  "--line-length=88"
+]
 
-[language-server.pyright]
+[language-server.basedpyright]
 command = "basedpyright-langserver"
 args = ["--stdio"]
 
-[language-server.pyright.config]
+[language-server.basedpyright.config]
 reportMissingTypeStubs = false
 
-[language-server.pyright.config.python.analysis]
+[language-server.basedpyright.config.python.analysis]
 typeCheckingMode = "strict"
 autoImportCompletions = true
 
@@ -108,18 +108,27 @@ autoImportCompletions = true
 command = "ruff-lsp"
 # settings = {args = []}
 
-# [language-server.ruff.config]
-# documentFormatting = false
-# settings.run = "onSave"
+[language-server.ruff.config]
+documentFormatting = true
+settings.run = "onSave"
+
+[language-server.pylyzer]
+command = "pylyzer"
+args = ["--server"]
 
 [[language]]
 name = "python"
 language-servers = [
-  { name = "pyright", except-features = [ "format" ] },
-  { name = "ruff"},
+  # { name = "ruff", only-features = [ "format", "diagnostics" ] },
+  { name = "ruff" },
+  { name = "basedpyright", except-features = [ "format" ] },
+  # { name = "pylyzer" },
   { name = "cspell"},
 ]
 auto-format = true
+# uv tool install isort black basedpyright
+formatter = { command = "bash", args = ["-c", "isort - | black --quiet -"] }
+# formatter = { command = "bash", args = ["-c", "isort - | ruff --quiet -"] }
 # scope = "source.python"
 # injection-regex = "python"
 file-types = ["py","pyi","py3","pyw","ptl",".pythonstartup",".pythonrc","SConstruct", "rpy", "cpy", "ipy", "pyt", "SConscript"]
@@ -127,7 +136,7 @@ file-types = ["py","pyi","py3","pyw","ptl",".pythonstartup",".pythonrc","SConstr
 # roots = ["pyproject.toml", "setup.py", "poetry.lock", "pyrightconfig.json"]
 # comment-token = "#"
 # indent = { tab-width = 4, unit = "    " }
-rulers = [80, 120]
+rulers = [80, 100, 120]
 
 
 # Bash
