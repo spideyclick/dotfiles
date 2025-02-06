@@ -9,12 +9,16 @@
 theme = "spideyclick"
 
 [keys.normal]
+"C-q" = ":write-quit-all!"
+"C-A-q" = ":quit-all!"
 w = "@miw"
 W = "@miW"
 "C-i" = "@gsP"
 "C-p" = "@glp"
+"C-a" = "@glp"
 C-e = ["ensure_selections_forward", "select_mode", "goto_line_end", "normal_mode"]
 C-m = "@mim_"
+C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw", ":reload-all"]
 # C-A-m = "@mip"
 "'" = "select_register"
 "C-/" = "toggle_comments"
@@ -23,8 +27,6 @@ C-m = "@mim_"
 "b" = ["move_prev_word_start", "trim_selections"]
 "B" = ["move_prev_long_word_start", "trim_selections"]
 "M" = ["select_textobject_inner"]
-"C-q" = [":write-all", ":quit"]
-"C-A-q" = [":quit!"]
 
 # Rebind away from ALT as much as possible
 "D" = "delete_selection_noyank"
@@ -65,8 +67,8 @@ C-A-k = ["normal_mode", "extend_to_line_bounds", "yank", "open_above", "replace_
 "right" = "select_next_sibling"
 "C-h" = "jump_backward"
 "C-l" = "jump_forward"
-"C-up" = "jump_forward"
-"C-down" = "jump_backward"
+"C-up" = "increment"
+"C-down" = "decrement"
 "C-right" = "jump_forward"
 "C-left" = "jump_backward"
 
@@ -82,6 +84,11 @@ C-w = ":bc"
 
 space."w" = ":toggle-option soft-wrap.enable"
 
+[keys.normal.space.',']
+c = ":pipe sttr camel"
+s = ":pipe sttr slug"
+t = ":pipe sttr title"
+
 [keys.normal.space.t]
 t = ["extend_to_line_bounds", "trim_selections", ":pipe line_status 📃", "goto_first_nonwhitespace"]
 i = ["extend_to_line_bounds", "trim_selections", ":pipe line_status 🚧", "goto_first_nonwhitespace"]
@@ -92,10 +99,10 @@ s = ["extend_to_line_bounds", "trim_selections", ":pipe line_status ⏭️", "go
 w = ["extend_to_line_bounds", "trim_selections", ":pipe line_status 🕗", "goto_first_nonwhitespace"]
 
 [keys.insert]
+"C-q" = ":write-quit-all!"
+"C-A-q" = ":quit-all!"
 "A-x" = "normal_mode"
 "C-space" = "completion"
-"C-q" = [":write-all", ":quit"]
-"C-A-q" = [":quit!"]
 "C-s" = [":write", "normal_mode"]
 "C-o" = [":write-all", ":quit"]
 "C-n" = ["normal_mode", "extend_to_line_bounds", "yank", "open_below", "replace_with_yanked", ":pipe ~/dotfiles/scripts/line_base.rs", "collapse_selection", "insert_mode"]
@@ -116,13 +123,13 @@ w = ["extend_to_line_bounds", "trim_selections", ":pipe line_status 🕗", "goto
 "C-d" = [":insert-output date -I | awk '{$1=$1};1'", "append_mode"]
 
 [keys.select]
+"C-q" = ":write-quit-all!"
+"C-A-q" = ":quit-all!"
 X = "extend_line_above"
 "tab" = "extend_to_word"
 "D" = "delete_selection_noyank"
 "C-minus" = "merge_selections"
 "C-_" = "merge_consecutive_selections"
-"C-q" = [":write-all", ":quit"]
-"C-A-q" = [":quit!"]
 
 [editor]
 # gutters = ["diagnostics", "spacer", "line-numbers", "spacer", "diff"]
@@ -193,7 +200,7 @@ right = [
 separator = "|"
 mode.normal = "🔨"
 mode.insert = "✏️"
-mode.select = "🪢"
+mode.select = "🧲"
 
 [editor.soft-wrap]
 wrap-at-text-width = false
@@ -202,6 +209,6 @@ wrap-indicator = "↪\t"
 [editor.inline-diagnostics]
 # Minimum severity to show a diagnostic on the primary cursor's line.
 # Note that `cursor-line` diagnostics are hidden in insert mode.
-cursor-line = "disable"
+cursor-line = "hint"
 # Minimum severity to show a diagnostic on other lines:
-other-lines = "error"
+other-lines = "disable"

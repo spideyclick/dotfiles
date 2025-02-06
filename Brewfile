@@ -67,6 +67,7 @@ brew "hwatch"             # Modern 'watch' alternative
 brew "choose-rust"        # Human-friendly cut/awk alternative
 tap "knqyf263/pet"        # CLI Snippets
 brew "knqyf263/pet/pet"   # CLI Snippets
+brew "abhimanyu003/sttr/sttr"
 # Disabled due to repository being locked?
 # tap "xkumiyu/homebrew-case-style-changer"
 # brew "case-style-changer" # Quick case changing
