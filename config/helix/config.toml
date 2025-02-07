@@ -19,6 +19,9 @@ W = "@miW"
 C-e = ["ensure_selections_forward", "select_mode", "goto_line_end", "normal_mode"]
 C-m = "@mim_"
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw", ":reload-all"]
+C-x = [":sh bash -c 'zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- yazi'"]
+C-b = [":sh bash -c 'zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash'"]
+C-n = [":sh bash -c 'zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- nu'"]
 # C-A-m = "@mip"
 "'" = "select_register"
 "C-/" = "toggle_comments"
@@ -27,6 +30,7 @@ C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw", ":reload-a
 "b" = ["move_prev_word_start", "trim_selections"]
 "B" = ["move_prev_long_word_start", "trim_selections"]
 "M" = ["select_textobject_inner"]
+"G" = "@ge"
 
 # Rebind away from ALT as much as possible
 "D" = "delete_selection_noyank"
@@ -44,8 +48,8 @@ C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw", ":reload-a
 # Cusom line manipulations
 x = "extend_line_below"
 X = "extend_line_above"
-"C-x" = ["extend_to_line_bounds", "trim_selections"]
-"C-X" = "shrink_to_line_bounds"
+"C-A-x" = ["extend_to_line_bounds", "trim_selections"]
+"C-A-X" = "shrink_to_line_bounds"
 # Not really sure what this buys us, since regular "x" seems to do the same thing
 # " "extend_to_line_bounds"
 

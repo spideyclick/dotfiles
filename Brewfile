@@ -85,6 +85,7 @@ if !File.exist?("/.dockerenv")
   # General Language Servers
   brew "yaml-language-server"
   brew "bash-language-server"
+  brew "harper"
 
   # File Manager
   brew "ranger"

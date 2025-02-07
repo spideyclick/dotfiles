@@ -15,8 +15,17 @@ auto-format = true
 indent = { tab-width = 4, unit = "	" }
 formatter = { command = "dprint", args = ["fmt", "--stdin", "-c", "dprint.json", "md"]}
 rulers = [120]
-language-servers = [ "marksman", "cspell" ]
-# soft-wrap = true
+language-servers = [ "marksman", "cspell", "mpls", "harper-ls"]
+
+[language-server.mpls]
+command = "mpls"
+args = ["--dark-mode", "--enable-emoji"]
+# An example args entry showing how to specify flags with values:
+# args = ["--port", "8080", "--browser", "google-chrome"]
+
+[language-server.harper-ls]
+command = "harper-ls"
+args = ["--stdio"]
 
 [[grammar]]
 name = "markdown"
