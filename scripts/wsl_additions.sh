@@ -11,6 +11,7 @@ fi
 # Instal wslu on debian
 OS_ID=$(grep -ioP '^ID=\K\S+$' /etc/os-release)
 if [[ ${OS_ID} == "debian" ]]; then
+	if apt list 2> /dev/null | rg -i wslu > /dev/null 2>&1; then exit; fi
 	echo "Installing WSL Utilities (wslu) on Debain"
 	sudo apt-get install -y gnupg2 apt-transport-https
 	wget -O - https://pkg.wslutiliti.es/public.key \

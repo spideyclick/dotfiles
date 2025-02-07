@@ -38,46 +38,92 @@
 # 'vscode --install-extension'
 # vscode "GitHub.codespaces"
 
+#############################################################################
+### Docker containers, WSL & Bare Metal                                     #
+#############################################################################
+
 # Shell
 brew "starship"
 brew "zoxide"
 
-# File Manager
-brew "yazi"
-
-# IDE
-brew "helix"
-brew "lazygit"
-brew "git-delta"
-
 # Utilities
 brew "fd"                 # find replacement
-brew "jq"                 # JSON Parser
 brew "rg"                 # grep replacement
 brew "sd"                 # sed replacement
-brew "yq"                 # YAML Parser
 brew "bat"                # cat replacement
-brew "eva"                # Simple calculator (bc replacement)
 brew "fzf"                # Fuzzy Finder
-brew "lsd"                # ls replacement
-brew "tldr"               # Quick help docs
-brew "tailspin"           # Log Colorizer (tspin)
-brew "jless"              # TUI JSON Browser
-brew "hwatch"             # Modern 'watch' alternative
 brew "choose-rust"        # Human-friendly cut/awk alternative
-tap "knqyf263/pet"        # CLI Snippets
-brew "knqyf263/pet/pet"   # CLI Snippets
-brew "abhimanyu003/sttr/sttr"
-# Disabled due to repository being locked?
-# tap "xkumiyu/homebrew-case-style-changer"
-# brew "case-style-changer" # Quick case changing
 
-# TODO: Move IDE extras to separate brew files
 
-# General Language Servers
-# brew "yaml-language-server" Remov
+#############################################################################
+### WSL & Bare Metal                                                        #
+#############################################################################
+if !File.exist?("/.dockerenv")
 
-# IDE - Rust
-# brew "cargo-binstall"
-# brew "cargo-rust-script"
+  brew "zellij"
+  brew "nushell"
+  brew "carapace"
 
+  # Utilities
+  brew "jq"                     # JSON Parser
+  brew "yq"                     # YAML Parser
+  brew "eva"                    # Simple calculator (bc replacement)
+  brew "lsd"                    # ls replacement
+  brew "tldr"                   # Quick help docs
+  brew "tailspin"               # Log Colorizer (tspin)
+  brew "jless"                  # TUI JSON Browser
+  brew "hwatch"                 # Modern 'watch' alternative
+  tap "knqyf263/pet"
+  brew "knqyf263/pet/pet"       # CLI Snippets
+  brew "abhimanyu003/sttr/sttr" # Various string maniuplations
+
+  # IDE
+  brew "helix"
+  brew "lazygit"
+  brew "git-delta"
+
+  # General Language Servers
+  brew "yaml-language-server"
+  brew "bash-language-server"
+
+  # File Manager
+  brew "ranger"
+  brew "yazi"
+
+  # Misc
+  brew "aichat"
+  brew "pass"
+  brew "hwatch"
+  brew "autossh"
+  brew "posting"
+
+  # Docker
+  def docker_installed?
+    system('which docker > /dev/null 2>&1')
+  end
+  if docker_installed?
+    brew "ctop"
+    brew "lazydocker"
+  end
+
+  # Rust
+  def rust_installed?
+    system('which cargo > /dev/null 2>&1')
+  end
+  if rust_installed?
+    brew "cargo-binstall"
+    brew "rust-script"
+  end
+
+end
+
+#############################################################################
+### Bare metal only                                                         #
+#############################################################################
+if !File.exist?("/.dockerenv") and !File.exist?("/proc/sys/fs/binfmt_misc/WSLInterop")
+
+  # Fonts
+  tap homebrew/cask-fonts
+  cask "font-jetbrains-mono-nerd-font"
+
+end
