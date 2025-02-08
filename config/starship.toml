@@ -62,7 +62,8 @@ format = '$symbol'
 disabled = false
 # format="[🕒 $time]($style)"
 format="[$time]($style)"
-time_format = "%T%z" #change to %R to only have HH:MM
+# time_format = "%T%z" #change to %R to only have HH:MM
+time_format = "%R%z" #change to %R to only have HH:MM
 style = "italic #808080"
 
 [username]
