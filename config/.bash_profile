@@ -1,25 +1,32 @@
+# ~/.bash_profile: executed by the command interpreter for login shells.
+
+# Because of this file's existence, neither ~/.bash_login nor ~/.profile
+# will be sourced.
+
+# See /usr/share/doc/bash/examples/startup-files for examples.
+# The files are located in the bash-doc package.
+
 echo "Running .bash_profile"
 
-# Always source .bashrc
-source "$HOME/.bashrc"
-
-# exports
 export EDITOR=hx
 
-# Zellij
-ZELLIJ_AUTO_ATTACH=true
-ZELLIJ_AUTO_EXIT=true
-# eval "$(zellij setup --generate-auto-start zsh)"
-if command -v 'zellij' &> /dev/null && [[ "$ZELLIJ_AUTO_ATTACH" == "true" ]]; then
-  zellij attach --create main
-  if [[ "$ZELLIJ_AUTO_EXIT" == "true" ]]; then
-    exit 0
-  fi
-fi
+# Path Additions
+PATH=${PATH:+${PATH}:}~/.local/bin
 
-# Etc
-# source /home/zhubbell/.config/broot/launcher/bash/br
-# if [ -e /home/zhubbell/.nix-profile/etc/profile.d/nix.sh ]; then . /home/zhubbell/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-# eval `ssh-agent -s`
-# ssh-add -t 0 ~/.ssh/id_rsa
+# HOSTS Additions
+export HOSTALIASES=~/.hosts
+
+# HISTORY Configurations
+# ignoreboth refers to ignoring duplicates & commands prefixed with a space
+export HISTCONTROL=ignoreboth
+export HISTIGNORE="clear:history:[bf]g:exit:date"
+export HISTSIZE=2000
+export HISTFILESIZE=16000
+
+# Set umask
+# 0 = all, 2 = RO, 7 = none
+umask 027
+
+# Alias definitions
+if [ -f ~/.bash_aliases ]; then source "$HOME/.bash_aliases"; fi
 

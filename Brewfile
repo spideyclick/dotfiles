@@ -124,7 +124,11 @@ end
 if !File.exist?("/.dockerenv") and !File.exist?("/proc/sys/fs/binfmt_misc/WSLInterop")
 
   # Fonts
-  tap homebrew/cask-fonts
-  cask "font-jetbrains-mono-nerd-font"
+  # This isn't working anymore, cask-fonts was deprecated?
+  # Disabling for now
+
+  # tap "homebrew/cask-fonts"
+  # cask "font-jetbrains-mono-nerd-font"
+  # brew "font-jetbrains-mono-nerd-font"
 
 end
