@@ -15,7 +15,9 @@ auto-format = true
 indent = { tab-width = 4, unit = "	" }
 formatter = { command = "dprint", args = ["fmt", "--stdin", "-c", "dprint.json", "md"]}
 rulers = [120]
-language-servers = [ "marksman", "cspell", "mpls", "harper-ls"]
+# Dropping harper-ls for now, they need better dictionaries and project-level exceptions
+# language-servers = [ "marksman", "cspell", "mpls", "harper-ls"]
+language-servers = [ "marksman", "cspell", "mpls"]
 
 [language-server.mpls]
 command = "mpls"
