@@ -12,6 +12,7 @@ export EDITOR=hx
 
 # Path Additions
 PATH=${PATH:+${PATH}:}~/.local/bin
+[[ -d ~/.cargo/bin ]] && PATH=${PATH:+${PATH}:}~/.cargo/bin
 
 # HOSTS Additions
 export HOSTALIASES=~/.hosts
