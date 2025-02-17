@@ -203,7 +203,7 @@ right = [
 ]
 separator = "|"
 mode.normal = "🔨"
-mode.insert = "✏️"
+mode.insert = "📝"
 mode.select = "🧲"
 
 [editor.soft-wrap]
