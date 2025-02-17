@@ -19,3 +19,4 @@ function turl() {
 	curl -s "http://tinyurl.com/api-create.php?url=$1"
 }
 alias ptgo="pytest -x --last-failed --tb=line --disable-warnings | rg -U 'FAILURES' -A 1 | tail -n 1 | choose 0 | cb"
+alias zj='zellij a main'
