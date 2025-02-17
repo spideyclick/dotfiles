@@ -29,7 +29,7 @@
 "ui.cursorcolumn.primary" = { bg = "black" }
 "ui.cursorline.primary" = { bg = "black" }
 "ui.selection" = { fg = "white", bg = "ruler" }
-"ui.highlight" = { modifiers = [ "reversed" ] }
+"ui.highlight" = { bg = "ruler" }
 
 # Statusline
 "ui.statusline" = {}
