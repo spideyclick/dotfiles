@@ -15,6 +15,7 @@ $os\
 $shell\
 $shlvl\
 $directory\
+$direnv\
 $git_branch\
 $git_status\
 $hostname\
@@ -25,7 +26,6 @@ $nodejs\
 $package\
 $python\
 $rust\
-$direnv\
 $fill\
 $cmd_duration\
 $time\
@@ -271,7 +271,15 @@ style = "fg:#ff7400"
 format = '[⬢]($style)'
 
 [direnv]
+style = "fg:yellow bold"
+format = "[$loaded]($style)"
+allowed_msg     = "+"  # The message displayed when an rc file is allowed.
+not_allowed_msg = "❌" # The message displayed when an rc file is not_allowed.
+denied_msg      = "❌" # The message displayed when an rc file is denied.
+loaded_msg      = "+"  # The message displayed when an rc file is loaded.
+unloaded_msg    = "❌" # The message displayed when an rc file is not loaded.
 disabled = false
+
 
 # ~/.config/starship.toml
 
