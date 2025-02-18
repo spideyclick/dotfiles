@@ -10,20 +10,22 @@ add_newline = false
 # format = """$all"""
 format = """
 $status\
+$container\
 $os\
+$shell\
+$shlvl\
 $directory\
 $git_branch\
-$container\
+$git_status\
 $hostname\
-$sudo\
 $username\
-$localip\
+$sudo\
 $docker_context\
 $nodejs\
 $package\
 $python\
 $rust\
-$shlvl\
+$direnv\
 $fill\
 $cmd_duration\
 $time\
@@ -63,27 +65,29 @@ disabled = false
 # format="[🕒 $time]($style)"
 format="[$time]($style)"
 # time_format = "%T%z" #change to %R to only have HH:MM
-time_format = "%R%z" #change to %R to only have HH:MM
-style = "italic #808080"
+# time_format = "%R%z" #change to %R to only have HH:MM
+# time_format = "%Z %#z"
+time_format = "%T%z"
+style = "#808080"
 
 [username]
 style_user = "fg:blue"
 style_root = "bold fg:red"
 # format = "[🧑 $user]($style)"
-format = "[$user]($style)"
+format = " [$user]($style)"
 disabled = false
 show_always = true
 
 [hostname]
 ssh_only = false
-format = "[$hostname ]($style)"
+format = " [$hostname]($style)"
 disabled = false
 style = "fg:cyan"
 
 [os]
 # format = "[ 💻 $name]($style)"
 # format = "[$symbol $name ]($style)"
-format = "[$symbol]($style) "
+format = "[$symbol]($style)"
 style = "fg:#ff7400"
 disabled = false
 
@@ -140,7 +144,7 @@ disabled = false
 style = "fg:blue"
 
 [localip]
-disabled = false
+disabled = true
 ssh_only = false
 # format = "[ 🌐 ($localipv4) ]($style)"
 format = " [($localipv4) ]($style)"
@@ -170,7 +174,7 @@ truncation_length = 8
 truncation_symbol = "…"
 # ignore_branches = ["master", "main"]
 # Icons: 
-format = "[ $branch ]($style)"
+format = " [$branch]($style)"
 style = "fg:green"
 
 # [git_commit]
@@ -181,22 +185,24 @@ style = "fg:green"
 # format = "[\\($tag\\)]($style)"
 # style = "fg:#9ed072"
 
-# [git_status]
+[git_status]
 # # format="[](fg:#ffffff bg:none)[🥶](fg:#282c34 )[ ](fg:#ffffff )[$modified](fg:#282c34 )[$untracked](fg:#282c34 )[$staged](fg:#282c34 )[$renamed](fg:#282c34 )[](fg:#4da0ff bg:none)"
 # # format="(fg:#ffffff )[$modified](fg:#282c34 )[$untracked](fg:#282c34 )[$staged](fg:#282c34 )[$renamed](fg:#282c34 )[](fg:#9ed072 bg:none)"
 # format="[$modified](fg:#282c34 )[$untracked](fg:#282c34 )[$staged](fg:#282c34 )[$renamed](fg:#282c34 )"
-# conflicted = "⚠"
-# ahead = "->"
-# behind = "<-"
-# diverged = "😵"
-# up_to_date = "✔"
+style = "fg:green"
+format="[$modified$staged$renamed]($style)"
+conflicted = "⚠"
+ahead = "->"
+behind = "<-"
+diverged = "😵"
+up_to_date = ""
 # untracked = "+"
-# stashed = "📦"
-# modified = "*"
-# renamed = "👅"
-# deleted = "🗑️"
+stashed = "📦"
+modified = "*"
+renamed = "?"
+deleted = "🗑️"
 # style = "fg:#9ed072"
-# disabled = false
+disabled = false
 
 # [git_state]
 # rebase = "REBASING"
@@ -213,7 +219,7 @@ style = "fg:green"
 [directory]
 # format = "[📂 $path ]($style)"
 fish_style_pwd_dir_length = 2
-format = "[$path ]($style)"
+format = " [$path]($style)"
 style = "fg:yellow"
 truncation_length = 1
 # truncation_symbol = "…"
@@ -225,12 +231,12 @@ style = "fg:#000000 "
 
 [python]
 # symbol = "🐍"
-format = '[${symbol}${pyenv_prefix}(${version})( \($virtualenv\))]($style) '
+format = ' [${symbol}${pyenv_prefix}(${version})( \($virtualenv\))]($style)'
 style = "fg:green"
 
 [rust]
 symbol = "🦀"
-format = '[$symbol $version]($style)'
+format = ' [$symbol $version]($style)'
 style = "fg:#f39660"
 
 [fill]
@@ -251,7 +257,8 @@ format = '[$duration ](bold #808080)'
 
 [shlvl]
 disabled = false
-format = '[nested: $shlvl](italic)'
+style = "fg:#ff7400"
+format = '[+$shlvl]($style)'
 threshold = 2
 
 [sudo]
@@ -260,4 +267,19 @@ disabled = false
 format = '[💪](blue)'
 
 [container]
-format = '[⬢](cyan)'
+style = "fg:#ff7400"
+format = '[⬢]($style)'
+
+[direnv]
+disabled = false
+
+# ~/.config/starship.toml
+
+[shell]
+fish_indicator = '🐟'
+nu_indicator = 'nu'
+bash_indicator = '_'
+unknown_indicator = 'UNKNOWN SHELL'
+style = "fg:#ff7400 bold"
+format = "[$indicator]($style)"
+disabled = false

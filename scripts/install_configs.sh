@@ -23,6 +23,8 @@ if [ ! -e "${user_home_dir}/.inputrc" ]; then ln -s "${dotfiles_config_dir}/.inp
 mkdir -p "${config_dir}/lazygit"
 if [ ! -e "${config_dir}/lazygit/config.yml" ]; then ln -s "${dotfiles_config_dir}/lazygit/config.yml" "${config_dir}/lazygit/config.yml"; fi
 if [ ! -e "${config_dir}/starship.toml" ]; then ln -s "${dotfiles_config_dir}/starship.toml" "${config_dir}/starship.toml"; fi
+mkdir -p "${config_dir}/nushell"
+if [ ! -e "${config_dir}/nushell/config.nu" ]; then ln -s "${dotfiles_config_dir}/nushell/config.nu" "${config_dir}/nushell/config.nu"; fi
 
 # PUDB can't read symlinks, so I need to copy/overwrite instead
 mkdir -p "${config_dir}/pudb"
