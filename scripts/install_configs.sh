@@ -15,12 +15,11 @@ if [ ! -e "${config_dir}/pet" ]; then ln -s "${dotfiles_config_dir}/pet" "${conf
 if [ ! -e "${config_dir}/posting" ]; then ln -s "${dotfiles_config_dir}/posting" "${config_dir}/posting"; fi
 if [ ! -e "${config_dir}/ranger" ]; then ln -s "${dotfiles_config_dir}/ranger" "${config_dir}/ranger"; fi
 if [ ! -e "${config_dir}/zellij" ]; then ln -s "${dotfiles_config_dir}/zellij" "${config_dir}/zellij"; fi
+if [ ! -e "${config_dir}/lazygit" ]; then ln -s "${dotfiles_config_dir}/lazygit" "${config_dir}/lazygit"; fi
 
 # Symlinked Files
 if [ ! -e "${HOME}/.bash_aliases" ]; then ln -s "${dotfiles_config_dir}/.bash_aliases" "${HOME}/.bash_aliases"; fi
 if [ ! -e "${HOME}/.inputrc" ]; then ln -s "${dotfiles_config_dir}/.inputrc" "${HOME}/.inputrc"; fi
-mkdir -p "${config_dir}/lazygit"
-if [ ! -e "${config_dir}/lazygit/config.yml" ]; then ln -s "${dotfiles_config_dir}/lazygit/config.yml" "${config_dir}/lazygit/config.yml"; fi
 if [ ! -e "${config_dir}/starship.toml" ]; then ln -s "${dotfiles_config_dir}/starship.toml" "${config_dir}/starship.toml"; fi
 mkdir -p "${config_dir}/nushell"
 if [ ! -e "${config_dir}/nushell/config.nu" ]; then ln -s "${dotfiles_config_dir}/nushell/config.nu" "${config_dir}/nushell/config.nu"; fi

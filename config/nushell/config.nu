@@ -1,5 +1,8 @@
+#############################################################################
+# Config
+#############################################################################
 $env.config.show_banner = false
-$env.config.table.mode = 'light'
+$env.config.table.mode = 'compact'
 $env.config.hooks.env_change.PWD = [
 	# Direnv
 	{ ||
@@ -11,6 +14,9 @@ $env.config.hooks.env_change.PWD = [
 	}
 ]
 
+#############################################################################
+# Completions
+#############################################################################
 let carapace_completer = {|spans: list<string>|
     carapace $spans.0 nushell ...$spans
     | from json
@@ -75,3 +81,9 @@ $env.config.completions = {
 		completer: $external_completer
 	}
 }
+
+#############################################################################
+# Aliases
+#############################################################################
+alias lg = lazygit
+

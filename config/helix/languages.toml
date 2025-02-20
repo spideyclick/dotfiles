@@ -246,6 +246,23 @@ name = "tfvars"
 formatter = { command = 'terraform', args = ["fmt", "-"] }
 auto-format = true
 
+
+[language-server.terraform]
+command = "terraform-ls"
+args = ["serve"]
+
+[[language]]
+name = "terraform"
+# auto-format = true
+# indent = { tab-width = 4, unit = " " }
+# formatter = { command = "dprint", args = ["fmt", "--stdin", "-c", "dprint.json", "md"]}
+# rulers = [120]
+language-servers = [ "terraform" ]
+scope = "source.terraform"
+# injection-regex = "markdown\\.inline"
+file-types = [ "tf" ]
+# grammar = "markdown_inline"
+
 [[language]]
 name = "sshclientconfig"
 file-types = [ { glob = ".ssh/config" }, { glob = ".ssh/config.d/*" } ]
