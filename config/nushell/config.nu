@@ -3,6 +3,11 @@
 #############################################################################
 $env.config.show_banner = false
 $env.config.table.mode = 'compact'
+# $env.config.table.mode = 'markdown'
+# $env.config.table.mode = 'none'
+# $env.config.table.mode = 'heavy'
+# $env.config.table.mode = 'thin'
+# $env.config.table.mode = 'reinforced'
 $env.config.hooks.env_change.PWD = [
 	# Direnv
 	{ ||

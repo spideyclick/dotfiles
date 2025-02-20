@@ -139,7 +139,7 @@ Windows = "󰍲 "
 [docker_context]
 only_with_files = false
 # format = '[🐋 $context ]($style)'
-format = '[🐋 $context ]($style)'
+format = ' [🐋 $context ]($style)'
 disabled = false
 style = "fg:blue"
 
