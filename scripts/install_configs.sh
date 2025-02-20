@@ -2,9 +2,8 @@
 
 cd "$(dirname $0)/../config" || exit
 
-user_home_dir=$(getent passwd "$(whoami)" | cut -d: -f6)
-config_dir="${user_home_dir}/.config"
-dotfiles_config_dir="${user_home_dir}/dotfiles/config"
+config_dir="${HOME}/.config"
+dotfiles_config_dir="${HOME}/dotfiles/config"
 
 mkdir -p "$config_dir"
 
@@ -18,8 +17,8 @@ if [ ! -e "${config_dir}/ranger" ]; then ln -s "${dotfiles_config_dir}/ranger" "
 if [ ! -e "${config_dir}/zellij" ]; then ln -s "${dotfiles_config_dir}/zellij" "${config_dir}/zellij"; fi
 
 # Symlinked Files
-if [ ! -e "${user_home_dir}/.bash_aliases" ]; then ln -s "${dotfiles_config_dir}/.bash_aliases" "${user_home_dir}/.bash_aliases"; fi
-if [ ! -e "${user_home_dir}/.inputrc" ]; then ln -s "${dotfiles_config_dir}/.inputrc" "${user_home_dir}/.inputrc"; fi
+if [ ! -e "${HOME}/.bash_aliases" ]; then ln -s "${dotfiles_config_dir}/.bash_aliases" "${HOME}/.bash_aliases"; fi
+if [ ! -e "${HOME}/.inputrc" ]; then ln -s "${dotfiles_config_dir}/.inputrc" "${HOME}/.inputrc"; fi
 mkdir -p "${config_dir}/lazygit"
 if [ ! -e "${config_dir}/lazygit/config.yml" ]; then ln -s "${dotfiles_config_dir}/lazygit/config.yml" "${config_dir}/lazygit/config.yml"; fi
 if [ ! -e "${config_dir}/starship.toml" ]; then ln -s "${dotfiles_config_dir}/starship.toml" "${config_dir}/starship.toml"; fi
@@ -39,6 +38,6 @@ fi
 
 
 # Managed Blocks
-../scripts/push_managed_config_block.sh .bash_profile "${user_home_dir}/.bash_profile"
-../scripts/push_managed_config_block.sh .bashrc "${user_home_dir}/.bashrc"
-../scripts/push_managed_config_block.sh .gitconfig "${user_home_dir}/.gitconfig"
+../scripts/push_managed_config_block.sh .bash_profile "${HOME}/.bash_profile"
+../scripts/push_managed_config_block.sh .bashrc "${HOME}/.bashrc"
+../scripts/push_managed_config_block.sh .gitconfig "${HOME}/.gitconfig"
