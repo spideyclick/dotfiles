@@ -52,6 +52,7 @@ brew "rg"                 # grep replacement
 brew "sd"                 # sed replacement
 brew "bat"                # cat replacement
 brew "fzf"                # Fuzzy Finder
+brew "direnv"             # Heirarchial environment files
 brew "choose-rust"        # Human-friendly cut/awk alternative
 
 
