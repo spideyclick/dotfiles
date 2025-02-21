@@ -39,7 +39,7 @@
 # vscode "GitHub.codespaces"
 
 #############################################################################
-### Docker containers, WSL & Bare Metal                                     #
+### Always install every time!                                              #
 #############################################################################
 
 # Shell
@@ -55,81 +55,90 @@ brew "fzf"                # Fuzzy Finder
 brew "direnv"             # Heirarchial environment files
 brew "choose-rust"        # Human-friendly cut/awk alternative
 
-
 #############################################################################
-### WSL & Bare Metal                                                        #
+### Conditional installs                                                    #
 #############################################################################
-if !File.exist?("/.dockerenv")
+# Docker
+def docker_installed?
+  system('which docker > /dev/null 2>&1')
+end
+if docker_installed?
+  brew "ctop"
+  brew "lazydocker"
+end
 
-  brew "zellij"
-  brew "nushell"
-  brew "carapace"
-
-  # Utilities
-  brew "jq"                     # JSON Parser
-  brew "yq"                     # YAML Parser
-  brew "eva"                    # Simple calculator (bc replacement)
-  brew "lsd"                    # ls replacement
-  brew "tldr"                   # Quick help docs
-  brew "tailspin"               # Log Colorizer (tspin)
-  brew "jless"                  # TUI JSON Browser
-  brew "hwatch"                 # Modern 'watch' alternative
-  tap "knqyf263/pet"
-  brew "knqyf263/pet/pet"       # CLI Snippets
-  brew "abhimanyu003/sttr/sttr" # Various string maniuplations
-
-  # IDE
-  brew "helix"
-  brew "lazygit"
-  brew "git-delta"
-
-  # General Language Servers
-  brew "yaml-language-server"
-  brew "bash-language-server"
-  brew "harper"
-
-  # File Manager
-  brew "ranger"
-  brew "yazi"
-
-  # Misc
-  brew "aichat"
-  brew "pass"
-  brew "hwatch"
-  brew "autossh"
-  brew "posting"
-
-  # Docker
-  def docker_installed?
-    system('which docker > /dev/null 2>&1')
-  end
-  if docker_installed?
-    brew "ctop"
-    brew "lazydocker"
-  end
-
-  # Rust
-  def rust_installed?
-    system('which cargo > /dev/null 2>&1')
-  end
-  if rust_installed?
-    brew "cargo-binstall"
-    brew "rust-script"
-  end
-
+# Rust
+def rust_installed?
+  system('which cargo > /dev/null 2>&1')
+end
+if rust_installed?
+  brew "cargo-binstall"
+  brew "rust-script"
 end
 
 #############################################################################
-### Bare metal only                                                         #
+### No Docker Containers                                                    #
 #############################################################################
-if !File.exist?("/.dockerenv") and !File.exist?("/proc/sys/fs/binfmt_misc/WSLInterop")
-
-  # Fonts
-  # This isn't working anymore, cask-fonts was deprecated?
-  # Disabling for now
-
-  # tap "homebrew/cask-fonts"
-  # cask "font-jetbrains-mono-nerd-font"
-  # brew "font-jetbrains-mono-nerd-font"
-
+if File.exist?("/.dockerenv")
+  return
 end
+
+# IDE
+brew "helix"
+brew "lazygit"
+brew "git-delta"
+
+# General Language Servers
+brew "yaml-language-server"
+brew "bash-language-server"
+# brew "harper"
+
+# File Manager
+# brew "ranger"
+brew "yazi"
+
+#############################################################################
+### No SSH                                                                  #
+#############################################################################
+if ENV['SSH_CLIENT'] == nil
+  return
+end
+
+brew "zellij"
+brew "nushell"
+brew "carapace"
+
+# Utilities
+brew "jq"                     # JSON Parser
+brew "yq"                     # YAML Parser
+brew "eva"                    # Simple calculator (bc replacement)
+brew "lsd"                    # ls replacement
+brew "tldr"                   # Quick help docs
+brew "tailspin"               # Log Colorizer (tspin)
+brew "jless"                  # TUI JSON Browser
+brew "hwatch"                 # Modern 'watch' alternative
+tap "knqyf263/pet"
+brew "knqyf263/pet/pet"       # CLI Snippets
+brew "abhimanyu003/sttr/sttr" # Various string maniuplations
+
+# Misc
+brew "aichat"
+brew "pass"
+brew "hwatch"
+brew "autossh"
+brew "posting"
+
+#############################################################################
+### No WSL                                                                  #
+#############################################################################
+if File.exist?("/proc/sys/fs/binfmt_misc/WSLInterop")
+  return
+end
+
+# Fonts
+# This isn't working anymore, cask-fonts was deprecated?
+# Disabling for now
+
+# tap "homebrew/cask-fonts"
+# cask "font-jetbrains-mono-nerd-font"
+# brew "font-jetbrains-mono-nerd-font"
