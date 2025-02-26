@@ -20,6 +20,11 @@ $env.config.hooks.env_change.PWD = [
 ]
 
 #############################################################################
+# Program Initializers
+#############################################################################
+source ~/.config/nushell/.zoxide.nu
+
+#############################################################################
 # Completions
 #############################################################################
 let carapace_completer = {|spans: list<string>|
@@ -91,4 +96,40 @@ $env.config.completions = {
 # Aliases
 #############################################################################
 alias lg = lazygit
+alias c = z
+def rd [] { to json | jless }
+def cb [] { $in | ~/Downloads/isomorphic_copy/bin/c }
+def p [] { $in | ~/Downloads/isomorphic_copy/bin/p }
+alias x = yazi
 
+# Compare two or more lists.
+def dift [
+	--boolean (-b) # Use boolean values instead of icons
+	l1: list
+	l2: list
+	...rest: list
+]: nothing -> table {
+	let true_value = if $boolean { true } else { "✅" }
+	let false_value = if $boolean { false } else { "❌" }
+	[$l1 $l2] ++ $rest
+	| each { wrap value }
+	| enumerate
+	| each {|list|
+  	$list.item | insert $"L($list.index + 1)" { $true_value }
+	} | reduce {|it, acc|
+		$acc | join -o $it value
+	} | update cells {
+		if ($in | is-empty) { $false_value } else { $in }
+	}
+}
+
+def difd [
+	d1: string
+	d2: string
+]: nothing -> table {
+	(
+		comm
+			(ls --short-names $d1 | get name)
+			(ls --short-names $d2 | get name)
+	)
+}

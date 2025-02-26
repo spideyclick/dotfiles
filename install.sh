@@ -42,7 +42,7 @@ echo "Installing WSL Extras"
 
 echo "Installing Nushell Extras"
 cargo binstall nu_plugin_formats --locked
-plugin add ~/.cargo/bin/nu_plugin_formats
+nu -c 'plugin add ~/.cargo/bin/nu_plugin_formats'
 
 ### Auto zide setup
 # Disabling for now since I'm using uv for depencies

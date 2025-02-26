@@ -21,7 +21,7 @@ rulers = [120]
 # Dropping harper-ls for now, they need better dictionaries and project-level exceptions
 # language-servers = [ "marksman", "cspell", "mpls", "harper-ls"]
 # language-servers = [ "marksman", "cspell", "mpls"]
-language-servers = [ "marksman", "cspell", "iwe"]
+language-servers = [ "marksman", "cspell"]
 
 # [language-server.mpls]
 # command = "mpls"
@@ -253,15 +253,9 @@ args = ["serve"]
 
 [[language]]
 name = "terraform"
-# auto-format = true
-# indent = { tab-width = 4, unit = " " }
-# formatter = { command = "dprint", args = ["fmt", "--stdin", "-c", "dprint.json", "md"]}
-# rulers = [120]
 language-servers = [ "terraform" ]
 scope = "source.terraform"
-# injection-regex = "markdown\\.inline"
 file-types = [ "tf" ]
-# grammar = "markdown_inline"
 
 [[language]]
 name = "sshclientconfig"
