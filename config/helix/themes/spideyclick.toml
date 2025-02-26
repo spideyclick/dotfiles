@@ -40,11 +40,11 @@
 "ui.statusline.separator" = "ruler"
 
 # Virtual/invisible text
-"ui.virtual.indent-guide" = { fg = "gray", modifiers = ["dim"] }
-"ui.virtual.inlay-hint" = { fg = "white", modifiers = ["italic", "dim"] }
-"ui.virtual.whitespace" = { fg = "gray", modifiers = ["dim"] }
+"ui.virtual.indent-guide" = { fg = "black" }
+"ui.virtual.inlay-hint" = { fg = "gray", modifiers = ["italic"] }
+"ui.virtual.whitespace" = { fg = "black" }
 "ui.virtual.ruler" = { bg = "ruler" }
-"ui.virtual.wrap" = { fg = "gray", modifiers = ["dim"] }
+"ui.virtual.wrap" = { fg = "black" }
 "ui.virtual.jump-label" = { fg = "black", bg = "purple", modifiers = ["italic", "bold"] }
 
 # Bufferline
@@ -141,7 +141,6 @@
 "markup.document" = { "fg" = "white" }
 "document" = { "fg" = "white" }
 "markup.heading" = { modifiers = ["bold"] }
-# "markup.heading.marker" = { fg = "text", bg = "text", modifiers = ["dim", "bold"] }
 "markup.heading.1" = { fg = "red" }
 "markup.heading.2" = { fg = "green" }
 "markup.heading.3" = { fg = "cyan" }
@@ -162,7 +161,7 @@
 # They can be inherited from terminal config if desired by commenting this section out
 
 # default = "default"
-black = "#181819"
+# black = "#181819"
 # red = "#fc5d7c"
 # green = "#9ed072"
 # yellow = "#e7c664"
@@ -171,7 +170,7 @@ black = "#181819"
 # magenta = "???"
 # cyan = "#8dd0b6" # added for compatibility with `edge` scheme
 # gray = "#7f8490"
-gray = "#808080"
+# gray = "#808080"
 # light-red = "#fc5d7c"
 # light-green = "#9ed072"
 # light-yellow = "#e7c664"
