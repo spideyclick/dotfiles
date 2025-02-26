@@ -40,6 +40,10 @@ fi
 echo "Installing WSL Extras"
 ./scripts/wsl_additions.sh
 
+echo "Installing Nushell Extras"
+cargo binstall nu_plugin_formats --locked
+plugin add ~/.cargo/bin/nu_plugin_formats
+
 ### Auto zide setup
 # Disabling for now since I'm using uv for depencies
 # if [ -f /usr/src/app/pyproject.toml ]; then
