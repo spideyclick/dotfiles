@@ -2,7 +2,7 @@
   Description = "Dump Python Object"
   Output = ""
   Tag = []
-  command = "from pathlib import Path; from json import dumps; Path(\"/tmp/tmp.json\").write_text(dumps(<variable_name>, indent=2));"
+  command = "from pathlib import Path; from json import dumps;print(dumps(<variable_name>, indent=2));"
 
 [[Snippets]]
   Description = "Show Listening Ports"

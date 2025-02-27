@@ -99,6 +99,7 @@ i = ["extend_to_line_bounds", "trim_selections", ":pipe line_status 🚧", "goto
 d = ["extend_to_line_bounds", "trim_selections", ":pipe line_status ✅", "goto_first_nonwhitespace"]
 b = ["extend_to_line_bounds", "trim_selections", ":pipe line_status ⛔", "goto_first_nonwhitespace"]
 c = ["extend_to_line_bounds", "trim_selections", ":pipe line_status ❌", "goto_first_nonwhitespace"]
+r = ["extend_to_line_bounds", "trim_selections", ":pipe line_status 🔎", "goto_first_nonwhitespace"]
 s = ["extend_to_line_bounds", "trim_selections", ":pipe line_status ⏭️", "goto_first_nonwhitespace"]
 w = ["extend_to_line_bounds", "trim_selections", ":pipe line_status 🕗", "goto_first_nonwhitespace"]
 
