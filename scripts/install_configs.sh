@@ -23,6 +23,7 @@ if [ ! -e "${HOME}/.inputrc" ]; then ln -s "${dotfiles_config_dir}/.inputrc" "${
 if [ ! -e "${config_dir}/starship.toml" ]; then ln -s "${dotfiles_config_dir}/starship.toml" "${config_dir}/starship.toml"; fi
 mkdir -p "${config_dir}/nushell"
 if [ ! -e "${config_dir}/nushell/config.nu" ]; then ln -s "${dotfiles_config_dir}/nushell/config.nu" "${config_dir}/nushell/config.nu"; fi
+if [ ! -e "${config_dir}/nushell/.zoxide.nu" ]; then ln -s "${dotfiles_config_dir}/nushell/.zoxide.nu" "${config_dir}/nushell/.zoxide.nu"; fi
 
 # PUDB can't read symlinks, so I need to copy/overwrite instead
 mkdir -p "${config_dir}/pudb"
