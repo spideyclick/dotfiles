@@ -218,7 +218,8 @@ disabled = false
 
 [directory]
 # format = "[📂 $path ]($style)"
-fish_style_pwd_dir_length = 2
+# truncate_to_repo = true
+# fish_style_pwd_dir_length = 2
 format = " [$path]($style)"
 style = "fg:yellow"
 truncation_length = 1
@@ -230,8 +231,8 @@ disabled = true
 style = "fg:#000000 "
 
 [python]
-# symbol = "🐍"
-format = ' [${symbol}${pyenv_prefix}(${version})( \($virtualenv\))]($style)'
+symbol = ""
+format = ' [${symbol} ${pyenv_prefix}(${version})( \($virtualenv\))]($style)'
 style = "fg:green"
 
 [rust]
