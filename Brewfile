@@ -114,9 +114,11 @@ brew "yq"                     # YAML Parser
 brew "eva"                    # Simple calculator (bc replacement)
 brew "lsd"                    # ls replacement
 brew "tldr"                   # Quick help docs
-brew "tailspin"               # Log Colorizer (tspin)
 brew "jless"                  # TUI JSON Browser
+brew "pueue"                  # Command Queue Manager
+service "pueue"
 brew "hwatch"                 # Modern 'watch' alternative
+brew "tailspin"               # Log Colorizer (tspin)
 tap "knqyf263/pet"
 brew "knqyf263/pet/pet"       # CLI Snippets
 brew "abhimanyu003/sttr/sttr" # Various string maniuplations

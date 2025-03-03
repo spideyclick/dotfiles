@@ -36,6 +36,13 @@ if [[ ! -f ~/.local/bin/rgr ]]; then
 	wget -qO- https://github.com/acheronfail/repgrep/releases/download/0.15.0/repgrep-0.15.0-x86_64-unknown-linux-gnu.tar.gz \
 	| tar --strip-components=1 -xzf - -C ~/.local/bin repgrep-0.15.0-x86_64-unknown-linux-gnu/rgr
 fi
+if ! command -v mgitstatus > /dev/null; then
+	mkdir -p ~/tmp/mgitstatus
+	git clone https://github.com/fboender/multi-git-status ~/tmp/mgitstatus
+	cp ~/tmp/mgitstatus/mgitstatus ~/.local/bin
+	rm -rf ~/tmp/mgitstatus
+fi
+
 
 echo "Installing WSL Extras"
 ./scripts/wsl_additions.sh

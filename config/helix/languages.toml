@@ -236,26 +236,59 @@ name = "typescript"
 formatter = { command = 'prettier', args = ["--parser", "typescript"] }
 auto-format = true
 
-[[language]]
-name = "hcl"
-formatter = { command = 'terraform', args = ["fmt", "-"] }
-auto-format = true
+# [[language]]
+# name = "hcl"
+# formatter = { command = 'terraform', args = ["fmt", "-"] }
+# auto-format = true
 
-[[language]]
-name = "tfvars"
-formatter = { command = 'terraform', args = ["fmt", "-"] }
-auto-format = true
+# [[language]]
+# name = "tfvars"
+# formatter = { command = 'terraform', args = ["fmt", "-"] }
+# auto-format = true
 
 
-[language-server.terraform]
+# [language-server.terraform]
+# command = "terraform-ls"
+# args = ["serve"]
+
+# [[language]]
+# name = "terraform"
+# language-servers = [ "terraform" ]
+# scope = "source.terraform"
+# file-types = [ "tf" ]
+
+[language-server.terraform-ls]
+# terraform-ls = { command = "terraform-ls", args = ["serve"] }
 command = "terraform-ls"
 args = ["serve"]
 
 [[language]]
-name = "terraform"
-language-servers = [ "terraform" ]
-scope = "source.terraform"
-file-types = [ "tf" ]
+name = "hcl"
+scope = "source.hcl"
+injection-regex = "(hcl|tf|nomad)"
+language-id = "terraform"
+file-types = ["hcl", "tf", "nomad"]
+comment-token = "#"
+block-comment-tokens = { start = "/*", end = "*/" }
+indent = { tab-width = 2, unit = "  " }
+language-servers = [ "terraform-ls" ]
+auto-format = true
+
+[[grammar]]
+name = "hcl"
+source = { git = "https://github.com/tree-sitter-grammars/tree-sitter-hcl", rev = "9e3ec9848f28d26845ba300fd73c740459b83e9b" }
+
+[[language]]
+name = "tfvars"
+scope = "source.tfvars"
+language-id = "terraform-vars"
+file-types = ["tfvars"]
+comment-token = "#"
+block-comment-tokens = { start = "/*", end = "*/" }
+indent = { tab-width = 2, unit = "  " }
+language-servers = [ "terraform-ls" ]
+auto-format = true
+grammar = "hcl"
 
 [[language]]
 name = "sshclientconfig"
