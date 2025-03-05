@@ -34,6 +34,7 @@ def rd [] { to json | jless }
 def cb [] { $in | ~/Downloads/isomorphic_copy/bin/c }
 def p [] { $in | ~/Downloads/isomorphic_copy/bin/p }
 alias x = yazi
+alias tf = terraform
 
 # Compare two or more lists.
 def dift [
