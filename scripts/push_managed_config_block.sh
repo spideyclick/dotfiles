@@ -2,6 +2,8 @@
 
 START_DELIMITER="### MANAGED BY DOTFILES SCRIPT (START)"
 END_DELIMITER="### MANAGED BY DOTFILES SCRIPT (END)"
+# if [ -p /dev/stdin ]; then
+# 	MANAGED_CONTENT=$(cat "$1")
 MANAGED_CONTENT=$(cat "$1")
 if grep -q "$START_DELIMITER" "$2" && grep -q "$END_DELIMITER" "$2"; then
 	echo "Found managed section in $2; updating"
