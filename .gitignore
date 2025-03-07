@@ -1,3 +1,4 @@
 **/*.code-workspace
 **/*.wasm
 **/*.lock.json
+config/helix/runtime
