@@ -25,6 +25,7 @@ if [ ! -e "${config_dir}/lazygit" ]; then ln -s "${dotfiles_config_dir}/lazygit"
 if [ ! -e "${HOME}/.bash_aliases" ]; then ln -s "${dotfiles_config_dir}/.bash_aliases" "${HOME}/.bash_aliases"; fi
 if [ ! -e "${HOME}/.inputrc" ]; then ln -s "${dotfiles_config_dir}/.inputrc" "${HOME}/.inputrc"; fi
 if [ ! -e "${config_dir}/starship.toml" ]; then ln -s "${dotfiles_config_dir}/starship.toml" "${config_dir}/starship.toml"; fi
+if [ ! -e "${config_dir}/contour/contour.yml" ]; then ln -s "${dotfiles_config_dir}/contour.yml" "${config_dir}/contour/contour.yml"; fi
 
 # Can't just symlink the nushell directory due to history & plugin files
 # (unless I use .gitignore maybe?)
