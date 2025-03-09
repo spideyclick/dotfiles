@@ -48,7 +48,7 @@ C-n = [":sh bash -c 'zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- 
 # Cusom line manipulations
 x = "extend_line_below"
 X = "extend_line_above"
-"C-A-x" = ["extend_to_line_bounds", "trim_selections"]
+"C-A-x" = "@gsvgl"
 "C-A-X" = "shrink_to_line_bounds"
 # Not really sure what this buys us, since regular "x" seems to do the same thing
 # " "extend_to_line_bounds"
