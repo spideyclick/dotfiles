@@ -18,6 +18,7 @@ if [ ! -e "${config_dir}/posting" ]; then ln -s "${dotfiles_config_dir}/posting"
 if [ ! -e "${config_dir}/ranger" ]; then ln -s "${dotfiles_config_dir}/ranger" "${config_dir}/ranger"; fi
 if [ ! -e "${config_dir}/zellij" ]; then ln -s "${dotfiles_config_dir}/zellij" "${config_dir}/zellij"; fi
 if [ ! -e "${config_dir}/lazygit" ]; then ln -s "${dotfiles_config_dir}/lazygit" "${config_dir}/lazygit"; fi
+if [ ! -e "${config_dir}/direnv" ]; then ln -s "${dotfiles_config_dir}/direnv" "${config_dir}/direnv"; fi
 
 #############################################################################
 # Symlinked Files

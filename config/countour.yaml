@@ -29,7 +29,7 @@ profiles:
         horizontal: 0
         vertical: 0
       background:
-        opacity: 0.95
+        opacity: 1.0
         blur: true
       font:
         size: 13
@@ -125,10 +125,10 @@ color_schemes:
       cyan: '#89DDFF'
       white: '#FFFFFF'
     # Disabled due to stretch behaviour
-    # background_image:
-    #   path: '~/Pictures/wallpapers/current_terminal'
-    #   opacity: 1
-    #   blur: True
+    background_image:
+      path: '~/Pictures/wallpapers/target'
+      opacity: 1
+      blur: True
 
 input_mapping:
   # - { mods: [Control], key: Enter, action: CancelSelection }
