@@ -73,7 +73,8 @@
 
 # Diagnostics
 "diagnostic" = { underline = { style = "dotted" } }
-# "diagnostic" = { underline = { style = "dotted" } }
+# "diagnostic" = { underline = { style = "curl" } }
+# "diagnostic" = { underline = { style = "line" } }
 # "diagnostic" = { modifiers = ["reversed"] }
 # "diagnostic.hint" = { underline = { style = "dotted" } }
 # "diagnostic.info" = { underline = { style = "dotted" } }

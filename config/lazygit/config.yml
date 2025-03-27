@@ -8,7 +8,7 @@ git:
 gui:
   skipDiscardChangeWarning: true
   nerdFontsVersion: "3"
-  border: rounded
+  border: hidden
   branchColorPatterns:
     '^hotfix/': 'red'
     '^feature/': 'green'
