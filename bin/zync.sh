@@ -32,8 +32,8 @@ inotifywait -mr \
 while read -r date time dir file; do
   CHANGED_ABS="${dir}${file}"
   CHANGED_REL="${CHANGED_ABS#"$CURRENT_DIRECTORY"/}"
-  echo $CHANGED_ABS
-  echo $CHANGED_REL
+  echo "$CHANGED_ABS"
+  echo "$CHANGED_REL"
   rsync \
     --progress \
     --relative \

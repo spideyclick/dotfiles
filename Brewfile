@@ -103,7 +103,7 @@ brew "diskonaut"
 #############################################################################
 ### No SSH                                                                  #
 #############################################################################
-if ENV['SSH_CLIENT'] == nil
+if ENV['SSH_CLIENT'] != nil
   return
 end
 
@@ -118,8 +118,9 @@ brew "eva"                    # Simple calculator (bc replacement)
 brew "lsd"                    # ls replacement
 brew "tldr"                   # Quick help docs
 brew "jless"                  # TUI JSON Browser
-brew "pueue"                  # Command Queue Manager
-service "pueue"
+# Disabled pueue because the "service" command doesn't seem to work
+# brew "pueue"                  # Command Queue Manager
+# service "pueue"
 brew "hwatch"                 # Modern 'watch' alternative
 brew "tailspin"               # Log Colorizer (tspin)
 tap "knqyf263/pet"

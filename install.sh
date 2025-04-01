@@ -43,7 +43,6 @@ if ! command -v mgitstatus > /dev/null; then
 	rm -rf ~/tmp/mgitstatus
 fi
 
-
 echo "Installing WSL Extras"
 ./scripts/wsl_additions.sh
 
@@ -55,6 +54,11 @@ if \
 ; then
 	cargo binstall nu_plugin_formats --locked
 	nu -c 'plugin add ~/.cargo/bin/nu_plugin_formats'
+fi
+
+if command -v cargo &> /dev/null; then
+	echo "Installing Items with Cargo Binstall"
+	cargo binstall pueue --locked
 fi
 
 ### Auto zide setup
