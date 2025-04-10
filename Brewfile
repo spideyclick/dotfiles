@@ -114,6 +114,7 @@ brew "carapace"
 # Utilities
 brew "jq"                     # JSON Parser
 brew "yq"                     # YAML Parser
+brew "jid"                    # Interactive jq editor
 brew "eva"                    # Simple calculator (bc replacement)
 brew "lsd"                    # ls replacement
 brew "tldr"                   # Quick help docs
