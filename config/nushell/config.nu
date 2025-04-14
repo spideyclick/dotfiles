@@ -140,3 +140,5 @@ $env.config.completions = {
 		completer: $external_completer
 	}
 }
+
+use ~/dotfiles/nu_modules/main.nu *

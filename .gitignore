@@ -2,3 +2,4 @@
 **/*.wasm
 **/*.lock.json
 config/helix/runtime
+profiles/

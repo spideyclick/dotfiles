@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-mkdir -p ~/work/
-git clone gitea:alsc/dotfiles ~/work/dotfiles
-~/work/dotfiles/install.sh
+git clone gitea:alsc/dotfiles ~/dotfiles/profiles/work
+~/dotfiles/profiles/work/install.sh
 
