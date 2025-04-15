@@ -59,7 +59,13 @@ def add [
       print --no-newline 'link '
       ln -vs $target $source_file
     }
-    'dir' => { print "dir not implemented"; return }
+    'dir' => {
+      print --no-newline 'copy '
+      cp -vr ($path | path expand) $target
+      rm -vr ($path | path expand)
+      print --no-newline 'link '
+      ln -vs $target ($path | path expand)
+    }
     'symlink' => {
       print "target is already a symlink"
       print (ls --long ($path | path expand --no-symlink ) | select name target | first | to yaml)
