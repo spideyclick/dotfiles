@@ -10,18 +10,20 @@ export def main [
   ...args
 ] {
   match $sub_command {
-    'go' => {
-      print "go!"
-      install --profile $profile
-    }
-    _ => {
-      print "other"
-    }
+    'go' => { install --profile $profile }
+    _ => { print "other" }
   }
 }
 
-export def install [
+def install [
   --profile (-p): string@dfls_profiles
 ] {
-  $profile
+  let path = (
+    match $profile {
+      null => "~/dotfiles/install.sh"
+      _ => $"~/dotfiles/profiles/($profile)/install.sh"
+    }
+  )
+  bash -c $path
+  print "Dotfiles installation complete!"
 }
