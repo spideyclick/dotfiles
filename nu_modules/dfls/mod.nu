@@ -60,8 +60,10 @@ def add [
       ln -vs $target $source_file
     }
     'dir' => { print "dir not implemented"; return }
-    'symlink' => { print "symlink not implemented"; return }
+    'symlink' => {
+      print "target is already a symlink"
+      print (ls --long ($path | path expand --no-symlink ) | select name target | first | to yaml)
+    }
     _ => { print $"Unexpected path type found: ($path) is type ($path | path type)" }
   }
-  # $target
 }
