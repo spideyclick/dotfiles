@@ -69,7 +69,7 @@ end
 
 # Rust
 def rust_installed?
-  system('which cargo > /dev/null 2>&1')
+  system('[ -e /home/linuxbrew/.linuxbrew/bin/cargo ]')
 end
 if rust_installed?
   brew "cargo-binstall"

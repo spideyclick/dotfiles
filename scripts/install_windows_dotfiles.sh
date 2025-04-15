@@ -18,6 +18,8 @@ function safe_copy() {
 	cp -p "$1" "$2"
 }
 
-safe_copy ../config/windows_terminal/settings.json /mnt/c/Users/zhubbell/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
-safe_copy ../config/windows_terminal/settings.json /mnt/c/Users/zhubbell/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json
+# safe_copy ../config/windows_terminal/settings.json /mnt/c/Users/ZacharyHubbell/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
+# safe_copy ../config/windows_terminal/settings.json /mnt/c/Users/ZacharyHubbell/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json
+cp ../config/windows_terminal/settings.json /mnt/c/Users/ZacharyHubbell/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
+cp ../config/windows_terminal/settings.json /mnt/c/Users/ZacharyHubbell/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json
 
