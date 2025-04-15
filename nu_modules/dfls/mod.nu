@@ -1,9 +1,7 @@
 def dfls_profiles [] {
   ls -d --short-names  ~/dotfiles/profiles/ | get name
 }
-def dfls_subcommands [] {
-  [go install other]
-}
+def dfls_subcommands [] { [go add] }
 export def main [
   --profile (-p): string@dfls_profiles
   sub_command: string@dfls_subcommands
