@@ -29,7 +29,6 @@ ssh-add -t 0 ~/.ssh/id_rsa
 # Zellij
 ZELLIJ_AUTO_ATTACH=true
 ZELLIJ_AUTO_EXIT=true
-# eval "$(zellij setup --generate-auto-start zsh)"
 if \
 	command -v 'zellij' &> /dev/null && \
 	[[ "$ZELLIJ_AUTO_ATTACH" == "true" ]] && \
@@ -41,10 +40,5 @@ if \
   fi
 fi
 
-# Etc
-# source /home/zhubbell/.config/broot/launcher/bash/br
-# if [ -e /home/zhubbell/.nix-profile/etc/profile.d/nix.sh ]; then . /home/zhubbell/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
-# Disabled because it's not working well on my system
-# source ~/.local/share/blesh/ble.sh
-# eval "$(atuin init bash)"
+# Direnv needs to be towards the end
+if command -v direnv &> /dev/null; then eval "$(direnv hook bash)"; fi
