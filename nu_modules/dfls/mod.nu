@@ -41,7 +41,7 @@ def add [
       _ => $"~/dotfiles/profiles/($profile)/config/"
     }
   )
-  let target = $config_dir | path join ($path | path expand | path relative-to '~' ) | path expand
+  let target = $config_dir | path join ($path | path expand | path relative-to ( $env.HOME | path expand ) ) | path expand
   if ($target | path exists) {
     print $"File or folder already exists in dotfiles: ($target)"
     return

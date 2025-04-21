@@ -20,3 +20,4 @@ function turl() {
 }
 alias ptgo="pytest -x --last-failed --tb=line --disable-warnings | rg -U 'FAILURES' -A 1 | tail -n 1 | choose 0 | cb"
 alias zj='zellij a main'
+alias zt='zellij_tabs'
