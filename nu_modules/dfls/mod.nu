@@ -1,19 +1,27 @@
-def dfls_profiles [] {
-  ls -d --short-names  ~/dotfiles/profiles/ | get name
-}
-def dfls_subcommands [] { [go add] }
+########################################################################
+### Completions
+########################################################################
+def dfls_profiles [] { ls -d --short-names  ~/dotfiles/profiles/ | get name }
+def dfls_subcommands [] { [install add] }
+
+########################################################################
+### Main
+########################################################################
 export def main [
   --profile (-p): string@dfls_profiles
   sub_command: string@dfls_subcommands
   ...args
 ] {
   match $sub_command {
-    'go' => { install --profile $profile }
+    'install' => { install --profile $profile }
     'add' => { add --profile $profile ($args | first) }
     _ => { print "other" }
   }
 }
 
+########################################################################
+### Sub Commands - Install
+########################################################################
 def install [
   --profile (-p): string@dfls_profiles
 ] {
@@ -27,6 +35,9 @@ def install [
   print "Dotfiles installation complete!"
 }
 
+########################################################################
+### Sub Commands - Add
+########################################################################
 def add [
   --profile (-p): string@dfls_profiles
   path: path
@@ -41,7 +52,11 @@ def add [
       _ => $"~/dotfiles/profiles/($profile)/config/"
     }
   )
-  let target = $config_dir | path join ($path | path expand | path relative-to ( $env.HOME | path expand ) ) | path expand
+  let target = (
+    $config_dir | path join (
+      $path | path expand | path relative-to ( $env.HOME | path expand )
+    ) | path expand
+  )
   if ($target | path exists) {
     print $"File or folder already exists in dotfiles: ($target)"
     return
