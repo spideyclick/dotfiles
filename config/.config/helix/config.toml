@@ -6,7 +6,7 @@
 
 # TODO: Figure out select inside of matching indent
 
-theme = "spideyclick"
+theme = "base16-tweaks"
 
 [keys.normal]
 "C-q" = ":write-quit-all!"
