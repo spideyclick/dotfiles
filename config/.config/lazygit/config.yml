@@ -1,0 +1,18 @@
+notARepository: 'quit'
+disableStartupPopups: true
+git:
+  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
+  paging:
+    pager: delta --dark --paging=never
+    # externalDiffCommand: difft --color=always
+gui:
+  skipDiscardChangeWarning: true
+  nerdFontsVersion: "3"
+  border: hidden
+  branchColorPatterns:
+    '^hotfix/': 'red'
+    '^feature/': 'green'
+    '^bugfix/': 'yellow'
+    '^\w+-\d+': 'cyan'
+    '^master$': 'blue'
+    '^main$': 'blue'

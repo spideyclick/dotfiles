@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+echo "Script deprecated! Use dfls deploy instead"
+exit 1
+
 cd "$(dirname $0)/../config" || exit
 
 config_dir="${HOME}/.config"
