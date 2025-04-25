@@ -120,7 +120,10 @@ export def deploy [
   }
   if $dry_run { print "Dry run - no files deployed" }
 
-  # Iterate over all files in config_blocks dir (including nested)
+  # Step 2: Iterate over all files in config_blocks dir (including nested)
   # If file exists, print a warning and skip
   # If symlink exists, update
+
+  # Step 3: Iterate over folders in config_folders dir
+  # Or maybe whole folders don't make sense
 }
