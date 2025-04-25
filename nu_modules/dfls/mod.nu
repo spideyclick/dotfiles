@@ -2,27 +2,24 @@
 ### Completions
 ########################################################################
 def dfls_profiles [] { ls -d --short-names  ~/dotfiles/profiles/ | get name }
-def dfls_subcommands [] { [install add] }
 
 ########################################################################
 ### Main
 ########################################################################
-export def main [
-  --profile (-p): string@dfls_profiles
-  sub_command: string@dfls_subcommands
-  ...args
-] {
-  match $sub_command {
-    'install' => { install --profile $profile }
-    'add' => { add --profile $profile ($args | first) }
-    _ => { print "other" }
-  }
-}
+# export def --wrapped main [
+#   sub_command: string
+#   --profile (-p): string@dfls_profiles
+#   ...args
+# ] {
+#   match $sub_command {
+#     'install' => { install --profile $profile }
+#     'add' => { add --profile $profile ($args | first) }
+#     'deploy' => { deploy --profile $profile ...$args }
+#     _ => { print "subcommand not recognized" }
+#   }
+# }
 
-########################################################################
-### Sub Commands - Install
-########################################################################
-def install [
+export def install [
   --profile (-p): string@dfls_profiles
 ] {
   let path = (
@@ -35,10 +32,7 @@ def install [
   print "Dotfiles installation complete!"
 }
 
-########################################################################
-### Sub Commands - Add
-########################################################################
-def add [
+export def add [
   --profile (-p): string@dfls_profiles
   path: path
 ] {
@@ -85,4 +79,45 @@ def add [
     }
     _ => { print $"Unexpected path type found: ($path) is type ($path | path type)" }
   }
+}
+
+export def deploy [
+  --profile (-p): string@dfls_profiles
+  --dry-run
+] {
+  let config_dir = (
+    match $profile {
+      null => ("~/dotfiles/config/" | path expand)
+      _ => ($"~/dotfiles/profiles/($profile)/config/" | path expand)
+    }
+  )
+  # ls -af ...(glob $"($config_dir)/**/*") | where type == file | get name | each { |dotfiles_path|
+  glob $"($config_dir)/**/*" | each { |dotfiles_path|
+    if ( $dotfiles_path | path type ) == 'dir' { return }
+    let user_path = ($env.HOME | path expand | path join ($dotfiles_path | path expand | path relative-to ( $config_dir | path expand )))
+    match ($user_path | path type) {
+      null => {
+        print $"(ansi green)DEPLOY(ansi reset) ($user_path) -> ($dotfiles_path)"
+        if $dry_run { return }
+        ln -sf $dotfiles_path $user_path
+      }
+      "symlink" => {
+        if ( ( readlink -n $user_path ) == $dotfiles_path ) {
+          print $"✅ ($user_path) -> ($dotfiles_path)"
+          return
+        }
+        print $"(ansi green)UPDATE(ansi reset) ($user_path) -> ($dotfiles_path)"
+        if $dry_run { return }
+        ln -sf $dotfiles_path $user_path
+      }
+      "file" => { print $"(ansi yellow)SKIP(ansi reset) existing file ($user_path)" }
+      "dir" => {}
+      _ => { print $"(ansi red)ERROR(ansi reset) Path type of ($user_path) not recognized: ($user_path | path type)" }
+    }
+  }
+  if $dry_run { print "Dry run - no files deployed" }
+
+  # Iterate over all files in config_blocks dir (including nested)
+  # If file exists, print a warning and skip
+  # If symlink exists, update
 }
