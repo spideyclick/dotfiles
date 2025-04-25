@@ -1,23 +1,4 @@
-########################################################################
-### Completions
-########################################################################
 def dfls_profiles [] { ls -d --short-names  ~/dotfiles/profiles/ | get name }
-
-########################################################################
-### Main
-########################################################################
-# export def --wrapped main [
-#   sub_command: string
-#   --profile (-p): string@dfls_profiles
-#   ...args
-# ] {
-#   match $sub_command {
-#     'install' => { install --profile $profile }
-#     'add' => { add --profile $profile ($args | first) }
-#     'deploy' => { deploy --profile $profile ...$args }
-#     _ => { print "subcommand not recognized" }
-#   }
-# }
 
 export def install [
   --profile (-p): string@dfls_profiles
