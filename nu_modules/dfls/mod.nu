@@ -83,7 +83,8 @@ export def add [
 
 export def deploy [
   --profile (-p): string@dfls_profiles
-  --dry-run
+  --dry-run (-d)
+  --verbose (-v)
 ] {
   let config_dir = (
     match $profile {
@@ -99,15 +100,17 @@ export def deploy [
       null => {
         print $"(ansi green)DEPLOY(ansi reset) ($user_path) -> ($dotfiles_path)"
         if $dry_run { return }
+        mkdir --verbose ( $user_path | path dirname )
         ln -sf $dotfiles_path $user_path
       }
       "symlink" => {
         if ( ( readlink -n $user_path ) == $dotfiles_path ) {
-          print $"✅ ($user_path) -> ($dotfiles_path)"
+          if $verbose { print $"✅ ($user_path) -> ($dotfiles_path)" }
           return
         }
         print $"(ansi green)UPDATE(ansi reset) ($user_path) -> ($dotfiles_path)"
         if $dry_run { return }
+        mkdir --verbose ( $user_path | path dirname )
         ln -sf $dotfiles_path $user_path
       }
       "file" => { print $"(ansi yellow)SKIP(ansi reset) existing file ($user_path)" }
