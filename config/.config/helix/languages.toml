@@ -1,5 +1,9 @@
 # Generic
 
+[language-server.codebook]
+command = "codebook-lsp"
+args = ["serve"]
+
 [language-server.cspell]
 command = "cspell-lsp"
 args = ["--stdio"]
@@ -21,7 +25,7 @@ rulers = [120]
 # Dropping harper-ls for now, they need better dictionaries and project-level exceptions
 # language-servers = [ "marksman", "cspell", "mpls", "harper-ls"]
 # language-servers = [ "marksman", "cspell", "mpls"]
-language-servers = [ "marksman", "cspell"]
+language-servers = [ "marksman", "codebook"]
 
 # [language-server.mpls]
 # command = "mpls"
@@ -65,7 +69,7 @@ block-comment-tokens = [
   { start = "/**", end = "*/" },
   { start = "/*!", end = "*/" },
 ]
-language-servers = ["rust-analyzer", "cspell"]
+language-servers = ["rust-analyzer", "codebook"]
 # indent = { tab-width = 4, unit = "    " }
 indent = { tab-width = 2, unit = "	"}
 persistent-diagnostic-sources = ["rustc", "clippy"]
@@ -138,7 +142,7 @@ language-servers = [
   { name = "ruff" },
   { name = "basedpyright", except-features = [ "format" ] },
   # { name = "pylyzer" },
-  { name = "cspell"},
+  { name = "codebook"},
 ]
 auto-format = true
 # uv tool install isort black basedpyright
