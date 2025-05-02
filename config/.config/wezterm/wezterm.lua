@@ -11,7 +11,7 @@ if wezterm.config_builder then
 end
 
 config.color_scheme = 'MaterialOcean'
-config.default_prog = { 'wsl' }
+-- config.default_prog = { 'wsl' }
 config.font = wezterm.font 'JetBrains Mono'
 config.enable_tab_bar = false
 config.window_padding = {
@@ -26,7 +26,7 @@ config.window_background_gradient = {
   orientation = { Linear = {angle = -40.0 } },
   colors = { '#0f111a', '#0f111a' },
 }
-config.font_size = 9
+config.font_size = 13
 -- config.disable_default_key_bindings = true
 -- key = 'F11', mods = 'SHIFT|CTRL', action = ToggleFullScreen
 -- and finally, return the configuration to wezterm
