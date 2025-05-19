@@ -10,12 +10,21 @@ if wezterm.config_builder then
   config = wezterm.config_builder()
 end
 
+config.window_close_confirmation = 'NeverPrompt'
+config.background = {
+  {
+    source = {
+      File = '/var/home/spideyclick/dotfiles/config/wallpapers/terminal-wallpaper-mountain.jpg',
+    },
+    hsb = { brightness = 0.65 },
+    vertical_align = 'Middle',
+    horizontal_align = 'Center',
+  }
+}
+config.window_background_opacity = 1.0
+config.text_background_opacity = 1.0
 
-config.window_background_image = '/home/spideyclick/dotfiles/config/wallpapers/terminal-wallpaper-mountain.jpg'
-config.window_background_opacity = 0.0
-config.text_background_opacity = 0.3
-
--- config.color_scheme = 'MaterialOcean'
+-- config.color_scheme = 'TokioNight'
 -- name = 'Nautilus',
 config.colors = {
 
@@ -25,18 +34,19 @@ config.colors = {
 
   -- Overrides the cell background color when the current cell is occupied by the
   -- cursor and the cursor style is set to Block
-  cursor_bg = '#E2DDC8',
+  -- cursor_bg = '#E2DDC8',
   -- Overrides the text color when the current cell is occupied by the cursor
-  cursor_fg = 'C0A0C0',
+  -- cursor_fg = 'C0A0C0',
   -- Specifies the border color of the cursor when the cursor style is set to Block,
   -- or the color of the vertical or horizontal bar when the cursor style is set to
   -- Bar or Underline.
   cursor_border = '#C0A0C0',
 
   -- the foreground color of selected text
-  selection_fg = 'C0A0C0',
+  -- selection_fg = 'C0A0C0',
   -- the background color of selected text
-  selection_bg = '#603048',
+  -- selection_bg = '#603048',
+  -- selection_bg = '#888888',
 
   -- The color of the scrollbar "thumb"; the portion that represents the current viewport
   scrollbar_thumb = '#222222',
@@ -113,7 +123,7 @@ config.window_padding = {
 config.window_background_opacity = 0.95
 -- config.window_background = "#0f111a"
 config.window_background_gradient = {
-  orientation = { Linear = {angle = -40.0 } },
+  orientation = { Linear = { angle = -40.0 } },
   colors = { '#0f111a', '#0f111a' },
 }
 config.font_size = 13
@@ -129,14 +139,14 @@ config.font_rules = {
   },
 }
 
-      -- {
-      --   foreground = '00ff00',
-      --   foreground_text_hsb = {
-      --     hue = 1.0,
-      --     saturation = 1.0,
-      --     brightness = 0.5,
-      --   },
-      -- },
+-- {
+--   foreground = '00ff00',
+--   foreground_text_hsb = {
+--     hue = 1.0,
+--     saturation = 1.0,
+--     brightness = 0.5,
+--   },
+-- },
 
 -- config.disable_default_key_bindings = true
 -- key = 'F11', mods = 'SHIFT|CTRL', action = ToggleFullScreen
