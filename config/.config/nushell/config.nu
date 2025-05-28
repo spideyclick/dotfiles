@@ -152,3 +152,4 @@ $env.config.completions = {
 }
 
 use ~/dotfiles/nu_modules/main.nu *
+source $"($nu.home-path)/.cargo/env.nu"

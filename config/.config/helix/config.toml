@@ -9,20 +9,19 @@
 theme = "base16-tweaks"
 
 [keys.normal]
-"C-q" = ":write-quit-all!"
-"C-A-q" = ":quit-all!"
+# Cusom line manipulations
+"tab" = "goto_word"
 w = "@miw"
 W = "@miW"
+C-w = ":bc"
+C-A-w = ":wbc"
 "C-i" = "@gsP"
 "C-p" = "@glp"
 "C-a" = "@glp"
 C-e = ["ensure_selections_forward", "select_mode", "goto_line_end", "normal_mode"]
 C-m = "@mim_"
-C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw", ":reload-all"]
-C-x = [":sh bash -c 'zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- yazi'"]
-C-b = [":sh bash -c 'zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash'"]
-C-n = [":sh bash -c 'zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- nu'"]
 # C-A-m = "@mip"
+space.c = "toggle_comments"
 "'" = "select_register"
 "C-/" = "toggle_comments"
 "e" = ["move_next_word_end", "trim_selections"]
@@ -31,6 +30,12 @@ C-n = [":sh bash -c 'zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- 
 "B" = ["move_prev_long_word_start", "trim_selections"]
 "M" = ["select_textobject_inner"]
 "G" = "@ge"
+x = "extend_line_below"
+X = "extend_line_above"
+"C-A-x" = "@gsvgl"
+"C-A-X" = "shrink_to_line_bounds"
+# Not really sure what this buys us, since regular "x" seems to do the same thing
+# " "extend_to_line_bounds"
 
 # Rebind away from ALT as much as possible
 "D" = "delete_selection_noyank"
@@ -43,19 +48,6 @@ C-n = [":sh bash -c 'zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- 
 "C-_" = "merge_consecutive_selections"
 "C-;" = "flip_selections"
 "C-:" = "ensure_selections_forward"
-
-# Cusom line manipulations
-x = "extend_line_below"
-X = "extend_line_above"
-"C-A-x" = "@gsvgl"
-"C-A-X" = "shrink_to_line_bounds"
-# Not really sure what this buys us, since regular "x" seems to do the same thing
-# " "extend_to_line_bounds"
-
-"tab" = "goto_word"
-space.c = "toggle_comments"
-space."." = "file_picker_in_current_buffer_directory"
-"C-f" = ":format"
 
 # Ctrl-based line modifications
 C-j = ["extend_to_line_bounds", "delete_selection", "paste_after"]
@@ -75,18 +67,24 @@ C-A-k = ["normal_mode", "extend_to_line_bounds", "yank", "open_above", "replace_
 "C-right" = "jump_forward"
 "C-left" = "jump_backward"
 
-# C-S-O = ["open_below", "normal_mode"]
+# Other Shortcuts
+"C-q" = ":write-quit-all!"
+"C-A-q" = ":quit-all!"
+space."." = "file_picker_in_current_buffer_directory"
+"C-f" = ":format"
 
 # Scripts
 # "ret" = ["normal_mode", "extend_to_line_bounds", "yank", "open_below", "replace_with_yanked", ":pipe ~/dotfiles/scripts/line_base.rs", "collapse_selection", "insert_mode"]
 "C-A-t" = [":insert-output bash t"]
 "C-A-d" = [":insert-output bash -c 'date --iso' | tr -d '\n'"]
-# From https://yazi-rs.github.io/docs/tips
-C-o = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/scripts/yazi-picker.sh open"
-C-w = ":bc"
-C-A-w = ":wbc"
+C-x = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- yazi"
+C-o = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.config/helix/scripts/yazi-picker.sh open" # From https://yazi-rs.github.io/docs/tips
+C-t = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash"
+C-T = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- nu"
+C-g = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- lazygit"
+C-G = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw", ":reload-all"]
 
-space."w" = ":toggle-option soft-wrap.enable"
+space."w" = ":set-option soft-wrap.enable true"
 
 [keys.normal.space.',']
 c = ":pipe sttr camel"

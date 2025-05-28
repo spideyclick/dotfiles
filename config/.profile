@@ -6,3 +6,4 @@
 
 # See /usr/share/doc/bash/examples/startup-files for examples.
 # The files are located in the bash-doc package.
+. "$HOME/.cargo/env"
