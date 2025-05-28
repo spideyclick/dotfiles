@@ -82,7 +82,7 @@ C-o = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash ~/.co
 C-t = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- bash"
 C-T = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- nu"
 C-g = ":sh zellij run -c -f -x 10% -y 10% --width 80% --height 80% -- lazygit"
-C-G = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw", ":reload-all"]
+C-G = [":new", ":insert-output bash -c lazygit", ":buffer-close!", ":redraw", ":reload-all"]
 
 space."w" = ":set-option soft-wrap.enable true"
 
