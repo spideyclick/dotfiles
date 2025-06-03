@@ -45,8 +45,8 @@ config.colors = {
   -- the foreground color of selected text
   -- selection_fg = 'C0A0C0',
   -- the background color of selected text
-  -- selection_bg = '#603048',
-  -- selection_bg = '#888888',
+  -- selection_bg = '#444444',
+  selection_bg = '#603048',
 
   -- The color of the scrollbar "thumb"; the portion that represents the current viewport
   scrollbar_thumb = '#222222',
