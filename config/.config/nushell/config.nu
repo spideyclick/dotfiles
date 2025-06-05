@@ -50,6 +50,15 @@ def cb [] { $in | ~/Downloads/isomorphic_copy/bin/c }
 def p [] { $in | ~/Downloads/isomorphic_copy/bin/p }
 alias x = yazi
 alias tf = terraform
+def hl [] {
+	history
+	| where cwd == (pwd)
+	| where exit_status == 0
+	| get command
+	| to text
+	| fzf
+	| ~/isomorphic_copy/bin/c
+}
 
 # Compare two or more lists.
 def dift [
