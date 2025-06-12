@@ -64,7 +64,7 @@ export def main [
     | str substring 0..-4
     | into datetime -f '%s'
     | date to-timezone local
-    | into string
+    | format date '%F %H:%M:%S%Z'
     | $"($in) ($line.message)"
   } | to text
 }
