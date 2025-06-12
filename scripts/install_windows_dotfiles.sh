@@ -20,6 +20,6 @@ function safe_copy() {
 
 # safe_copy ../config/windows_terminal/settings.json /mnt/c/Users/ZacharyHubbell/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
 # safe_copy ../config/windows_terminal/settings.json /mnt/c/Users/ZacharyHubbell/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json
-cp ../config/windows_terminal/settings.json /mnt/c/Users/ZacharyHubbell/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
-cp ../config/windows_terminal/settings.json /mnt/c/Users/ZacharyHubbell/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json
+cp ../config_other/windows_terminal/settings.json /mnt/c/Users/ZacharyHubbell/AppData/Local/Packages/Microsoft.WindowsTerminal_8wekyb3d8bbwe/LocalState/settings.json
+cp ../config_other/windows_terminal/settings.json /mnt/c/Users/ZacharyHubbell/AppData/Local/Packages/Microsoft.WindowsTerminalPreview_8wekyb3d8bbwe/LocalState/settings.json
 
