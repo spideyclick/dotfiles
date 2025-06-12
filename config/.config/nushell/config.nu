@@ -49,7 +49,6 @@ $env.config = {
       if (which direnv | is-empty) {
         return
       }
-
       direnv export json | from json | default {} | load-env
       if 'ENV_CONVERSIONS' in $env and 'PATH' in $env.ENV_CONVERSIONS {
         $env.PATH = do $env.ENV_CONVERSIONS.PATH.from_string $env.PATH
@@ -70,8 +69,8 @@ source ~/.config/nushell/pueue_completions.nu
 alias lg = lazygit
 alias c = z
 def rd [] { to json | jless }
-# def cb [] { $in | ~/Downloads/isomorphic_copy/bin/c }
-# def p [] { ~/Downloads/isomorphic_copy/bin/p }
+def cb [] { $in | ~/isomorphic_copy/bin/c }
+def p [] { ~/isomorphic_copy/bin/p }
 alias x = yazi
 alias tf = terraform
 def l [] { ls --all }

@@ -135,7 +135,7 @@ keybinds clear-defaults=true {
                 ignore_case "true"
             }
         }
-        bind "Alt r" {
+        bind "Alt f" {
             LaunchOrFocusPlugin "zellij:session-manager" {
                 floating true
                 move_to_focused_tab true
