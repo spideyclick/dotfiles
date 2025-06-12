@@ -5,7 +5,13 @@
 #############################################################################
 # PATH
 #############################################################################
-$env.PATH = ($env.PATH | split row (char esep) | append "/home/linuxbrew/.linuxbrew/bin")
+$env.PATH = (
+	$env.PATH
+	| split row (char esep)
+	| append "/home/linuxbrew/.linuxbrew/bin"
+	| append $"($env.HOME)/.local/bin"
+	| append $"($env.HOME)/isomorphic_copy/bin"
+)
 
 #############################################################################
 # HISTORY
@@ -23,16 +29,34 @@ $env.config.table.mode = 'compact'
 # $env.config.table.mode = 'heavy'
 # $env.config.table.mode = 'thin'
 # $env.config.table.mode = 'reinforced'
-$env.config.hooks.env_change.PWD = [
-	# Direnv
-	{ ||
-		if (which direnv | is-empty) { return }
-		direnv export json | from json | default {} | load-env
-		if 'ENV_CONVERSIONS' in $env and 'PATH' in $env.ENV_CONVERSIONS {
-			$env.PATH = do $env.ENV_CONVERSIONS.PATH.from_string $env.PATH
-		}
-	}
-]
+
+# Direnv: Only change when CWD changes
+# $env.config.hooks.env_change.PWD = [
+# 	# Direnv
+# 	{ ||
+# 		if (which direnv | is-empty) { return }
+# 		direnv export json | from json | default {} | load-env
+# 		if 'ENV_CONVERSIONS' in $env and 'PATH' in $env.ENV_CONVERSIONS {
+# 			$env.PATH = do $env.ENV_CONVERSIONS.PATH.from_string $env.PATH
+# 		}
+# 	}
+# ]
+
+# Direnv: Run on every prompt (may be slow!)
+$env.config = {
+  hooks: {
+    pre_prompt: [{ ||
+      if (which direnv | is-empty) {
+        return
+      }
+
+      direnv export json | from json | default {} | load-env
+      if 'ENV_CONVERSIONS' in $env and 'PATH' in $env.ENV_CONVERSIONS {
+        $env.PATH = do $env.ENV_CONVERSIONS.PATH.from_string $env.PATH
+      }
+    }]
+  }
+}
 
 #############################################################################
 # Completions & Program Initializers
@@ -46,10 +70,19 @@ source ~/.config/nushell/pueue_completions.nu
 alias lg = lazygit
 alias c = z
 def rd [] { to json | jless }
-def cb [] { $in | ~/Downloads/isomorphic_copy/bin/c }
-def p [] { $in | ~/Downloads/isomorphic_copy/bin/p }
+# def cb [] { $in | ~/Downloads/isomorphic_copy/bin/c }
+# def p [] { ~/Downloads/isomorphic_copy/bin/p }
 alias x = yazi
 alias tf = terraform
+def l [] { ls --all }
+def dps [] { docker ps -a --format json | jq -r '.Names, .RunningFor, .Status' | paste - - - | column -ts $'\t' | sort }
+alias diff = delta
+alias scp = scp -O
+alias sftp = with-readline sftp
+def turl [] { curl -s "http://tinyurl.com/api-create.php?url=$1" }
+# alias ptgo="pytest -x --last-failed --tb=line --disable-warnings | rg -U 'FAILURES' -A 1 | tail -n 1 | choose 0 | cb"
+alias zj = zellij a main
+alias zt = zellij_tabs
 def hl [] {
 	history
 	| where cwd == (pwd)

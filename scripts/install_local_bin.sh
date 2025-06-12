@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-cd "$(dirname "$0")/../bin"
+cd "$(dirname "$0")/../bin" || exit 1
 mkdir -p ~/.local/bin
 
 for file in ./*; do
 	if [ -f "${file}" ]; then
-		if [ ! -e ~/.local/bin/$(basename ${file%.*}) ]; then
-			ln -s $(readlink -f "$file") ~/.local/bin/$(basename ${file%.*})
+		if [ ! -e "$HOME/.local/bin/$(basename "${file%.*}")" ]; then
+			ln -s "$(readlink -f "$file")" "$HOME/.local/bin/$(basename "${file%.*}")"
 		fi
 	fi
 done

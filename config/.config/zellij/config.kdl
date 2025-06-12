@@ -135,7 +135,7 @@ keybinds clear-defaults=true {
                 ignore_case "true"
             }
         }
-        bind "Alt f" {
+        bind "Alt r" {
             LaunchOrFocusPlugin "zellij:session-manager" {
                 floating true
                 move_to_focused_tab true
@@ -235,126 +235,7 @@ keybinds clear-defaults=true {
         bind "z" { ToggleFocusFullscreen; SwitchToMode "normal"; }
     }
 }
-themes {
-    spideyclick {
-        text_unselected {
-            base 255 255 255
-            background 15 17 26
-            emphasis_0 243 150 96
-            emphasis_1 141 208 182
-            emphasis_2 158 208 114
-            emphasis_3 255 0 255
-        }
-        text_selected {
-            base 255 255 255
-            background 15 17 26
-            emphasis_0 243 150 96
-            emphasis_1 141 208 182
-            emphasis_2 158 208 114
-            emphasis_3 255 0 255
-        }
-        ribbon_selected {
-            base 15 17 26
-            background 158 208 114
-            emphasis_0 252 93 124
-            emphasis_1 243 150 96
-            emphasis_2 255 0 255
-            emphasis_3 118 204 224
-        }
-        ribbon_unselected {
-            base 15 17 26
-            background 208 208 208
-            emphasis_0 252 93 124
-            emphasis_1 255 255 255
-            emphasis_2 118 204 224
-            emphasis_3 255 0 255
-        }
-        table_title {
-            base 158 208 114
-            background 0
-            emphasis_0 243 150 96
-            emphasis_1 141 208 182
-            emphasis_2 158 208 114
-            emphasis_3 255 0 255
-        }
-        table_cell_selected {
-            base 255 255 255
-            background 15 17 26
-            emphasis_0 243 150 96
-            emphasis_1 141 208 182
-            emphasis_2 158 208 114
-            emphasis_3 255 0 255
-        }
-        table_cell_unselected {
-            base 255 255 255
-            background 15 17 26
-            emphasis_0 243 150 96
-            emphasis_1 141 208 182
-            emphasis_2 158 208 114
-            emphasis_3 255 0 255
-        }
-        list_selected {
-            base 255 255 255
-            background 15 17 26
-            emphasis_0 243 150 96
-            emphasis_1 141 208 182
-            emphasis_2 158 208 114
-            emphasis_3 255 0 255
-        }
-        list_unselected {
-            base 255 255 255
-            background 15 17 26
-            emphasis_0 243 150 96
-            emphasis_1 141 208 182
-            emphasis_2 158 208 114
-            emphasis_3 255 0 255
-        }
-        frame_selected {
-            base 158 208 114
-            background 0
-            emphasis_0 243 150 96
-            emphasis_1 141 208 182
-            emphasis_2 255 0 255
-            emphasis_3 0
-        }
-        frame_highlight {
-            base 243 150 96
-            background 0
-            emphasis_0 243 150 96
-            emphasis_1 243 150 96
-            emphasis_2 243 150 96
-            emphasis_3 243 150 96
-        }
-        exit_code_success {
-            base 158 208 114
-            background 0
-            emphasis_0 141 208 182
-            emphasis_1 15 17 26
-            emphasis_2 255 0 255
-            emphasis_3 118 204 224
-        }
-        exit_code_error {
-            base 252 93 124
-            background 0
-            emphasis_0 231 198 100
-            emphasis_1 0
-            emphasis_2 0
-            emphasis_3 0
-        }
-        multiplayer_user_colors {
-            player_1 255 0 255
-            player_2 118 204 224
-            player_3 0
-            player_4 231 198 100
-            player_5 141 208 182
-            player_6 0
-            player_7 252 93 124
-            player_8 0
-            player_9 0
-            player_10 0
-        }
-    }
-}
+themes { }
 
 // Plugin aliases - can be used to change the implementation of Zellij
 // changing these requires a restart to take effect
@@ -391,7 +272,8 @@ simplified_ui true
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-theme "spideyclick"
+// theme "spideyclick"
+theme "ansi"
  
 // Choose the base input mode of zellij.
 // Default: normal
