@@ -222,7 +222,7 @@ disabled = false
 # fish_style_pwd_dir_length = 2
 format = " [$path]($style)"
 style = "fg:yellow"
-truncation_length = 1
+truncation_length = 2
 # truncation_symbol = "…"
 
 [package] 
