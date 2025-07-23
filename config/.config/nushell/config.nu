@@ -16,11 +16,14 @@ $env.PATH = (
 #############################################################################
 # HISTORY
 #############################################################################
-$env.config.history.file_format = "sqlite"
-$env.config.history.max_size = 10_000
+$env.config.history = {
+	file_format: sqlite
+	max_size: 10_000
+	isolation: true
+}
 
 #############################################################################
-# Config
+# General Config
 #############################################################################
 $env.config.show_banner = false
 $env.config.table.mode = 'compact'
