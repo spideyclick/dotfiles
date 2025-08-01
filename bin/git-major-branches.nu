@@ -10,7 +10,7 @@ let cutoff = ((date now) - 90day)
 
 git branch -r --no-merged $"origin/($main_branch)"
 | lines
-| filter {|line| not ($line | str contains "origin/HEAD") }
+| where {|line| not ($line | str contains "origin/HEAD") }
 | each {|line|
     let branch = ($line | str trim)
     let raw_info = (git log -1 --format="%ci|||%cn" $branch | str trim)

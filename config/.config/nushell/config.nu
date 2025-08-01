@@ -151,7 +151,7 @@ let zoxide_completer = {|spans|
 # }
 
 # # if the current command is an alias, get it's expansion
-# let expanded_alias = (scope aliases | where name == $spans.0 | get -i 0 | get -i expansion)
+# let expanded_alias = (scope aliases | where name == $spans.0 | get -o 0 | get -o expansion)
 # # overwrite
 # let spans = (if $expanded_alias != null	{
 #		 # put the first word of the expanded alias first in the span
@@ -167,7 +167,7 @@ let zoxide_completer = {|spans|
 let external_completer = {|spans|
 		let expanded_alias = scope aliases
 		| where name == $spans.0
-		| get -i 0.expansion
+		| get -o 0.expansion
 		let spans = if $expanded_alias != null {
 				$spans
 				| skip 1

@@ -1,11 +1,11 @@
 #!/usr/bin/env nu
 
 let branches_to_remove = (
-	git branch --merged
+	git branch -r --merged
 	| lines
 	| where $it !~ '\*'
 	| str trim
-	| where $it != 'master' and $it != 'main'
+	| where $it !~ '.*main|master|HEAD.*'
 )
 print $branches_to_remove
 input 'Remove these branches? (Ctrl-C to stop)'
