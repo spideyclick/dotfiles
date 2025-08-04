@@ -26,8 +26,6 @@
 # Cursor
 "ui.cursor" = { modifiers = [ "reversed" ] }
 "ui.cursor.primary" = { fg = "white", modifiers = [ "reversed" ] }
-"ui.cursorcolumn.primary" = { bg = "black" }
-"ui.cursorline.primary" = { bg = "black" }
 "ui.selection" = { fg = "white", bg = "ruler" }
 "ui.highlight" = { bg = "ruler" }
 
