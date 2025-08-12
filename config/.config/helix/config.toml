@@ -122,8 +122,8 @@ w = ["extend_to_line_bounds", "trim_selections", ":pipe ~/.local/bin/line_status
 "A-Q" = ["record_macro"]
 "A-q" = ["replay_macro"]
 
-"C-t" = [":insert-output date +'%_I:%_M' | awk '{$1=$1};1'", "append_mode"]
-"C-d" = [":insert-output date -I | awk '{$1=$1};1'", "append_mode"]
+"C-t" = [":insert-output date +'%%-I:%%-M' | trim", "ensure_selections_forward", "collapse_selection", "move_char_right", "insert_mode"]
+"C-d" = [":insert-output date -I | trim", "ensure_selections_forward", "collapse_selection", "move_char_right", "insert_mode"]
 
 [keys.select]
 "C-q" = ":write-quit-all!"
