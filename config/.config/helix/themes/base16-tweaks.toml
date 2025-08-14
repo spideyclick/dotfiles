@@ -19,8 +19,8 @@
 "ui.text.focus" = { fg = "highlight" }
 
 # Gutter
-"ui.gutter" = { bg = "none" }
-"ui.linenr" = { bg = "none" }
+# "ui.gutter" = { bg = "none" }
+# "ui.linenr" = { bg = "none" }
 "ui.linenr.selected" = { fg = "red", modifiers = ["bold"] }
 
 # Cursor
@@ -137,15 +137,15 @@
 "attribute" = "orange"
 
 # Markup
-"markup.document" = { "fg" = "white" }
-"document" = { "fg" = "white" }
+"markup.document" = { fg = "white" }
+"document" = { fg = "white" }
 "markup.heading" = { modifiers = ["bold"] }
 "markup.heading.1" = { fg = "red" }
 "markup.heading.2" = { fg = "green" }
 "markup.heading.3" = { fg = "cyan" }
 "markup.heading.4" = { fg = "yellow" }
 "markup.heading.5" = { fg = "purple" }
-"markup.heading.6" = { fg = "fg" }
+"markup.heading.6" = { fg = "blue" }
 "markup.list" = "red"
 "markup.bold" = { modifiers = ["bold"] }
 "markup.italic" = { modifiers = ["italic"] }
