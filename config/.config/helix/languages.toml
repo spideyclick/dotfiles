@@ -120,8 +120,14 @@ args = ["--stdio"]
 reportMissingTypeStubs = false
 
 [language-server.basedpyright.config.python.analysis]
-typeCheckingMode = "strict"
 autoImportCompletions = true
+# Remember to put these settings into the project-level config so
+# that other developers can see the errors you're dealing with!
+# Example config (inside of pyproject.toml):
+# [tool.basedpyright]
+# # https://docs.basedpyright.com/latest/configuration/config-files/#diagnostic-settings-defaults
+# typeCheckingMode = "recommended"
+# reportExplicitAny = false
 
 [language-server.ruff]
 command = "ruff-lsp"
