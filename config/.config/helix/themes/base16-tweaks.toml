@@ -24,9 +24,9 @@
 "ui.linenr.selected" = { fg = "red", modifiers = ["bold"] }
 
 # Cursor
-"ui.cursor" = { modifiers = [ "reversed" ] }
-"ui.cursor.primary" = { fg = "white", modifiers = [ "reversed" ] }
-"ui.selection" = { fg = "white", bg = "ruler" }
+"ui.cursor" = { bg = "ruler", fg = "white" }
+"ui.cursor.primary" = { bg = "white", fg = "#000000" }
+"ui.selection" = { bg = "#603050" }
 "ui.highlight" = { bg = "ruler" }
 
 # Statusline
