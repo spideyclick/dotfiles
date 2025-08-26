@@ -145,7 +145,7 @@ args = ["--server"]
 name = "python"
 language-servers = [
   # { name = "ruff", only-features = [ "format", "diagnostics" ] },
-  { name = "ruff" },
+  # { name = "ruff" },
   { name = "basedpyright", except-features = [ "format" ] },
   # { name = "pylyzer" },
   { name = "codebook"},
