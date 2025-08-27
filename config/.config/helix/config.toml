@@ -18,10 +18,11 @@ C-A-w = ":wbc"
 "C-i" = "@gsP"
 "C-p" = "@glp"
 "C-a" = "@glp"
+# TODO: Create a script that will try to intelligently vertical align all columns in a given paragraph
+# "C-v" = ["@mip", "@x"]
 C-e = ["ensure_selections_forward", "select_mode", "goto_line_end", "normal_mode"]
 C-m = "@mim_"
 # C-A-m = "@mip"
-space.c = "toggle_comments"
 "'" = "select_register"
 "C-/" = "toggle_comments"
 "e" = ["move_next_word_end", "trim_selections"]
@@ -101,6 +102,24 @@ c = ["extend_to_line_bounds", "trim_selections", ":pipe ~/.local/bin/line_status
 r = ["extend_to_line_bounds", "trim_selections", ":pipe ~/.local/bin/line_status 🔎", "goto_first_nonwhitespace"]
 s = ["extend_to_line_bounds", "trim_selections", ":pipe ~/.local/bin/line_status ⏭️", "goto_first_nonwhitespace"]
 w = ["extend_to_line_bounds", "trim_selections", ":pipe ~/.local/bin/line_status 🕗", "goto_first_nonwhitespace"]
+
+[keys.normal.space.c]
+# space.c = "toggle_comments"
+# m for Meeting
+m = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu m", "goto_first_nonwhitespace"]
+l = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu l", "goto_first_nonwhitespace"]
+t = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu t", "goto_first_nonwhitespace"]
+i = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu i", "goto_first_nonwhitespace"]
+c = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu c", "goto_first_nonwhitespace"]
+d = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu d", "goto_first_nonwhitespace"]
+r = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu r", "goto_first_nonwhitespace"]
+p = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu p", "goto_first_nonwhitespace"]
+j = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu j", "goto_first_nonwhitespace"]
+w = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu w", "goto_first_nonwhitespace"]
+o = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu o", "goto_first_nonwhitespace"]
+y = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu y", "goto_first_nonwhitespace"]
+b = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu b", "goto_first_nonwhitespace"]
+h = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu h", "goto_first_nonwhitespace"]
 
 [keys.insert]
 "C-q" = ":write-quit-all!"
