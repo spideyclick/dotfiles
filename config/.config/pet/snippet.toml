@@ -5,6 +5,12 @@
   command = "from pathlib import Path; from json import dumps;print(dumps(<variable_name>, indent=2));"
 
 [[Snippets]]
+  Description = "Async run inside debugger"
+  Output = ""
+  Tag = []
+  command = "from asyncio import get_event_loop;loop = get_event_loop(); loop.run_until_complete(<async_func_name>);"
+
+[[Snippets]]
   Description = "Show Listening Ports"
   Output = ""
   Tag = []
