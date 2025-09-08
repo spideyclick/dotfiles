@@ -18,6 +18,7 @@ def main [category: string] {
 		"c" => "💻",
 		"d" => "🚀",
 		"r" => "🚀",
+		"s" => "🚨",
 		"p" => "🔍",
 		"j" => "📋",
 		"w" => "📖",
@@ -34,6 +35,7 @@ def main [category: string] {
 		"c" => $"($data | get category_name | default '[CODE]')"
 		"d" => "[DEPLOY]"
 		"r" => "[RELEASE]"
+		"s" => "[SUPPORT]"
 		"p" => "[PR]",
 		"j" => "[JIRA]",
 		"w" => "[DOC]",

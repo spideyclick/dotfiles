@@ -113,6 +113,7 @@ i = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bi
 c = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu c", "goto_first_nonwhitespace"]
 d = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu d", "goto_first_nonwhitespace"]
 r = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu r", "goto_first_nonwhitespace"]
+s = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu s", "goto_first_nonwhitespace"]
 p = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu p", "goto_first_nonwhitespace"]
 j = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu j", "goto_first_nonwhitespace"]
 w = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu w", "goto_first_nonwhitespace"]
