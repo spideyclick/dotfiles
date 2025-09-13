@@ -69,8 +69,10 @@ block-comment-tokens = [
   { start = "/**", end = "*/" },
   { start = "/*!", end = "*/" },
 ]
-language-servers = ["rust-analyzer", "codebook"]
+language-servers = ["rust-analyzer"]
+# language-servers = ["rust-analyzer", "codebook"]
 # indent = { tab-width = 4, unit = "    " }
+formatter = { command = "rust-fmt" }
 indent = { tab-width = 2, unit = "	"}
 persistent-diagnostic-sources = ["rustc", "clippy"]
 
@@ -102,15 +104,6 @@ args = [
 
 
 # Python
-
-# Formatting handled by RUFF now
-[language.formatter]
-command = "black"
-args = [
-  "-",
-  "--quiet",
-  "--line-length=88"
-]
 
 [language-server.basedpyright]
 command = "basedpyright-langserver"
