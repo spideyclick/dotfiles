@@ -80,7 +80,7 @@ show_always = true
 
 [hostname]
 ssh_only = false
-ssh_symbol = ' 🌎 '
+ssh_symbol = ' 🌎'
 format = "[$hostname]($style)$ssh_symbol"
 disabled = false
 style = "fg:cyan"
