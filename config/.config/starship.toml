@@ -13,12 +13,15 @@ $status\
 $container\
 $shell\
 $shlvl\
-$direnv\
+[ ]()\
 $directory\
+$direnv\
 $git_branch\
 $git_status\
-$os\
+[ ]()\
 $hostname\
+$os\
+[ ]()\
 $username\
 $sudo\
 $docker_context\
@@ -28,6 +31,7 @@ $python\
 $rust\
 $fill\
 $cmd_duration\
+[ ]()\
 $time\
 $character\
 """
@@ -63,30 +67,31 @@ format = '$symbol'
 [time]
 disabled = false
 # format="[🕒 $time]($style)"
-format="[$time]($style)"
+# format="[$time]($style)"
+format="$time"
 # time_format = "%T%z" #change to %R to only have HH:MM
 # time_format = "%R%z" #change to %R to only have HH:MM
 # time_format = "%Z %#z"
 time_format = "%T%z"
-style = "#808080"
+# style = "#808080"
 
 [username]
 style_user = "fg:blue"
 style_root = "bold fg:red"
 # format = "[🧑 $user]($style)"
-format = " [$user]($style)"
+format = "[$user]($style)"
 disabled = false
 show_always = true
 
 [hostname]
 ssh_only = false
-ssh_symbol = ' 🌎'
+ssh_symbol = '🌎'
 format = "[$hostname]($style)$ssh_symbol"
 disabled = false
 style = "fg:cyan"
 
 [os]
-format = " [$symbol ]($style)"
+format = "[$symbol ]($style)"
 style = "bold cyan"
 disabled = false
 
@@ -137,10 +142,8 @@ Windows = "󰍲"
 
 [docker_context]
 only_with_files = false
-# format = '[🐋 $context ]($style)'
-format = ' [🐋 $context ]($style)'
+format = '  $context'
 disabled = false
-style = "fg:blue"
 
 [localip]
 disabled = true
@@ -189,17 +192,17 @@ style = "fg:green"
 # # format="(fg:#ffffff )[$modified](fg:#282c34 )[$untracked](fg:#282c34 )[$staged](fg:#282c34 )[$renamed](fg:#282c34 )[](fg:#9ed072 bg:none)"
 # format="[$modified](fg:#282c34 )[$untracked](fg:#282c34 )[$staged](fg:#282c34 )[$renamed](fg:#282c34 )"
 style = "fg:green"
-format="[$modified$staged$renamed]($style)"
-conflicted = "⚠"
-ahead = "->"
-behind = "<-"
-diverged = "😵"
+format="[$all_status$ahead_behind]($style)"
+conflicted = "⚠ "
+ahead = " "
+behind = " "
+diverged = " "
 up_to_date = ""
-# untracked = "+"
-stashed = "📦"
-modified = "*"
-renamed = "?"
-deleted = "🗑️"
+untracked = " "
+stashed = " "
+modified = " "
+renamed = " "
+deleted = " "
 # style = "fg:#9ed072"
 disabled = false
 
@@ -231,8 +234,7 @@ style = "fg:#000000 "
 
 [python]
 symbol = ""
-format = ' [${symbol} ${pyenv_prefix}(${version})( \($virtualenv\))]($style)'
-style = "fg:green"
+format = ' ${symbol} ${pyenv_prefix}(${version})( \($virtualenv\))'
 
 [rust]
 symbol = "🦀"
@@ -253,12 +255,12 @@ symbol = ' '
 disabled = false
 min_time = 0
 show_milliseconds = true
-format = '[$duration ](bold #808080)'
+format = '$duration'
 
 [shlvl]
 disabled = false
 style = "fg:#ff7400"
-format = '[+$shlvl]($style) '
+format = '[+$shlvl]($style)'
 threshold = 2
 
 [sudo]
@@ -274,10 +276,10 @@ format = '[⬢]($style)'
 style = "fg:yellow bold"
 format = "[$loaded]($style)"
 allowed_msg     = "+"   # The message displayed when an rc file is allowed.
-not_allowed_msg = "❌ " # The message displayed when an rc file is not_allowed.
-denied_msg      = "❌ " # The message displayed when an rc file is denied.
+not_allowed_msg = "❌" # The message displayed when an rc file is not_allowed.
+denied_msg      = "❌" # The message displayed when an rc file is denied.
 loaded_msg      = " "  # The message displayed when an rc file is loaded.
-unloaded_msg    = "❌ " # The message displayed when an rc file is not loaded.
+unloaded_msg    = "❌" # The message displayed when an rc file is not loaded.
 disabled = false
 
 
