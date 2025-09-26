@@ -94,6 +94,7 @@ def hl [] {
 	| fzf
 	| ~/isomorphic_copy/bin/c
 }
+def psql2nu [query: string] { psql -t -P tuples_only=off -A --csv -c $query | from csv }
 
 # Compare two or more lists.
 def dift [
