@@ -44,7 +44,8 @@ X = "extend_line_above"
 "A-," = "remove_primary_selection"
 "A-C" = "copy_selection_on_next_line"
 "C-A-c" = "copy_selection_on_prev_line"
-"C-s" = "split_selection_on_newline"
+"C-s" = ":write"
+"C-A-s" = "split_selection_on_newline"
 "C-minus" = "merge_selections"
 "C-_" = "merge_consecutive_selections"
 "C-;" = "flip_selections"
@@ -149,6 +150,7 @@ h = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bi
 [keys.select]
 "C-q" = ":write-quit-all!"
 "C-A-q" = ":quit-all!"
+"C-s" = [":write", "normal_mode"]
 X = "extend_line_above"
 "tab" = "extend_to_word"
 "D" = "delete_selection_noyank"

@@ -50,7 +50,7 @@
 "ui.bufferline.active" = { fg = "white", modifiers = ["bold", "reversed"] }
 
 ## SYNTAX HIGHLIGHTING
-"comment" = { fg = "gray", modifiers = ["italic"] }
+"comment" = { fg = "gray" }
 "label" = "gray"
 "constructor" = "purple"
 "namespace" = "blue"
