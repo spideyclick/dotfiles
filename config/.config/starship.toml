@@ -92,7 +92,7 @@ style = "fg:cyan"
 
 [os]
 format = "[$symbol ]($style)"
-style = "bold cyan"
+style = "cyan"
 disabled = false
 
 [os.symbols]
