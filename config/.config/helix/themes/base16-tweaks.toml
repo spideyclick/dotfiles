@@ -80,7 +80,7 @@
 # "diagnostic.error" = { underline = { color = "#fc5d7c", style = "curl" } }
 
 # Diagnostics (gutter)
-"hint" = { fg = "white", modifiers = ["italic", "dim"] }
+"hint" = { fg = "green", modifiers = ["italic", "dim"] }
 "info" = { fg = "blue", modifiers = ["italic", "dim"] }
 "warning" = { fg = "yellow", modifiers = ["italic", "dim"] }
 "error" = { fg = "red", modifiers = ["italic", "dim"] }

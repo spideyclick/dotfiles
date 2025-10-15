@@ -114,6 +114,10 @@ config.colors = {
 
 -- config.default_prog = { 'wsl' }
 config.font = wezterm.font 'JetBrains Mono'
+-- config.font = wezterm.font {
+--   family = 'JetBrains Mono',
+--   weight = 'Regular',
+-- }
 config.enable_tab_bar = false
 config.window_padding = {
   left = "0px",
@@ -135,7 +139,17 @@ config.font_rules = {
     intensity = 'Half',
     font = wezterm.font {
       family = 'JetBrains Mono',
+      -- weight = 'Regular',
       weight = 'Thin',
+    },
+  },
+  {
+    intensity = 'Half',
+    italic = true,
+    font = wezterm.font {
+      family = 'JetBrains Mono',
+      weight = 'Thin',
+      italic = true,
     },
   },
 }
