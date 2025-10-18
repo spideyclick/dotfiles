@@ -12,15 +12,12 @@ def main [] {
 	let match = $match | first
 	let now = (date now)
 	mut current_hour = ($now | format date '%H' | into int)
-	if ($current_hour > 12) {$current_hour -= 12}
 	mut current_minute = (($now | format date '%M' | into int) / 15 | math round) * 15
 	if ($current_minute == 60) {
 		$current_hour += 1
 		$current_minute -= 60
 	}
-	mut current_time = $"($current_hour)"
-	if ($current_minute != 0) { $current_time += $":($current_minute)" }
-	$current_time
+	let current_time = $"($current_hour):($current_minute)" | date from-human | format date '%I:%M'
 	if ($match | get -o time_block) == null {
 		return $"- [($current_time)] ($match | get line_content)"
 	}
