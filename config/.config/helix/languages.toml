@@ -297,3 +297,15 @@ grammar = "hcl"
 name = "sshclientconfig"
 file-types = [ { glob = ".ssh/config" }, { glob = ".ssh/config.d/*" } ]
 indent = { tab-width = 4, unit = "\t" }
+
+[[language]]
+name = "yaml"
+file-types = ["yaml", "yml"]
+language-servers = ["yaml-language-server"]
+auto-format = true
+
+[language-server.yaml-language-server.config.yaml]
+completion = true
+validation = true
+hover = true
+format = { enable = true }
