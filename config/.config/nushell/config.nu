@@ -77,7 +77,7 @@ def p [] { ~/isomorphic_copy/bin/p }
 alias x = yazi
 alias tf = terraform
 def l [] { ls --all }
-def dps [] { docker ps --format json | from json --objects | select ID Names State Status }
+def dps [] { docker ps --format json | from json --objects | select ID Names State Status | sort-by Names }
 alias diff = delta
 alias scp = scp -O
 alias sftp = with-readline sftp
