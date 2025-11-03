@@ -2,9 +2,9 @@ notARepository: 'quit'
 disableStartupPopups: true
 git:
   branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
-  paging:
-    pager: delta --dark --paging=never
-    # externalDiffCommand: difft --color=always
+  pagers:
+    - pager: delta --dark --paging=never
+      # externalDiffCommand: difft --color=always
 gui:
   skipDiscardChangeWarning: true
   nerdFontsVersion: "3"
