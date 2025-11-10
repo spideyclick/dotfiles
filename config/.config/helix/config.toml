@@ -156,6 +156,8 @@ X = "extend_line_above"
 "D" = "delete_selection_noyank"
 "C-minus" = "merge_selections"
 "C-_" = "merge_consecutive_selections"
+"C-up" = "increment"
+"C-down" = "decrement"
 
 [keys.normal.m]
 "\"" = "@mi\"c"
