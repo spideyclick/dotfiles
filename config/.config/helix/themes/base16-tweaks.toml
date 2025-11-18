@@ -39,7 +39,7 @@
 
 # Virtual/invisible text
 "ui.virtual.indent-guide" = { fg = "black" }
-"ui.virtual.inlay-hint" = { fg = "gray", modifiers = ["italic"] }
+"ui.virtual.inlay-hint" = { fg = "#62b6cb", modifiers = ["dim", "italic"] }
 "ui.virtual.whitespace" = { fg = "black" }
 "ui.virtual.ruler" = { bg = "ruler" }
 "ui.virtual.wrap" = { fg = "black" }
