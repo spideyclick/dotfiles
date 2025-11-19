@@ -122,6 +122,7 @@ o = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bi
 y = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu y", "goto_first_nonwhitespace"]
 b = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu b", "goto_first_nonwhitespace"]
 h = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu h", "goto_first_nonwhitespace"]
+f = ["extend_to_line_bounds", "trim_selections", ":pipe nu --stdin ~/dotfiles/bin/categorize.nu f", "goto_first_nonwhitespace"]
 
 [keys.insert]
 "C-q" = ":write-quit-all!"

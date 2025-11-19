@@ -26,6 +26,7 @@ def main [category: string] {
 		"y" => "🔧",
 		"b" => "🌴",
 		"h" => "🚨",
+		"f" => "🏁",
 	}
 	let category_name = match $category {
 		"m" => "[MEETING]",
@@ -43,6 +44,7 @@ def main [category: string] {
 		"y" => "[TOOLS  ]",
 		"b" => "[BREAK  ]",
 		"h" => "[HOTFIX ]",
+		"f" => "[FINISH ]",
 	}
 	return $"- ($data | get time_block | default '')($icon) ($category_name) ($data | get main_content)"
 }
