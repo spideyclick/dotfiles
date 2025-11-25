@@ -293,3 +293,6 @@ unknown_indicator = 'UNKNOWN SHELL'
 style = "fg:#ff7400 bold"
 format = "[$indicator]($style)"
 disabled = false
+
+[nodejs]
+format = ' [$symbol($version )]($style)'
