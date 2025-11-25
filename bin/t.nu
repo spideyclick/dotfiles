@@ -18,11 +18,15 @@ def main [--include-end-time] {
 		$current_minute -= 60
 	}
 	let current_time = $"($current_hour):($current_minute)" | date from-human | format date '%I:%M'
+	mut line_content = $match | get line_content
+	if ($line_content | str substring 0..0) == ' ' {
+		$line_content = $line_content | str substring 1..-1
+	}
 	if $include_end_time {
 		if ($match | get -o time_block) == null {
-			return $"- [($current_time)]($match | get line_content)"
+			return $"- [($current_time)] ($line_content)"
 		}
-		return $"- [($match | get start_time)-($current_time)]($match | get line_content)"
+		return $"- [($match | get start_time)-($current_time)] ($line_content)"
 	}
-	return $"- [($current_time)]($match | get line_content)"
+	return $"- [($current_time)] ($line_content)"
 }
