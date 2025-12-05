@@ -20,7 +20,8 @@ C-A-w = ":wbc"
 "C-a" = "@glp"
 # TODO: Create a script that will try to intelligently vertical align all columns in a given paragraph
 # "C-v" = ["@mip", "@x"]
-C-e = ["ensure_selections_forward", "select_mode", "goto_line_end", "normal_mode"]
+S-end = ["ensure_selections_forward", "select_mode", "goto_line_end", "normal_mode"]
+S-home = ["ensure_selections_forward", "flip_selections", "select_mode", "goto_first_nonwhitespace", "normal_mode"]
 C-m = "@mim_"
 # C-A-m = "@mip"
 "'" = "select_register"
