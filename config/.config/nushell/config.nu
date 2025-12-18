@@ -125,6 +125,18 @@ def git_branches_ahead [] {
 	| sort-by date
 	| compact
 }
+# WIP - Make wide tables easier to read
+# Alternative to `rd`
+# def thin [] {
+# 	each {|row|
+# 		$row | each {|cell|
+# 			print $cell
+# 			if ( $cell | describe ) == "string" {
+# 				$cell | str substring 0 4
+# 			} else { $cell }
+# 		}
+# 	}
+# }
 
 
 # Compare two or more lists.
