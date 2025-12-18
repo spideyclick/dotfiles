@@ -96,6 +96,36 @@ def hl [] {
 }
 def psql2nu [query: string] { psql -t -P tuples_only=off -A --csv -c $query | from csv }
 def pk [search_term: string] {ps | where name like $search_term | get 0.pid | kill $in}
+def holidays [] { http get $"https://openholidaysapi.org/PublicHolidays?countryIsoCode=DE&validFrom=(date now | format date %F)&validTo=((date now) + 365day | format date %F)" | each {|row| { name: ( $row.name.text | last ) date: $row.startDate } } }
+def git_branches_ahead [] {
+	git fetch --all
+	let current = (git rev-parse HEAD)
+	git for-each-ref --format='%(refname:short)' refs/remotes/
+	| lines
+	| each {|b|
+			let ahead_count = (
+					git rev-list --left-right --count $"($current)..($b)"
+					| split row "\t"
+					| get 1
+					| into int
+			)
+
+			if $ahead_count > 0 {
+					let last_commit = (git rev-list $"($current)..($b)" -n 1)
+					let committer = (git show -s --format='%cn' $last_commit)
+					let date = (git show -s --format='%cd' --date=iso $last_commit | split row ' ' | first)
+					{
+							branch: $b,
+							ahead_by: $ahead_count,
+							committer: $committer,
+							date: $date
+					}
+			}
+	}
+	| sort-by date
+	| compact
+}
+
 
 # Compare two or more lists.
 def dift [
